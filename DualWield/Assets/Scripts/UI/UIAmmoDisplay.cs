@@ -7,6 +7,9 @@ public class UIAmmoDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ammoDisplay;
     private float currentAmmoAmount;
 
+    [Header("Settings")] [Tooltip("When ammo goes below this number, text goes red. Default: 20")]
+    [SerializeField] [Range(0, 100)] private int LowAmmoMax;
+
     private void Start()
     {
         SetAmmoDisplay(100, true);
@@ -15,7 +18,7 @@ public class UIAmmoDisplay : MonoBehaviour
     private void Update()
     {
         // When ammo gets low
-        ammoDisplay.color = GetAmmoDisplay() <= 20 ? Color.red : Color.white;
+        ammoDisplay.color = GetAmmoDisplay() <= LowAmmoMax ? Color.red : Color.white;
     }
 
     /// <summary>
