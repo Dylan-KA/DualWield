@@ -6,7 +6,6 @@ public class WindGun : ParticleWeapon
 {
     protected override void Start()
     {
-        handOffset = new Vector3(.5f, -.35f, .8f);
         base.Start();
     }
 

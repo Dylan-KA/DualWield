@@ -110,3 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef8a161b783d826448dd09f9d8531824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handOffset: {x: 0.5, y: -0.35, z: 0.8}

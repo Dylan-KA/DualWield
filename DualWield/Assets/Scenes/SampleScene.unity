@@ -963,6 +963,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: windGunPrefab
+      value: 
+      objectReference: {fileID: 2777539602328322250, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
