@@ -51,6 +51,7 @@ public class PlayerCharacter: BaseCharacter
         {
             case WeaponType.Flamethrower:
                 weapon = Instantiate(flamethrowerPrefab, playerCamera.transform);
+                
                 break;
             case WeaponType.WindGun:
                 weapon = Instantiate(windGunPrefab, playerCamera.transform);
@@ -72,6 +73,10 @@ public class PlayerCharacter: BaseCharacter
             leftWeapon.SetOtherWeaponType(rightWeapon.GetWeaponType());
             rightWeapon.SetOtherWeaponType(leftWeapon.GetWeaponType());
         }
+
+       
+        
+        
     }
     
     void Update()
