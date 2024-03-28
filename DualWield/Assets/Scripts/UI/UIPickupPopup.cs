@@ -47,23 +47,15 @@ public class UIPickupPopup : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             timer = Time.time;
-            Debug.Log("Timer started");
         }
-        else if (Input.GetKey(KeyCode.Q))
+        
+        if (Input.GetKey(KeyCode.Q))
         {
-            Debug.Log("Q held");
-            Debug.Log(timer);
             if (Time.time - timer > holdDuration)
             {
-                Debug.Log("Q activated");
                 timer = float.PositiveInfinity; // Prevents subsequent runs
-                
                 PickupWeapon(other.gameObject, Hand.Left);
             }
-        }
-        else
-        {
-            timer = float.PositiveInfinity;
         }
     }
 
