@@ -13,8 +13,8 @@ public enum StatusEffect
 public class BaseCharacter : MonoBehaviour
 {
     [SerializeField] protected float movementSpeed;
-    protected const float MAX_HEALTH = 100;
-    protected float health = MAX_HEALTH;
+    protected const float maxHealth = 100;
+    protected float health = maxHealth;
     protected StatusEffect statusEffect = StatusEffect.None;
 
     // Start is called before the first frame update
@@ -29,9 +29,8 @@ public class BaseCharacter : MonoBehaviour
         
     }
 
-    void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
     }
-
 }

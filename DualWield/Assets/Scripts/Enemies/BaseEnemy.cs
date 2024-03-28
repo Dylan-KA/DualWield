@@ -36,7 +36,7 @@ public class BaseEnemy : BaseCharacter
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         try
         {
@@ -50,7 +50,7 @@ public class BaseEnemy : BaseCharacter
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (isPlayerSeen)
         {
