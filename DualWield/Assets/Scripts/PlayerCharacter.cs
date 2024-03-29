@@ -42,7 +42,7 @@ public class PlayerCharacter: BaseCharacter
     /// <summary>
     /// Equips a weapon in the specified hand
     /// </summary>
-    void EquipWeapon(WeaponType weaponType, Hand hand)
+    public void EquipWeapon(WeaponType weaponType, Hand hand)
     {
         // TODO: destroy the previous weapon held in this hand
         BaseWeapon weapon = null;
