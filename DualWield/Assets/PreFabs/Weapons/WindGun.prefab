@@ -111,3 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handOffset: {x: 0.5, y: -0.35, z: 0.8}
+  weaponType: 1
+  ListofEnemies: []
+  weaponCollider: {fileID: 0}

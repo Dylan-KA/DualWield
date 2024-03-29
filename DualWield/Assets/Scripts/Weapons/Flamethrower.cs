@@ -1,17 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class Flamethrower : ParticleWeapon
 {
     protected override void Start()
     {
+        
         base.Start();
     }
 
     protected override void Update()
     {
         base.Update();
+       
     }
     
     /// <summary>
@@ -22,34 +26,49 @@ public class Flamethrower : ParticleWeapon
 
         if (otherWeaponType == WeaponType.Flamethrower)
         {
-            
-           
+
             FlameAndFlame();
             
         }
         else if (otherWeaponType == WeaponType.WindGun)
         {
             FlameAndWind();
-            Debug.Log("TEst2");
+            
         }
             
     }
 
     private void FlameAndFlame()
     {
-        Debug.Log("TEst3");
-         /*
-          if(ListofEnemies){
+        if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage();
+                Enemy.TakeDamage(10);
             }
          }
-         */
+         
          
     }
     private void FlameAndWind()
     {
-        Debug.Log("TEst4");
+        IncreaseFlameSize();
+        FlameAndFlame();
+        StartCoroutine(ResetFlameSize());
+
     }
+
+    private void IncreaseFlameSize()
+    {
+        weaponCollider.transform.localScale = new Vector3(weaponCollider.transform.localScale.x, weaponCollider.transform.localScale.y,  10);
+    }
+
+    IEnumerator ResetFlameSize()
+    {
+        yield return new WaitForSeconds(3);
+        weaponCollider.transform.localScale = new Vector3(weaponCollider.transform.localScale.x,
+            weaponCollider.transform.localScale.y, 6.5f);
+    }
+
+
+
 }

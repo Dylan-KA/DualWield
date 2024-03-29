@@ -27,8 +27,7 @@ public class WindGun : ParticleWeapon
             
         else if (otherWeaponType == WeaponType.Flamethrower)
         {
-            Debug.Log(weaponType);
-            Debug.Log(otherWeaponType);
+            
             WindAndFlame();
         }
             
