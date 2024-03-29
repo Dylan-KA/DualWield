@@ -20,9 +20,17 @@ public class WindGun : ParticleWeapon
     public override void Fire()
     {
         if (otherWeaponType == WeaponType.WindGun)
+        {
+            
             WindAndWind();
+        }
+            
         else if (otherWeaponType == WeaponType.Flamethrower)
+        {
+            
             WindAndFlame();
+        }
+            
     }
 
     private void WindAndWind()

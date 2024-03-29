@@ -6,8 +6,8 @@ using UnityEngine;
 
 public abstract class ParticleWeapon : BaseWeapon
 {
-    [SerializeField]private GameObject[] /*BaseEnemy[]*/ ListofEnemies;
-    [SerializeField] private BoxCollider weaponCollider;
+    [SerializeField] protected BaseEnemy[] ListofEnemies;
+    [SerializeField] protected BoxCollider weaponCollider;
     
     
     protected override void Start()
@@ -41,10 +41,7 @@ public abstract class ParticleWeapon : BaseWeapon
             weaponCollider = transform.parent.GetChild(1).GetComponent<BoxCollider>();
         }
     }
-    protected GameObject[]/*Change to BaseEnemy[]*/ GetHitEnemies()
-    {
-        return ListofEnemies;
-    }
+    
 
     private void FixedUpdate()
     {
@@ -59,16 +56,16 @@ public abstract class ParticleWeapon : BaseWeapon
             ListofEnemies = GetCollidingObjects();
         }
     }
-    protected GameObject[] GetCollidingObjects()
+    protected BaseEnemy[] GetCollidingObjects()
     {
         Collider[] colliders = Physics.OverlapBox(weaponCollider.bounds.center, weaponCollider.bounds.extents, Quaternion.identity);
         
         var enemyColliders = colliders.Where(collider => collider.CompareTag("Enemy")).ToArray();
         
-        GameObject[] hitObjects = new GameObject[enemyColliders.Length];
+        BaseEnemy[] hitObjects = new BaseEnemy[enemyColliders.Length];
         for (int i = 0; i < enemyColliders.Length; i++)
         {
-            hitObjects[i] = enemyColliders[i].gameObject;
+            hitObjects[i] = enemyColliders[i].gameObject.GetComponent<BaseEnemy>();
         }
         return hitObjects;
     }

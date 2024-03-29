@@ -6,7 +6,7 @@ using UnityEngine;
 public abstract class BaseWeapon : MonoBehaviour
 {
     [SerializeField] protected Vector3 handOffset;
-    protected WeaponType weaponType;
+    [SerializeField] protected WeaponType weaponType;
     protected WeaponType otherWeaponType;
     protected Hand hand;
 
