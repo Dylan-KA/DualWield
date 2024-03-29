@@ -6,8 +6,8 @@ using UnityEngine;
 
 public abstract class ParticleWeapon : BaseWeapon
 {
-    [SerializeField]private GameObject[] /*BaseEnemy[]*/ ListofEnemies;
-    [SerializeField] private BoxCollider weaponCollider;
+    [SerializeField] protected GameObject[] /*BaseEnemy[]*/ ListofEnemies;
+    [SerializeField] protected BoxCollider weaponCollider;
     
     
     protected override void Start()

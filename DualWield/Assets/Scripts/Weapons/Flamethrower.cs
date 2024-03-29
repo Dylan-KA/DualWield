@@ -19,18 +19,37 @@ public class Flamethrower : ParticleWeapon
     /// </summary>
     public override void Fire()
     {
+
         if (otherWeaponType == WeaponType.Flamethrower)
+        {
+            
+           
             FlameAndFlame();
+            
+        }
         else if (otherWeaponType == WeaponType.WindGun)
+        {
             FlameAndWind();
+            Debug.Log("TEst2");
+        }
+            
     }
 
     private void FlameAndFlame()
     {
-        // TODO: implement this
+        Debug.Log("TEst3");
+         /*
+          if(ListofEnemies){
+            foreach (BaseEnemy Enemy in ListofEnemies)
+            {
+                Enemy.TakeDamage();
+            }
+         }
+         */
+         
     }
     private void FlameAndWind()
     {
-        // TODO: implement this
+        Debug.Log("TEst4");
     }
 }
