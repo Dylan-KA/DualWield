@@ -10,10 +10,10 @@
 /DualWield/[Ll]ogs/
 /DualWield/[Uu]ser[Ss]ettings/
 
-# --- Michael's New Ignore Additions v1.0
+# --- Michael's New Ignore Additions v1.1
 
 # NEW: Ignores workspace.xml
-/DualWield/.idea/.idea.DualWield/.idea/workspace.xml
+/DualWield/.idea/
 
 # --- Back to normal vvv
 

@@ -162,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPopup: {fileID: 3716563132115377481}
   pickup: {fileID: 1466833919787726872}
-  holdDuration: 3
+  GameManager: {fileID: 0}
   weaponType: 0
 --- !u!1 &3716563132115377481
 GameObject:
@@ -656,7 +656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9019822857827249868, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
       propertyPath: m_Name
-      value: FlamethrowerPickup Variant
+      value: FlamethrowerPickup
       objectReference: {fileID: 0}
     - target: {fileID: 9019822857827249871, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
       propertyPath: m_RootOrder
