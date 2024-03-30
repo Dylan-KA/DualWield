@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 198993423900235080}
   - component: {fileID: 199087449348766326}
   m_Layer: 0
-  m_Name: Magic fire pro red
+  m_Name: Fire Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

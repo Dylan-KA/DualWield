@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 199085752862407120}
   - component: {fileID: 65674772761106248}
   m_Layer: 0
-  m_Name: RotatorPS2
+  m_Name: Rainbow Rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
