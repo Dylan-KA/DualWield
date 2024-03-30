@@ -45,6 +45,10 @@ public class PlayerCharacter: BaseCharacter
     public void EquipWeapon(WeaponType weaponType, Hand hand)
     {
         // TODO: destroy the previous weapon held in this hand
+        if (leftWeapon && hand == Hand.Left)
+            Destroy(leftWeapon.gameObject);
+        else if (rightWeapon && hand == Hand.Right)
+            Destroy(rightWeapon.gameObject);
         BaseWeapon weapon = null;
 
         switch (weaponType)
@@ -78,6 +82,8 @@ public class PlayerCharacter: BaseCharacter
         
         
     }
+
+
     
     void Update()
     {
