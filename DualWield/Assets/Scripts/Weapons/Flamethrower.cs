@@ -33,7 +33,6 @@ public class Flamethrower : ParticleWeapon
         else if (otherWeaponType == WeaponType.WindGun)
         {
             FlameAndWind();
-            
         }
             
     }
@@ -45,9 +44,7 @@ public class Flamethrower : ParticleWeapon
             {
                 Enemy.TakeDamage(25*Time.deltaTime);
             }
-         }
-         
-         
+        }
     }
     private void FlameAndWind()
     {

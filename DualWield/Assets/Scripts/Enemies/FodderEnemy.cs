@@ -18,6 +18,6 @@ public class FodderEnemy : BaseEnemy
     }
     protected override void Attack()
     {
-        Debug.Log("Fodder Attacking");
+        //Debug.Log("Fodder Attacking");
     }
 }

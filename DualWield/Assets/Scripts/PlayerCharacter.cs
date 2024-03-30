@@ -17,7 +17,7 @@ public class PlayerCharacter: BaseCharacter
     
     public Camera playerCamera;
     public float gravity = 10f;
-    private Vector3 Velocity;
+    private Vector3 velocity;
 
     public float lookspeed = 2f;
     public float lookXLimit = 45f;
@@ -26,6 +26,7 @@ public class PlayerCharacter: BaseCharacter
     private float rotationX = 0;
 
     public bool canMove = true;
+    public bool isFlying { private get; set; }
 
     public CharacterController characterController;
 
@@ -91,8 +92,11 @@ public class PlayerCharacter: BaseCharacter
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         moveDirection = (forward * (movementSpeed * Input.GetAxis("Vertical"))) + (right * (movementSpeed * Input.GetAxis("Horizontal")));
-        Velocity.y -= gravity * Time.deltaTime;
-        characterController.Move(Velocity * Time.deltaTime);
+        if (!isFlying)
+        {
+            velocity.y -= gravity * Time.deltaTime;
+        }
+        characterController.Move(velocity * Time.deltaTime);
         characterController.Move(moveDirection * Time.deltaTime);
         if (canMove)
         {
@@ -109,5 +113,15 @@ public class PlayerCharacter: BaseCharacter
             leftWeapon.Fire();
             rightWeapon.Fire();
         }
-    }   
+        else
+        {
+            isFlying = false;
+        }
+    }
+
+    public void AddFlyingForce(float force)
+    {
+        isFlying = true;
+        velocity.y = force;
+    }
 }
