@@ -9,6 +9,8 @@ public abstract class BaseWeapon : MonoBehaviour
     [SerializeField] protected WeaponType weaponType;
     protected WeaponType otherWeaponType;
     protected Hand hand;
+    protected bool isFiring = false;
+    public void SetFiring(bool bIsFiring) { isFiring = bIsFiring; }
 
     protected virtual void Start()
     {
@@ -17,6 +19,10 @@ public abstract class BaseWeapon : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (isFiring)
+        {
+            Fire();
+        }
         //PositionGun(); // uncomment this temporarily if u want to find a good handOffset
     }
 
@@ -30,7 +36,7 @@ public abstract class BaseWeapon : MonoBehaviour
         this.hand = hand;
     }
 
-    public void SetOtherWeaponType(WeaponType otherWeaponType)
+    public virtual void SetOtherWeaponType(WeaponType otherWeaponType)
     {
         this.otherWeaponType = otherWeaponType;
     }

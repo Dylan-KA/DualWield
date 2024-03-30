@@ -128,4 +128,13 @@ public class BaseEnemy : BaseCharacter
     {
         Debug.Log(gameObject.name + "attacked the Player at: " + attackRange);
     }
+
+    public override void TakeDamage(float damageAmount)
+    {
+        if (health <= 0) return;
+
+        base.TakeDamage(damageAmount);
+        if (health <= 0)
+            Destroy(gameObject);
+    }
 }

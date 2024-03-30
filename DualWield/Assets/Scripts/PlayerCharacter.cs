@@ -13,7 +13,6 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private BaseWeapon windGunPrefab;
     private BaseWeapon leftWeapon;
     private BaseWeapon rightWeapon;
-    private bool isFiring = false;
     
     public Camera playerCamera;
     public float gravity = 10f;
@@ -45,6 +44,10 @@ public class PlayerCharacter: BaseCharacter
     public void EquipWeapon(WeaponType weaponType, Hand hand)
     {
         // TODO: destroy the previous weapon held in this hand
+        if (leftWeapon && hand == Hand.Left)
+            Destroy(leftWeapon.gameObject);
+        else if (rightWeapon && hand == Hand.Right)
+            Destroy(rightWeapon.gameObject);
         BaseWeapon weapon = null;
 
         switch (weaponType)
@@ -78,6 +81,8 @@ public class PlayerCharacter: BaseCharacter
         
         
     }
+
+
     
     void Update()
     {
@@ -97,11 +102,16 @@ public class PlayerCharacter: BaseCharacter
         }
 
         // firing
-        isFiring = Input.GetKey(KeyCode.Mouse0);
-        if (isFiring)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            leftWeapon.Fire();
-            rightWeapon.Fire();
+            //Debug.Log("Firing");
+            leftWeapon.SetFiring(true);
+            rightWeapon.SetFiring(true);
+        } else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            //Debug.Log("Not Firing");
+            leftWeapon.SetFiring(false);
+            rightWeapon.SetFiring(false);
         }
     }   
 }

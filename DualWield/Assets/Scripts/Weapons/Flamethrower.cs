@@ -43,7 +43,7 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(10);
+                Enemy.TakeDamage(25 * Time.deltaTime );
             }
          }
          
@@ -51,24 +51,38 @@ public class Flamethrower : ParticleWeapon
     }
     private void FlameAndWind()
     {
-        IncreaseFlameSize();
-        FlameAndFlame();
-        StartCoroutine(ResetFlameSize());
-
+        if(ListofEnemies.Length != 0){
+            foreach (BaseEnemy Enemy in ListofEnemies)
+            {
+                Enemy.TakeDamage(25*Time.deltaTime);
+            }
+        }
     }
 
     private void IncreaseFlameSize()
     {
-        weaponCollider.transform.localScale = new Vector3(weaponCollider.transform.localScale.x, weaponCollider.transform.localScale.y,  10);
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y ,  6);
+        GetComponent<BoxCollider>().center =
+            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 2);
     }
 
-    IEnumerator ResetFlameSize()
+    private void ResetFlameSize()
     {
-        yield return new WaitForSeconds(3);
-        weaponCollider.transform.localScale = new Vector3(weaponCollider.transform.localScale.x,
-            weaponCollider.transform.localScale.y, 6.5f);
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,
+            GetComponent<BoxCollider>().size.y, 3);
     }
 
-
+    public override void SetOtherWeaponType(WeaponType otherWeaponType)
+    {
+        base.SetOtherWeaponType(otherWeaponType);
+        if (otherWeaponType == WeaponType.WindGun)
+        {
+            IncreaseFlameSize();
+        }
+        else
+        {
+            ResetFlameSize();
+        }
+    }
 
 }
