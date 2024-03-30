@@ -1,0 +1,74 @@
+using JetBrains.Annotations;
+using TMPro;
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    [CanBeNull]
+    [SerializeField] private TextMeshProUGUI ammoDisplay;
+    private float currentAmmoAmount;
+    
+    [Header("Settings")] [Tooltip("When ammo goes below this number, text goes red. Default: 20")]
+    [SerializeField] [Range(0, 100)] private int LowAmmoMax;
+
+    private void Start()
+    {
+        if (!ammoDisplay) { Debug.LogError("Error: Assign the ammo display to the GameManager.", ammoDisplay); }
+        RefillAmmo(); // Starting with two weapons. Remove if we don't start with two weapons.
+    }
+    
+    private void SetAmmoDisplay(float amount)
+    {
+        if (!ammoDisplay) { return; }
+        
+        ammoDisplay.text = amount + "%";
+        ammoDisplay.color = GetAmmo() <= LowAmmoMax ? Color.red : Color.white; // When ammo gets low
+    }
+    
+    /// <summary>
+    /// Drains ammo. Saves amount in memory (currentAmmoAmount).
+    /// </summary>
+    /// <param name="ammoUsed">Amount of ammo used by a weapon. (example: -5 -> 95%)</param>
+    /// <returns name="bool">Returns true if successful, false if ammo already at zero.</returns>
+    public bool DrainAmmo(float ammoUsed)
+    {
+        if (currentAmmoAmount <= 0) return false; // if ammo at zero
+        /* 
+         If ammo goes under 0, normalizes back to 0.
+         Example: If I shot a weapon that uses 95 ammo, and I'm at 5% left
+            then I use a different combination that uses 10 ammo, I'll go under 0.
+         */
+        if ((currentAmmoAmount -= ammoUsed) <= 0) { currentAmmoAmount = 0; }
+        SetAmmoDisplay(currentAmmoAmount);
+        return true;
+    }
+    
+    /// <summary>
+    /// Refills ammo back to 100%. Saves amount in memory (currentAmmoAmount).
+    /// </summary>
+    public void RefillAmmo()
+    {
+        currentAmmoAmount = 100;
+        SetAmmoDisplay(100);
+    }
+    
+    /// <summary>
+    /// Refills ammo to amount%. Use this if you want a custom amount of ammo instead.
+    /// Saves amount in memory (currentAmmoAmount).
+    /// </summary>
+    /// <param name="amount">Will set the currentAmmoAmount to amount.</param>
+    public void RefillAmmoCustom(float amount)
+    {
+        currentAmmoAmount = amount;
+        SetAmmoDisplay(currentAmmoAmount);
+    }
+    
+    /// <summary>
+    /// Gets ammo amount shown on screen (and essentially in GameManager & UI memory).
+    /// </summary>
+    /// <returns>Returns current ammo amount known to the game & UI.</returns>
+    private float GetAmmo()
+    {
+        return currentAmmoAmount;
+    }
+}
