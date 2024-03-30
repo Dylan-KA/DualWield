@@ -29,7 +29,7 @@ public class BaseCharacter : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damageAmount)
+    public virtual void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
     }

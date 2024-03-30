@@ -30,7 +30,7 @@ public abstract class BaseWeapon : MonoBehaviour
         this.hand = hand;
     }
 
-    public void SetOtherWeaponType(WeaponType otherWeaponType)
+    public virtual void SetOtherWeaponType(WeaponType otherWeaponType)
     {
         this.otherWeaponType = otherWeaponType;
     }

@@ -129,8 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 2
-  fieldOfView: 80
-  viewDistance: 10
+  health: 100
+  fieldOfView: 360
+  viewDistance: 152.69
   attackRange: 1.5
   attackSpeed: 3
   playerMask:
@@ -138,7 +139,7 @@ MonoBehaviour:
     m_Bits: 64
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
 --- !u!1 &996841942851717684
 GameObject:
   m_ObjectHideFlags: 0
