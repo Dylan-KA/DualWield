@@ -8,19 +8,19 @@ public class UIPickupPopup : MonoBehaviour
 {
     [SerializeField] private GameObject UIPopup;
     [SerializeField] private GameObject pickup;
+    [SerializeField] GameManager GameManager;
     private Camera mainCamera;
-    private float timer;
 
-    [Header("Settings")] [Tooltip("Amount of time needed to pick up a weapon.")]
-    [SerializeField] private float holdDuration;
+    [Header("Settings")]
     [Tooltip("The weapon of this pickup.")]
     [SerializeField] private WeaponType weaponType;
     
     // Start is called before the first frame update
     void Start()
     {
+        if (!Camera.main) { Debug.LogWarning("Main Camera is missing."); }
+        if (!GameManager) { Debug.LogError("GameManager reference is missing from UIManager."); }
         mainCamera = Camera.main; // If null, there is no safety net.
-        timer = 0f;
     }
     
     void LateUpdate()
@@ -33,6 +33,7 @@ public class UIPickupPopup : MonoBehaviour
     {
         PlayerCharacter PlayerCharacter = player.GetComponent<PlayerCharacter>();
         PlayerCharacter.EquipWeapon(weaponType, hand);
+        GameManager.RefillAmmo();
         pickup.SetActive(false);
     }
 
@@ -43,19 +44,13 @@ public class UIPickupPopup : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        // Hold Q for Left Hand
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            timer = Time.time;
-        }
-        
         if (Input.GetKey(KeyCode.Q))
         {
-            if (Time.time - timer > holdDuration)
-            {
-                timer = float.PositiveInfinity; // Prevents subsequent runs
-                PickupWeapon(other.gameObject, Hand.Left);
-            }
+            PickupWeapon(other.gameObject, Hand.Left);
+        }
+        else if (Input.GetKey(KeyCode.E))
+        {
+            PickupWeapon(other.gameObject, Hand.Right);
         }
     }
 

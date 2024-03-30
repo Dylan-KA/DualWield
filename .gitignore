@@ -10,6 +10,13 @@
 /DualWield/[Ll]ogs/
 /DualWield/[Uu]ser[Ss]ettings/
 
+# --- Michael's New Ignore Additions v1.0
+
+# NEW: Ignores workspace.xml
+/DualWield/.idea/.idea.DualWield/.idea/workspace.xml
+
+# --- Back to normal vvv
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
