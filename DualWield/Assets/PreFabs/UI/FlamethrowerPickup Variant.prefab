@@ -634,6 +634,26 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2747331770781859126, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747632360165042024, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747706871054377468, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2747831225208445826, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765028333345306632, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9019822857827249868, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
       propertyPath: m_Name
       value: FlamethrowerPickup Variant
@@ -644,7 +664,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9019822857827249871, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9019822857827249871, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
       propertyPath: m_LocalPosition.x
