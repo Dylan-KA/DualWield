@@ -104,12 +104,12 @@ public class PlayerCharacter: BaseCharacter
         // firing
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Debug.Log("Firing");
+            //Debug.Log("Firing");
             leftWeapon.SetFiring(true);
             rightWeapon.SetFiring(true);
         } else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            Debug.Log("Not Firing");
+            //Debug.Log("Not Firing");
             leftWeapon.SetFiring(false);
             rightWeapon.SetFiring(false);
         }
