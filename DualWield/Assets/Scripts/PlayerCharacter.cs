@@ -13,7 +13,6 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private BaseWeapon windGunPrefab;
     private BaseWeapon leftWeapon;
     private BaseWeapon rightWeapon;
-    private bool isFiring = false;
     
     public Camera playerCamera;
     public float gravity = 10f;
@@ -103,11 +102,16 @@ public class PlayerCharacter: BaseCharacter
         }
 
         // firing
-        isFiring = Input.GetKey(KeyCode.Mouse0);
-        if (isFiring)
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            leftWeapon.Fire();
-            rightWeapon.Fire();
+            Debug.Log("Firing");
+            leftWeapon.SetFiring(true);
+            rightWeapon.SetFiring(true);
+        } else if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            Debug.Log("Not Firing");
+            leftWeapon.SetFiring(false);
+            rightWeapon.SetFiring(false);
         }
     }   
 }

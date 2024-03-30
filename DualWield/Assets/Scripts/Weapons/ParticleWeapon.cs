@@ -8,19 +8,21 @@ public abstract class ParticleWeapon : BaseWeapon
 {
     [SerializeField] protected BaseEnemy[] ListofEnemies;
     [SerializeField] protected BoxCollider weaponCollider;
-    
-    
+
+    private ParticleSystem Particles;
+    private bool particlesPlaying = false;
+
     protected override void Start()
     {
         
         base.Start();
-        
+        Particles = GetComponentInChildren<ParticleSystem>();
     }
 
     protected override void Update()
     {
         base.Update();
-        
+        WeaponParticles();
     }
 
     private void Awake()
@@ -68,5 +70,25 @@ public abstract class ParticleWeapon : BaseWeapon
             hitObjects[i] = enemyColliders[i].gameObject.GetComponent<BaseEnemy>();
         }
         return hitObjects;
+    }
+
+    public void WeaponParticles()
+    {
+        if (Particles == null) { return; }
+        if (isFiring)
+        {
+            if (!particlesPlaying) //If particles not already playing.
+            {
+                Particles.Play();
+                Debug.Log("Playing Particles");
+                particlesPlaying = true;
+            }
+        }
+        else
+        {
+            Particles.Stop();
+            particlesPlaying = false;
+            Debug.Log("NO Particles");
+        }
     }
 }
