@@ -8,6 +8,7 @@ public class WindGun : ParticleWeapon
     private PlayerCharacter player;
     private float maxCameraXRotation = 44;
     private float windPower = 3;
+    private float windMultiplier = 2;
     private float flyingForce = 5;
 
     protected override void Start()
@@ -36,13 +37,11 @@ public class WindGun : ParticleWeapon
         ManagePlayerFlying();
         if (otherWeaponType == WeaponType.WindGun)
         {
-            
             WindAndWind();
         }
             
         else if (otherWeaponType == WeaponType.Flamethrower)
         {
-            
             WindAndFlame();
         }
             
@@ -50,7 +49,7 @@ public class WindGun : ParticleWeapon
 
     private void WindAndWind()
     {
-        PushEnemiesInRange();
+        PushEnemiesInRange(windMultiplier);
     }
     private void WindAndFlame()
     {
@@ -63,6 +62,16 @@ public class WindGun : ParticleWeapon
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
                 Enemy.gameObject.GetComponent<Rigidbody>().AddRelativeForce(gameObject.transform.position * windPower);
+            }
+        }
+    }
+    private void PushEnemiesInRange(float windMultiplier)
+    {
+        if (ListofEnemies.Length != 0)
+        {
+            foreach (BaseEnemy Enemy in ListofEnemies)
+            {
+                Enemy.gameObject.GetComponent<Rigidbody>().AddRelativeForce(gameObject.transform.position * windPower * windMultiplier);
             }
         }
     }
