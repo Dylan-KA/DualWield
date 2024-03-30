@@ -9,7 +9,6 @@ public class WindGun : ParticleWeapon
     private float maxCameraXRotation = 44;
     private float windPower = 3;
     private float flyingForce = 5;
-    private float maxFlyingHeight = 10;
 
     protected override void Start()
     {
@@ -72,12 +71,10 @@ public class WindGun : ParticleWeapon
         if (playerCamera == null) { Debug.Log("PlayerCamera is missing in 'WindGun'"); return; }
         if (IsPlayerLookingStraightDown())
         {
-            Debug.Log("Flying");
             player.AddFlyingForce(flyingForce);
         }
         else
         {
-            Debug.Log("Stop");
             player.isFlying = false;
         }
     }
