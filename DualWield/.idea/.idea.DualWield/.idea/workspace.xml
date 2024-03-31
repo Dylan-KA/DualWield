@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/PreFabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PreFabs/Weapons/Flamethrower.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/Weapons/Flamethrower.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PreFabs/Weapons/WindGun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/Weapons/WindGun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCharacter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flamethrower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/Flamethrower.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/ParticleWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/ParticleWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +112,7 @@
       <workItem from="1711686303812" duration="3137000" />
       <workItem from="1711700571379" duration="576000" />
       <workItem from="1711786958598" duration="707000" />
+      <workItem from="1711846711551" duration="922000" />
     </task>
     <servers />
   </component>
