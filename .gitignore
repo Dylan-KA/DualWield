@@ -77,7 +77,7 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-/DualWield/.idea
+/DualWield/.idea/
 DualWield/.idea/.idea.DualWield/.idea/workspace.xml
 DualWield/.idea/.idea.DualWield/.idea/copilot/chatSessions/00000000000.xd
 DualWield/.idea/.idea.DualWield/.idea/copilot/chatSessions/xd.lck
