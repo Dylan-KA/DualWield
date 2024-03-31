@@ -28,7 +28,10 @@ public class BaseCharacter : MonoBehaviour
     {
         
     }
-
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        
+    }
     public virtual void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
