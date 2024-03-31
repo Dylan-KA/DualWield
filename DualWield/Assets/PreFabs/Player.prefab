@@ -54,11 +54,14 @@ MonoBehaviour:
   flamethrowerPrefab: {fileID: 9019822857827249870, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
   windGunPrefab: {fileID: 2777539602328322250, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
   playerCamera: {fileID: 833108083828602931}
-  gravity: 100
+  gravity: 50
   lookspeed: 2
   lookXLimit: 90
   canMove: 1
   characterController: {fileID: 0}
+  groundlayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!143 &833108082530496967
 CharacterController:
   m_ObjectHideFlags: 0

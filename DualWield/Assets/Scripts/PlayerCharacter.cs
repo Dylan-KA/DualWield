@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -28,6 +29,9 @@ public class PlayerCharacter: BaseCharacter
     public bool isFlying { private get; set; }
 
     public CharacterController characterController;
+
+    [SerializeField] private LayerMask groundlayer;
+    private bool isGrounded;
 
     void Start()
     {
@@ -91,10 +95,17 @@ public class PlayerCharacter: BaseCharacter
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
         moveDirection = (forward * (movementSpeed * Input.GetAxis("Vertical"))) + (right * (movementSpeed * Input.GetAxis("Horizontal")));
+        IsGrounded();
         if (!isFlying)
         {
-            velocity.y -= gravity * Time.deltaTime;
+            velocity.y -= gravity * Time.deltaTime ;
+            if (velocity.y <= -50f)
+            {
+                velocity.y = -50f;
+            }
+            
         }
+        
         characterController.Move(velocity * Time.deltaTime);
         characterController.Move(moveDirection * Time.deltaTime);
         if (canMove)
@@ -127,5 +138,10 @@ public class PlayerCharacter: BaseCharacter
     {
         isFlying = true;
         velocity.y = force;
+    }
+
+    public void IsGrounded()
+    {
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
     }
 }
