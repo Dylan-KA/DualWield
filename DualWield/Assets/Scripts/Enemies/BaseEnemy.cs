@@ -12,12 +12,15 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float attackSpeed;
+    protected float squashDamage = 10;
+    protected float squashThreshHold = 2;
     //[SerializeField] protected float rotationSpeed;
     public LayerMask playerMask;
     public LayerMask obstructionMask;
     private Transform playerTransform;
     private bool isPlayerSeen;
     private bool isAttackOnCooldown;
+
     public float GetFieldOfView()
     {
         return fieldOfView;
@@ -68,6 +71,19 @@ public class BaseEnemy : BaseCharacter
             }
         }
     }
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+
+        if (collision.relativeVelocity.magnitude > squashThreshHold)
+        {
+            Debug.Log(collision.gameObject.name + $" || {collision.relativeVelocity.magnitude} || Squashed");
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            TakeDamage(squashDamage);   
+        }
+    }
+
     private IEnumerator FOVRoutine()
     {
         float delay = 0.2f;

@@ -6,9 +6,9 @@ public class WindGun : ParticleWeapon
 {
     private Camera playerCamera;
     private PlayerCharacter player;
-    private float maxCameraXRotation = 44;
-    private float windPower = 3;
-    private float windMultiplier = 2;
+    private float maxCameraXRotation = 90;
+    private float windPower = 1;
+    private float windMultiplier = 1.5f;
     private float flyingForce = 5;
 
     protected override void Start()
@@ -55,27 +55,23 @@ public class WindGun : ParticleWeapon
     {
         // TODO: implement this
     }
-    private void PushEnemiesInRange()
-    {
-        if (ListofEnemies.Length != 0)
-        {
-            foreach (BaseEnemy Enemy in ListofEnemies)
-            {
-                Enemy.gameObject.GetComponent<Rigidbody>().AddRelativeForce(gameObject.transform.position * windPower);
-            }
-        }
-    }
     private void PushEnemiesInRange(float windMultiplier)
     {
         if (ListofEnemies.Length != 0)
         {
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.gameObject.GetComponent<Rigidbody>().AddRelativeForce(gameObject.transform.position * windPower * windMultiplier);
-            }
+                Rigidbody enemyRb = Enemy.gameObject.GetComponent<Rigidbody>();
+                if (enemyRb != null)
+                {
+                    Vector3 directionFromPlayer = Enemy.gameObject.transform.position - player.gameObject.transform.position;
+                    directionFromPlayer.Normalize();
+                    enemyRb.AddForce(windMultiplier * windPower * directionFromPlayer, ForceMode.Impulse);
+                }
+            } 
         }
     }
-    private void ManagePlayerFlying()
+    private void ManagePlayerFlying() 
     {
         if (playerCamera == null) { Debug.Log("PlayerCamera is missing in 'WindGun'"); return; }
         if (IsPlayerLookingStraightDown())
