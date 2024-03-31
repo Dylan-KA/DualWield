@@ -19,7 +19,7 @@ public class PlayerCharacter: BaseCharacter
     private Vector3 velocity;
 
     public float lookspeed = 2f;
-    public float lookXLimit = 45f;
+    public float lookXLimit = 90f;
 
     private Vector3 moveDirection = Vector3.zero;
     private float rotationX = 0;

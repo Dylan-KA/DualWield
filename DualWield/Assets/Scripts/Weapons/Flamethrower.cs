@@ -51,22 +51,23 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(25*Time.deltaTime);
+                Enemy.TakeDamage(25*(4*Time.deltaTime));
             }
         }
     }
 
     private void IncreaseFlameSize()
     {
-        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y ,  6);
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y ,  8);
         GetComponent<BoxCollider>().center =
-            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 2);
+            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 3);
     }
 
     private void ResetFlameSize()
     {
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,
-            GetComponent<BoxCollider>().size.y, 3);
+            GetComponent<BoxCollider>().size.y, 5);
+        GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 2);
     }
 
     public override void SetOtherWeaponType(WeaponType otherWeaponType)
