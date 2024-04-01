@@ -130,10 +130,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3.5
   health: 100
-  fieldOfView: 360
-  viewDistance: 152.69
+  fieldOfView: 350
+  viewDistance: 100
   attackRange: 1.5
   attackSpeed: 3
+  squashDamage: 10
+  squashThreshHold: 2
   playerMask:
     serializedVersion: 2
     m_Bits: 64
