@@ -12,8 +12,8 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackRange;
     [SerializeField] protected float attackSpeed;
-    protected float squashDamage = 10;
-    protected float squashThreshHold = 2;
+    [SerializeField] protected float squashDamage = 10;
+    [SerializeField] protected float squashThreshHold = 2;
     //[SerializeField] protected float rotationSpeed;
     public LayerMask playerMask;
     public LayerMask obstructionMask;
@@ -76,7 +76,7 @@ public class BaseEnemy : BaseCharacter
     {
         base.OnCollisionEnter(collision);
 
-        if (collision.relativeVelocity.magnitude > squashThreshHold)
+        if (collision.relativeVelocity.magnitude > squashThreshHold && collision.gameObject.CompareTag("Untagged"))
         {
             //Debug.Log(collision.gameObject.name + $" || {collision.relativeVelocity.magnitude} || Squashed");
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
