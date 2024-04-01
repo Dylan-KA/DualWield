@@ -101,6 +101,8 @@ MonoBehaviour:
   handOffset: {x: 0.5, y: -0.35, z: 0.8}
   weaponType: 0
   ListofEnemies: []
+  baseDamage: 40
+  flameAndFlameMultiplier: 4
 --- !u!65 &2619971020580556631
 BoxCollider:
   m_ObjectHideFlags: 0

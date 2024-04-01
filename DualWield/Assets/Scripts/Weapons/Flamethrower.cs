@@ -6,6 +6,9 @@ using UnityEngine.PlayerLoop;
 
 public class Flamethrower : ParticleWeapon
 {
+    [SerializeField] private float baseDamage;
+    [SerializeField] private float flameAndFlameMultiplier;
+
     protected override void Start()
     {
         
@@ -42,7 +45,7 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(25 * Time.deltaTime );
+                Enemy.TakeDamage(baseDamage * flameAndFlameMultiplier * Time.deltaTime);
             }
         }
     }
@@ -51,7 +54,7 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(25*(4*Time.deltaTime));
+                Enemy.TakeDamage(baseDamage * Time.deltaTime);
             }
         }
     }

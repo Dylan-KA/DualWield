@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class FodderEnemy : BaseEnemy
 {
-    new const float maxHealth = 20;
+    //new const float maxHealth = 20;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        health = maxHealth;
+        //health = maxHealth;
     }
     protected override void Update()
     {

@@ -7,8 +7,8 @@ public class WindGun : ParticleWeapon
     private Camera playerCamera;
     private PlayerCharacter player;
     private float maxCameraXRotation = 90;
-    private float windPower = 1;
-    private float windMultiplier = 1.5f;
+    [SerializeField] private float baseWindPower = .2f;
+    [SerializeField] private float windAndWindMultiplier = 10f;
     private float flyingForce = 5;
 
     protected override void Start()
@@ -49,13 +49,14 @@ public class WindGun : ParticleWeapon
 
     private void WindAndWind()
     {
-        PushEnemiesInRange(windMultiplier);
+        PushEnemiesInRange(windAndWindMultiplier);
     }
     private void WindAndFlame()
     {
         // TODO: implement this
+        PushEnemiesInRange(baseWindPower);
     }
-    private void PushEnemiesInRange(float windMultiplier)
+    private void PushEnemiesInRange(float multiplier)
     {
         if (ListofEnemies.Length != 0)
         {
@@ -68,7 +69,7 @@ public class WindGun : ParticleWeapon
                 {
                     Vector3 directionFromPlayer = Enemy.gameObject.transform.position - player.gameObject.transform.position;
                     directionFromPlayer.Normalize();
-                    enemyRb.AddForce(windMultiplier * windPower * directionFromPlayer, ForceMode.Impulse);
+                    enemyRb.AddForce(multiplier * baseWindPower * directionFromPlayer, ForceMode.Impulse);
                 }
             } 
         }
