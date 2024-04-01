@@ -78,7 +78,7 @@ public class BaseEnemy : BaseCharacter
 
         if (collision.relativeVelocity.magnitude > squashThreshHold)
         {
-            Debug.Log(collision.gameObject.name + $" || {collision.relativeVelocity.magnitude} || Squashed");
+            //Debug.Log(collision.gameObject.name + $" || {collision.relativeVelocity.magnitude} || Squashed");
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             TakeDamage(squashDamage);   
         }

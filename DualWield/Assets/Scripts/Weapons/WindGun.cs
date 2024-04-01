@@ -61,6 +61,8 @@ public class WindGun : ParticleWeapon
         {
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
+                if (Enemy == null) { return; }
+
                 Rigidbody enemyRb = Enemy.gameObject.GetComponent<Rigidbody>();
                 if (enemyRb != null)
                 {
