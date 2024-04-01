@@ -9,7 +9,7 @@ public class WindGun : ParticleWeapon
     private float maxCameraXRotation = 90;
     [SerializeField] private float baseWindPower = .2f;
     [SerializeField] private float windAndWindMultiplier = 10f;
-    private float flyingForce = 5;
+    private float flyingForce = 10;
 
     protected override void Start()
     {
@@ -89,6 +89,6 @@ public class WindGun : ParticleWeapon
     private bool IsPlayerLookingStraightDown()
     {
         float adjustedRotationX = playerCamera.transform.localEulerAngles.x > 180 ? playerCamera.transform.localEulerAngles.x - 360 : playerCamera.transform.localEulerAngles.x;
-        return adjustedRotationX >= maxCameraXRotation;
+        return adjustedRotationX >= maxCameraXRotation-30; //Not exactly straight down (30) so the player can see better and use hover more easily.
     }
 }
