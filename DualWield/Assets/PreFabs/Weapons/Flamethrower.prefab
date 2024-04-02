@@ -491,6 +491,7 @@ MonoBehaviour:
   weaponFireSound: {fileID: 1645242702964836130}
   weaponFiringSound: {fileID: 6018129538999456172}
   ListofEnemies: []
+  ammoPerSecond: 12
   baseDamage: 40
   flameAndFlameMultiplier: 4
 --- !u!65 &2619971020580556631

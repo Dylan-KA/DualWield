@@ -491,6 +491,7 @@ MonoBehaviour:
   weaponFireSound: {fileID: 9114793080312682140}
   weaponFiringSound: {fileID: 7351466167822645370}
   ListofEnemies: []
+  ammoPerSecond: 12
   baseWindPower: 0.2
   windAndWindMultiplier: 10
 --- !u!65 &1899282685372793615

@@ -17,15 +17,17 @@ public abstract class BaseWeapon : MonoBehaviour
 
     protected virtual void Start()
     {
+        
         PositionGun();
     }
 
     protected virtual void Update()
     {
         if (isFiring)
-        {
-            Fire();
-        }
+            if (GameManager.Instance.GetAmmo() > 0)
+                Fire();
+            else
+                SetFiring(false);
         //PositionGun(); // uncomment this temporarily if u want to find a good handOffset
     }
 

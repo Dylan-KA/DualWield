@@ -26,6 +26,7 @@ public class Flamethrower : ParticleWeapon
     /// </summary>
     public override void Fire()
     {
+        base.Fire();
 
         if (otherWeaponType == WeaponType.Flamethrower)
         {

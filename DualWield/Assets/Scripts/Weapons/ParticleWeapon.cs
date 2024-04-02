@@ -7,6 +7,7 @@ using UnityEngine;
 public abstract class ParticleWeapon : BaseWeapon
 {
     [SerializeField] protected BaseEnemy[] ListofEnemies;
+    [SerializeField] protected float ammoPerSecond;
 
     private ParticleSystem Particles;
     private bool particlesPlaying = false;
@@ -31,7 +32,10 @@ public abstract class ParticleWeapon : BaseWeapon
         
     }
 
-    public abstract override void Fire();
+    public override void Fire()
+    {
+        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
+    }
 
    
     
