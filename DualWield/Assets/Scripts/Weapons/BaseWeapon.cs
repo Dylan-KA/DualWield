@@ -7,6 +7,9 @@ public abstract class BaseWeapon : MonoBehaviour
 {
     [SerializeField] protected Vector3 handOffset;
     [SerializeField] protected WeaponType weaponType;
+    [SerializeField] AudioSource weaponEmptySound;
+    [SerializeField] AudioSource weaponFireSound; 
+    [SerializeField] AudioSource weaponFiringSound;
     protected WeaponType otherWeaponType;
     protected Hand hand;
     protected bool isFiring = false;
@@ -50,4 +53,29 @@ public abstract class BaseWeapon : MonoBehaviour
     }
 
     public abstract void Fire();
+
+    public void PlayWeaponEmptySFX()
+    {
+        weaponEmptySound.Play();
+    }
+
+    public void PlayWeaponFireSFX()
+    {
+        weaponFireSound.Play();
+        if (weaponFiringSound != null)
+        {
+            PlayWeaponFiringSFX();
+        }
+    }
+
+    public void PlayWeaponFiringSFX()
+    {
+        weaponFiringSound.Play();
+    }
+
+    public void ClearWeaponSFX()
+    {
+        weaponFireSound.Stop();
+        weaponFiringSound.Stop();
+    }
 }

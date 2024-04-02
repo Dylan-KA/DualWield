@@ -117,21 +117,26 @@ public class PlayerCharacter: BaseCharacter
         }
 
         // firing
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0)) //True on first frame of mouse click/unclick
         {
             //Debug.Log("Firing");
             leftWeapon.SetFiring(true);
+            leftWeapon.PlayWeaponFireSFX();
             rightWeapon.SetFiring(true);
+            rightWeapon.PlayWeaponFireSFX();
         } else if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             //Debug.Log("Not Firing");
             leftWeapon.SetFiring(false);
+            leftWeapon.ClearWeaponSFX();
             rightWeapon.SetFiring(false);
+            rightWeapon.ClearWeaponSFX();
         }
         else
         {
             isFlying = false;
         }
+
     }
 
     public void AddFlyingForce(float force)
