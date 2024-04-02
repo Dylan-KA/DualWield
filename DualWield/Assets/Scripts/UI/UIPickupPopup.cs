@@ -32,6 +32,7 @@ public class UIPickupPopup : MonoBehaviour
     private void PickupWeapon(GameObject player, Hand hand)
     {
         PlayerCharacter PlayerCharacter = player.GetComponent<PlayerCharacter>();
+        if (!PlayerCharacter) return; // fixes null reference error
         PlayerCharacter.EquipWeapon(weaponType, hand);
         GameManager.RefillAmmo();
         pickup.SetActive(false);
