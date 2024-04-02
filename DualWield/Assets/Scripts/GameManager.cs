@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; } // its PascalCase on purpose!
+
     [CanBeNull]
     [SerializeField] private TextMeshProUGUI ammoDisplay;
     private float currentAmmoAmount;
     
     [Header("Settings")] [Tooltip("When ammo goes below this number, text goes red. Default: 20")]
     [SerializeField] [Range(0, 100)] private int LowAmmoMax;
+
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
@@ -67,7 +82,7 @@ public class GameManager : MonoBehaviour
     /// Gets ammo amount shown on screen (and essentially in GameManager & UI memory).
     /// </summary>
     /// <returns>Returns current ammo amount known to the game & UI.</returns>
-    private float GetAmmo()
+    public float GetAmmo()
     {
         return currentAmmoAmount;
     }
