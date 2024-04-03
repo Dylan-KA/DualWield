@@ -10,6 +10,13 @@
 /DualWield/[Ll]ogs/
 /DualWield/[Uu]ser[Ss]ettings/
 
+# --- Michael's New Ignore Additions v1.1
+
+# NEW: Ignores workspace.xml
+/DualWield/.idea/
+
+# --- Back to normal vvv
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
@@ -70,3 +77,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/DualWield/.idea/
+DualWield/.idea/.idea.DualWield/.idea/workspace.xml
+DualWield/.idea/.idea.DualWield/.idea/copilot/chatSessions/00000000000.xd
+DualWield/.idea/.idea.DualWield/.idea/copilot/chatSessions/xd.lck
+DualWield/.idea/.idea.DualWield/.idea/workspace.xml
