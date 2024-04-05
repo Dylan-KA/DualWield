@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -729,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalScale.x
@@ -4793,7 +4793,7 @@ Transform:
   - {fileID: 1187607452}
   - {fileID: 1206847947}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2027157880
 PrefabInstance:
@@ -5069,11 +5069,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponLeft
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponRight
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 833108082891488990, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: m_Materials.Array.data[0]

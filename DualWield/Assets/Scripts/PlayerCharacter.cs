@@ -10,6 +10,8 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private WeaponType startingWeaponLeft;
     [SerializeField] private BaseWeapon flamethrowerPrefab;
     [SerializeField] private BaseWeapon windGunPrefab;
+    [SerializeField] private BaseWeapon FreezeGunPrefab;
+    [SerializeField] private BaseWeapon RocketGunPrefab;
     private BaseWeapon leftWeapon;
     private BaseWeapon rightWeapon;
     
@@ -61,6 +63,9 @@ public class PlayerCharacter: BaseCharacter
                 break;
             case WeaponType.WindGun:
                 weapon = Instantiate(windGunPrefab, playerCamera.transform);
+                break;
+            case WeaponType.FreezeGun:
+                weapon = Instantiate(FreezeGunPrefab, playerCamera.transform);
                 break;
             default:
                 Debug.LogError("Unknown weapon type! Add it to this switch statement or something");
