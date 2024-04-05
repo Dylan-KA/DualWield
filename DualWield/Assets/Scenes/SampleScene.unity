@@ -2228,7 +2228,7 @@ PrefabInstance:
     - target: {fileID: 996841942765347330, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0dd8f82069ad5af4a95915534ab041d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1496d71334694604c836063740cbe748, type: 2}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -2621,7 +2621,7 @@ PrefabInstance:
     - target: {fileID: 996841942765347330, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0dd8f82069ad5af4a95915534ab041d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1496d71334694604c836063740cbe748, type: 2}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -3386,7 +3386,7 @@ PrefabInstance:
     - target: {fileID: 996841942765347330, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0dd8f82069ad5af4a95915534ab041d2, type: 2}
+      objectReference: {fileID: 2100000, guid: 1496d71334694604c836063740cbe748, type: 2}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -4416,7 +4416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4448,6 +4448,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: freezeTestFloat
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

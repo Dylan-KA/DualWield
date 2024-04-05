@@ -24,6 +24,7 @@ public class BaseEnemy : BaseCharacter
     private Color enemyMaterialColor;
     private bool isFlickering = false;
     private float dmgFlickerRate = 0.15f;
+    public float test = 0.0f;
 
     public float GetFieldOfView()
     {
@@ -77,6 +78,7 @@ public class BaseEnemy : BaseCharacter
                 MoveTowardsTarget();
             }
         }
+        VisualFreezeEffect(test);
     }
 
     protected override void OnCollisionEnter(Collision collision)
@@ -160,7 +162,7 @@ public class BaseEnemy : BaseCharacter
         if (health <= 0)
             Destroy(gameObject);
 
-        if (!isFlickering)
+        if (!isFlickering && statusEffect != StatusEffect.Freeze)
         {
             RedDamageFlicker();
             isFlickering = true;
@@ -169,7 +171,7 @@ public class BaseEnemy : BaseCharacter
 
     private void RedDamageFlicker()
     {
-        Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.0f);
+        Color newColor = new Color(1.0f, 0.0f, 0.0f);
         rend.material.SetColor("_Color", newColor);
         Invoke("ResetDamageFlicker", dmgFlickerRate);
     }
@@ -185,4 +187,10 @@ public class BaseEnemy : BaseCharacter
         isFlickering = false;
     }
 
+    // frozenPercentage of 0.0 is normal, 1.0 is fully frozen
+    private void VisualFreezeEffect(float frozenPercentage) 
+    {
+        Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
+        rend.material.SetColor("_EmissionColor", newColor);
+    }
 }
