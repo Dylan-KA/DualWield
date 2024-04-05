@@ -16,18 +16,49 @@ public abstract class BaseWeapon : MonoBehaviour
 
     protected virtual void Start()
     {
-        
         PositionGun();
     }
 
     protected virtual void Update()
     {
+        //PositionGun(); // uncomment this temporarily if u want to find a good handOffset
         if (isFiring)
+        {
             if (GameManager.Instance.GetAmmo() > 0)
                 Fire();
             else
+            {
                 SetFiring(false);
-        //PositionGun(); // uncomment this temporarily if u want to find a good handOffset
+                ClearWeaponSFX();
+            }
+        }
+
+        // Weapon Audio 
+        if (Input.GetKeyUp(KeyCode.Mouse0)) //First frame of mouse release
+        {
+            ClearWeaponSFX();
+        }
+
+        // Prevents duplicate audio playing if both guns are the same type
+        if (hand == Hand.Right && weaponType == otherWeaponType)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) //First frame of mouse click
+        {
+            if (GameManager.Instance.GetAmmo() > 0)
+            {
+                PlayWeaponFireSFX();
+            } else
+            {
+                PlayWeaponEmptySFX();
+            }
+        }
+
+        //Don't add code below here, as update may be returned early.
+        //Instead add above all audio code.
+
     }
 
     public WeaponType GetWeaponType()
@@ -60,6 +91,7 @@ public abstract class BaseWeapon : MonoBehaviour
         weaponEmptySound.Play();
     }
 
+    // This is the start of a weapon's fire audio (which does not loop)
     public void PlayWeaponFireSFX()
     {
         weaponFireSound.Play();
@@ -69,6 +101,7 @@ public abstract class BaseWeapon : MonoBehaviour
         }
     }
 
+    // This is the looping part of a weapon's firing audio
     public void PlayWeaponFiringSFX()
     {
         weaponFiringSound.Play();
