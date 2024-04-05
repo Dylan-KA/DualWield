@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneTemplate;
 using UnityEngine;
 
 public enum StatusEffect
@@ -14,8 +15,9 @@ public class BaseCharacter : MonoBehaviour
 {
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected const float maxHealth = 100;
-    [SerializeField ]protected float health = maxHealth;
-    protected StatusEffect statusEffect = StatusEffect.None;
+    [SerializeField]protected float health = maxHealth;
+    [SerializeField]protected StatusEffect statusEffect = StatusEffect.None;
+    [SerializeField] private float Temperature;
 
     // Start is called before the first frame update
     void Start()
@@ -35,5 +37,33 @@ public class BaseCharacter : MonoBehaviour
     public virtual void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+    }
+
+    public virtual void TemperatureChange(float tempChange)
+    {
+        Temperature += tempChange;
+        Debug.Log(Temperature);
+        if (Temperature > -10f)
+        {
+            movementSpeed += Temperature;
+        }
+
+        if (movementSpeed <= 0)
+        {
+            movementSpeed = 0;
+            Freeze();
+        }
+        
+        
+    }
+
+    public void Freeze()
+    {
+        
+        if (statusEffect == StatusEffect.Freeze)
+        {
+            Destroy(this.gameObject);
+        }
+        statusEffect = StatusEffect.Freeze;
     }
 }
