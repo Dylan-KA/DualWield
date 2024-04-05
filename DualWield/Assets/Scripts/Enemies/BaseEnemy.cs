@@ -20,6 +20,11 @@ public class BaseEnemy : BaseCharacter
     private Transform playerTransform;
     private bool isPlayerSeen;
     private bool isAttackOnCooldown;
+    private Renderer rend;
+    private Color enemyMaterialColor;
+    private bool isFlickering = false;
+    private float dmgFlickerRate = 0.15f;
+    public float test = 0.0f;
 
     public float GetFieldOfView()
     {
@@ -50,6 +55,9 @@ public class BaseEnemy : BaseCharacter
         {
             Debug.Log("Player cannot be found");
         }
+
+        rend = GetComponent<Renderer>();
+        enemyMaterialColor = rend.material.color;
     }
 
     // Update is called once per frame
@@ -70,6 +78,7 @@ public class BaseEnemy : BaseCharacter
                 MoveTowardsTarget();
             }
         }
+        VisualFreezeEffect(test);
     }
 
     protected override void OnCollisionEnter(Collision collision)
@@ -152,5 +161,36 @@ public class BaseEnemy : BaseCharacter
         base.TakeDamage(damageAmount);
         if (health <= 0)
             Destroy(gameObject);
+
+        if (!isFlickering && statusEffect != StatusEffect.Freeze)
+        {
+            RedDamageFlicker();
+            isFlickering = true;
+        }
+    }
+
+    private void RedDamageFlicker()
+    {
+        Color newColor = new Color(1.0f, 0.0f, 0.0f);
+        rend.material.SetColor("_Color", newColor);
+        Invoke("ResetDamageFlicker", dmgFlickerRate);
+    }
+
+    private void ResetDamageFlicker()
+    {
+        rend.material.SetColor("_Color", enemyMaterialColor);
+        Invoke("ReadyForNextFlicker", dmgFlickerRate);
+    }
+
+    private void ReadyForNextFlicker()
+    {
+        isFlickering = false;
+    }
+
+    // frozenPercentage of 0.0 is normal, 1.0 is fully frozen
+    private void VisualFreezeEffect(float frozenPercentage) 
+    {
+        Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
+        rend.material.SetColor("_EmissionColor", newColor);
     }
 }
