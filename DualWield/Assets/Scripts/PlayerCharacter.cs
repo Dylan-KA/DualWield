@@ -18,6 +18,7 @@ public class PlayerCharacter: BaseCharacter
     public Camera playerCamera;
     public float gravity = 10f;
     private Vector3 velocity;
+    private float maxFallingSpeed = -50.0f;
 
     public float lookspeed = 2f;
     public float lookXLimit = 90f;
@@ -85,12 +86,7 @@ public class PlayerCharacter: BaseCharacter
             rightWeapon.SetOtherWeaponType(leftWeapon.GetWeaponType());
         }
 
-       
-        
-        
     }
-
-
     
     void Update()
     {
@@ -101,14 +97,23 @@ public class PlayerCharacter: BaseCharacter
         IsGrounded();
         if (!isFlying)
         {
-            velocity.y -= gravity * Time.deltaTime ;
-            if (velocity.y <= -50f)
+            if (!isGrounded)
             {
-                velocity.y = -50f;
+                velocity.y -= gravity * Time.deltaTime;
+
+                // limit to maximum falling speed 
+                if (velocity.y <= maxFallingSpeed)
+                {
+                    velocity.y = maxFallingSpeed;
+                }
             }
-            
+            else
+            {
+                velocity.y = 0;
+            }
+
         }
-        
+
         characterController.Move(velocity * Time.deltaTime);
         characterController.Move(moveDirection * Time.deltaTime);
         if (canMove)
@@ -125,21 +130,12 @@ public class PlayerCharacter: BaseCharacter
             //Debug.Log("Firing");
             leftWeapon.SetFiring(true);
             rightWeapon.SetFiring(true);
-            if (GameManager.Instance.GetAmmo() > 0)
-            {
-                leftWeapon.PlayWeaponFireSFX();
-                rightWeapon.PlayWeaponFireSFX();
-            } else
-            {
-                leftWeapon.PlayWeaponEmptySFX();
-            }
         } else if (Input.GetKeyUp(KeyCode.Mouse0)) //True on first frame of mouse release
         {
             //Debug.Log("Not Firing");
             leftWeapon.SetFiring(false);
-            leftWeapon.ClearWeaponSFX();
             rightWeapon.SetFiring(false);
-            rightWeapon.ClearWeaponSFX();
+            isFlying = false;
         }
         else
         {
