@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class FodderEnemy : BaseEnemy
 {
-    //new const float maxHealth = 20;
+    //Health is changed in the Fodder's Prefab
 
-    // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-        //health = maxHealth;
     }
     protected override void Update()
     {
         base.Update();
     }
-    protected override void Attack()
+    protected override void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Fodder Attacking");
+        base.OnCollisionEnter(collision);
+        if (collision.gameObject.CompareTag("Player") && IsAttackingValid())
+        {
+            isAttacking = true;
+            DamagePlayer();
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        isAttacking = false;
     }
 }

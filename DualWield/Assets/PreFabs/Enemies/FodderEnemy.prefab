@@ -130,10 +130,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3.5
   health: 100
+  statusEffect: 0
+  Temperature: 0
   fieldOfView: 350
   viewDistance: 100
+  attackDamage: 10
   attackRange: 1.5
-  attackSpeed: 3
+  attackSpeed: 5
   squashDamage: 10
   squashThreshHold: 2
   playerMask:
@@ -141,7 +144,8 @@ MonoBehaviour:
     m_Bits: 64
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  test: 0
 --- !u!1 &996841942851717684
 GameObject:
   m_ObjectHideFlags: 0
