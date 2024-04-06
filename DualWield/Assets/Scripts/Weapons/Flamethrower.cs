@@ -62,9 +62,9 @@ public class Flamethrower : ParticleWeapon
 
     private void IncreaseFlameSize()
     {
-        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y ,  8);
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y, 16);
         GetComponent<BoxCollider>().center =
-            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 3);
+            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 6);
     }
 
     private void ResetFlameSize()

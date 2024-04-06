@@ -9,7 +9,8 @@ public abstract class ParticleWeapon : BaseWeapon
     [SerializeField] protected BaseEnemy[] ListofEnemies;
     [SerializeField] protected float ammoPerSecond;
 
-    private ParticleSystem Particles;
+    [SerializeField] private ParticleSystem Particles;
+    [SerializeField] private ParticleSystem ExtendedRangeParticles;
     private bool particlesPlaying = false;
 
     protected override void Start()
@@ -67,7 +68,6 @@ public abstract class ParticleWeapon : BaseWeapon
             if (!particlesPlaying) //If particles not already playing.
             {
                 Particles.Play();
-                //Debug.Log("Playing Particles");
                 particlesPlaying = true;
             }
         }
@@ -75,7 +75,6 @@ public abstract class ParticleWeapon : BaseWeapon
         {
             Particles.Stop();
             particlesPlaying = false;
-            //Debug.Log("NO Particles");
         }
     }
 }
