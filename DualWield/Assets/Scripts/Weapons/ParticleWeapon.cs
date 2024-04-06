@@ -9,21 +9,21 @@ public abstract class ParticleWeapon : BaseWeapon
     [SerializeField] protected BaseEnemy[] ListofEnemies;
     [SerializeField] protected float ammoPerSecond;
 
-    private ParticleSystem Particles;
+    [SerializeField] private ParticleSystem NormalRangeParticles;
+    [SerializeField] private ParticleSystem ExtendedRangeParticles;
+    [SerializeField] private ParticleSystem WeaponParticles; // The value is swapped between the 2 ranges above
     private bool particlesPlaying = false;
 
     protected override void Start()
     {
-        
         base.Start();
-        Particles = GetComponentInChildren<ParticleSystem>();
-
+        SetParticleRangeNormal();
     }
 
     protected override void Update()
     {
         base.Update();
-        WeaponParticles();
+        GenerateParticles();
 
     }
 
@@ -59,23 +59,33 @@ public abstract class ParticleWeapon : BaseWeapon
         return hitObjects;
     }
 
-    public void WeaponParticles()
+    public void GenerateParticles()
     {
-        if (Particles == null) { return; }
+        if (WeaponParticles == null) { return; }
         if (isFiring)
         {
             if (!particlesPlaying) //If particles not already playing.
             {
-                Particles.Play();
-                //Debug.Log("Playing Particles");
+                WeaponParticles.Play();
                 particlesPlaying = true;
             }
         }
         else
         {
-            Particles.Stop();
+            WeaponParticles.Stop();
             particlesPlaying = false;
-            //Debug.Log("NO Particles");
         }
+    }
+
+    public void SetParticleRangeNormal()
+    {
+        if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
+        WeaponParticles = NormalRangeParticles;
+    }
+
+    public void SetParticleRangeExtended()
+    {
+        if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
+        WeaponParticles = ExtendedRangeParticles;
     }
 }
