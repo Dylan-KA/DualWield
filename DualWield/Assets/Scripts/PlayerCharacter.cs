@@ -125,21 +125,11 @@ public class PlayerCharacter: BaseCharacter
             //Debug.Log("Firing");
             leftWeapon.SetFiring(true);
             rightWeapon.SetFiring(true);
-            if (GameManager.Instance.GetAmmo() > 0)
-            {
-                leftWeapon.PlayWeaponFireSFX();
-                rightWeapon.PlayWeaponFireSFX();
-            } else
-            {
-                leftWeapon.PlayWeaponEmptySFX();
-            }
         } else if (Input.GetKeyUp(KeyCode.Mouse0)) //True on first frame of mouse release
         {
             //Debug.Log("Not Firing");
             leftWeapon.SetFiring(false);
-            leftWeapon.ClearWeaponSFX();
             rightWeapon.SetFiring(false);
-            rightWeapon.ClearWeaponSFX();
         }
         else
         {
@@ -156,6 +146,6 @@ public class PlayerCharacter: BaseCharacter
 
     public void IsGrounded()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2);
     }
 }
