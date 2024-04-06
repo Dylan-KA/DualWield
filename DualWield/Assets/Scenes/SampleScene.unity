@@ -525,6 +525,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 38303906448975356, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_text
+      value: duel wield sprint 2
+      objectReference: {fileID: 0}
     - target: {fileID: 38303906770183887, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
       propertyPath: LowAmmoMax
       value: 30

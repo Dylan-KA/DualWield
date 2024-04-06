@@ -65,6 +65,7 @@ public class Flamethrower : ParticleWeapon
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y, 16);
         GetComponent<BoxCollider>().center =
             new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 6);
+        SetParticleRangeExtended();
     }
 
     private void ResetFlameSize()
@@ -72,6 +73,7 @@ public class Flamethrower : ParticleWeapon
         GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,
             GetComponent<BoxCollider>().size.y, 5);
         GetComponent<BoxCollider>().center = new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 2);
+        SetParticleRangeNormal();
     }
 
     public override void SetOtherWeaponType(WeaponType otherWeaponType)
