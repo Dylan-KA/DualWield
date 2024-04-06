@@ -23,13 +23,15 @@ public abstract class HitScanWeapon : BaseWeapon
     public BaseEnemy GetHitEnemy()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity))
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity ))
         {
-            Debug.Log(hit.transform.CompareTag("Enemy") ? "You hit an enemy" : "You hit something that isn't an enemy");
-           
+            if (hit.transform.CompareTag("Enemy"))
+            {
+                return hit.transform.GetComponent<BaseEnemy>();
+            }
         }
         
-        return hit.transform.GetComponent<BaseEnemy>();
+        return null;
     }
 }
 

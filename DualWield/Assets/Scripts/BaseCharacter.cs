@@ -39,6 +39,11 @@ public class BaseCharacter : MonoBehaviour
         health -= damageAmount;
     }
 
+    public virtual StatusEffect GetStatueEffect()
+    {
+        return statusEffect;
+    }
+
     public virtual void TemperatureChange(float tempChange)
     {
         Temperature += tempChange;
@@ -47,23 +52,15 @@ public class BaseCharacter : MonoBehaviour
         {
             movementSpeed += Temperature;
         }
-
         if (movementSpeed <= 0)
         {
             movementSpeed = 0;
             Freeze();
         }
-        
-        
     }
 
     public void Freeze()
     {
-        
-        if (statusEffect == StatusEffect.Freeze)
-        {
-            Destroy(this.gameObject);
-        }
         statusEffect = StatusEffect.Freeze;
     }
 }

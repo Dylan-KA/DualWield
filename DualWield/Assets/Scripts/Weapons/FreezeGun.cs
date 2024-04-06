@@ -57,7 +57,11 @@ public class FreezeGun : HitScanWeapon
         if (IsCoolingDown()) return;
         if (GetHitEnemy())
         {
-            GetHitEnemy().TemperatureChange(-2);
+            GetHitEnemy().TemperatureChange(-2.5f);
+            if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
+            {
+                GetHitEnemy().TakeDamage(20);
+            }
             
         }
         StartCooldown();
