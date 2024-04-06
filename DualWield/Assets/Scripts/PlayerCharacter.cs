@@ -18,6 +18,7 @@ public class PlayerCharacter: BaseCharacter
     public Camera playerCamera;
     public float gravity = 10f;
     private Vector3 velocity;
+    private float maxFallingSpeed = -50.0f;
 
     public float lookspeed = 2f;
     public float lookXLimit = 90f;
@@ -101,12 +102,21 @@ public class PlayerCharacter: BaseCharacter
         IsGrounded();
         if (!isFlying)
         {
-            velocity.y -= gravity * Time.deltaTime ;
-            if (velocity.y <= -50f)
+            if (!isGrounded)
             {
-                velocity.y = -50f;
+                velocity.y -= gravity * Time.deltaTime;
+                
+                // limit to maximum falling speed 
+                if (velocity.y <= -maxFallingSpeed)
+                {
+                    velocity.y = -maxFallingSpeed;
+                }
             }
-            
+            else
+            {
+                 velocity.y = 0;
+            }
+
         }
         
         characterController.Move(velocity * Time.deltaTime);
@@ -130,9 +140,6 @@ public class PlayerCharacter: BaseCharacter
             //Debug.Log("Not Firing");
             leftWeapon.SetFiring(false);
             rightWeapon.SetFiring(false);
-        }
-        else
-        {
             isFlying = false;
         }
 
@@ -146,6 +153,6 @@ public class PlayerCharacter: BaseCharacter
 
     public void IsGrounded()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
     }
 }
