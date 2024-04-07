@@ -130,6 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3.5
   health: 100
+  statusEffect: 0
+  Temperature: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 350
   viewDistance: 100
   attackRange: 1.5
@@ -142,6 +145,7 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 0
+  test: 0
 --- !u!1 &996841942851717684
 GameObject:
   m_ObjectHideFlags: 0
