@@ -59,12 +59,10 @@ public class WindGun : ParticleWeapon
         {
             if (Enemy.GetStatueEffect() == StatusEffect.Freeze)
             {
-                PushEnemiesInRange(50f);
+                PushEnemiesInRange(25f);
             }
         }
-        PushEnemiesInRange(windAndWindMultiplier);
-        
-        
+        PushEnemiesInRange(baseWindPower);
     }
 
     private void WindAndRocket()
