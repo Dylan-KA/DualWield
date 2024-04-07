@@ -10,16 +10,19 @@ public class BaseEnemy : BaseCharacter
     [Range(0, 360)]
     [SerializeField] protected float fieldOfView;
     [SerializeField] protected float viewDistance;
-    [SerializeField] protected float attackRange;
-    [SerializeField] protected float attackSpeed;
+    [SerializeField] protected float attackDamage;
+    [SerializeField] protected float attackRange = 1;
+    [SerializeField] protected float extendedAttackRange = 1;
+    [SerializeField] protected float attackWaitTime = 1;
     [SerializeField] protected float squashDamage = 10;
     [SerializeField] protected float squashThreshHold = 2;
     //[SerializeField] protected float rotationSpeed;
     public LayerMask playerMask;
     public LayerMask obstructionMask;
     private Transform playerTransform;
-    private bool isPlayerSeen;
-    private bool isAttackOnCooldown;
+    private bool isPlayerSeen = false;
+    protected bool isAttacking = false;
+    protected float currentAttackTimer = 0f;
     private Renderer rend;
     private Color enemyMaterialColor;
     private bool isFlickering = false;
@@ -63,20 +66,10 @@ public class BaseEnemy : BaseCharacter
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (isPlayerSeen)
+        EnemyAttackAtCertainRange();
+        if (isAttacking && currentAttackTimer < attackWaitTime)
         {
-            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange)
-            {
-                if (!isAttackOnCooldown)
-                {
-                    isAttackOnCooldown = true;
-                    StartCoroutine(AttackSpeed());
-                }
-            }
-            else
-            {
-                MoveTowardsTarget();
-            }
+            currentAttackTimer += Time.deltaTime;
         }
         VisualFreezeEffect(test);
     }
@@ -87,12 +80,10 @@ public class BaseEnemy : BaseCharacter
 
         if (collision.relativeVelocity.magnitude > squashThreshHold && collision.gameObject.CompareTag("Untagged"))
         {
-            //Debug.Log(collision.gameObject.name + $" || {collision.relativeVelocity.magnitude} || Squashed");
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             TakeDamage(squashDamage);   
         }
     }
-
     private IEnumerator FOVRoutine()
     {
         float delay = 0.2f;
@@ -135,6 +126,30 @@ public class BaseEnemy : BaseCharacter
             isPlayerSeen = false;
         }
     }
+    protected void EnemyAttackAtCertainRange()
+    {
+        if (isPlayerSeen)
+        {
+            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
+                (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
+            {
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                }
+                else if (isAttacking && currentAttackTimer >= attackWaitTime)
+                {
+                    DamagePlayer();
+                    ResetAttackWaitTime();
+                }
+            }
+            else
+            {
+                ResetAttack();
+                MoveTowardsTarget();
+            }
+        }
+    }
     private void MoveTowardsTarget()
     {
         if (playerTransform != null)
@@ -143,17 +158,6 @@ public class BaseEnemy : BaseCharacter
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
         }
     }
-    private IEnumerator AttackSpeed()
-    {
-        Attack();
-        yield return new WaitForSeconds(attackSpeed);
-        isAttackOnCooldown = false;
-    }
-    virtual protected void Attack() 
-    {
-        Debug.Log(gameObject.name + "attacked the Player at: " + attackRange);
-    }
-
     public override void TakeDamage(float damageAmount)
     {
         if (health <= 0) return;
@@ -168,14 +172,30 @@ public class BaseEnemy : BaseCharacter
             isFlickering = true;
         }
     }
-
+    protected bool IsAttackingValid()
+    {
+        return isAttacking && currentAttackTimer >= attackWaitTime;
+    }
+    protected void DamagePlayer()
+    {
+        playerTransform.gameObject.GetComponentInParent<BaseCharacter>().TakeDamage(attackDamage);
+        currentAttackTimer = 0f;
+    }
+    protected void ResetAttackWaitTime()
+    {
+        currentAttackTimer = 0;
+    }
+    protected void ResetAttack()
+    {
+        isAttacking = false;
+        currentAttackTimer = 0f;
+    }
     private void RedDamageFlicker()
     {
         Color newColor = new Color(1.0f, 0.0f, 0.0f);
         rend.material.SetColor("_Color", newColor);
         Invoke("ResetDamageFlicker", dmgFlickerRate);
     }
-
     private void ResetDamageFlicker()
     {
         rend.material.SetColor("_Color", enemyMaterialColor);
