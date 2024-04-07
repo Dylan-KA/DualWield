@@ -132,6 +132,7 @@ MonoBehaviour:
   health: 100
   statusEffect: 0
   Temperature: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 350
   viewDistance: 100
   attackDamage: 10

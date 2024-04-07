@@ -18,7 +18,9 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField]protected float health = maxHealth;
     [SerializeField]protected StatusEffect statusEffect = StatusEffect.None;
     [SerializeField] private float Temperature;
-
+    [SerializeField] protected PhysicMaterial freezeMaterial;
+    
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -39,31 +41,32 @@ public class BaseCharacter : MonoBehaviour
         health -= damageAmount;
     }
 
+    public virtual StatusEffect GetStatueEffect()
+    {
+        return statusEffect;
+    }
+
     public virtual void TemperatureChange(float tempChange)
     {
         Temperature += tempChange;
-        Debug.Log(Temperature);
         if (Temperature > -10f)
         {
             movementSpeed += Temperature;
         }
-
         if (movementSpeed <= 0)
         {
             movementSpeed = 0;
             Freeze();
         }
-        
-        
     }
 
     public void Freeze()
     {
-        
-        if (statusEffect == StatusEffect.Freeze)
-        {
-            Destroy(this.gameObject);
-        }
         statusEffect = StatusEffect.Freeze;
+        this.gameObject.GetComponent<BoxCollider>().material = freezeMaterial;
+        if (this.gameObject.GetComponent<BaseEnemy>())
+        {
+            this.gameObject.GetComponent<BaseEnemy>().SetSquashDamage(999999);
+        }
     }
 }

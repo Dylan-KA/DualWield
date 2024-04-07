@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.PlayerLoop;
 
 public class Flamethrower : ParticleWeapon
@@ -28,19 +30,38 @@ public class Flamethrower : ParticleWeapon
     {
         base.Fire();
 
-        if (otherWeaponType == WeaponType.Flamethrower)
+        switch (otherWeaponType)
         {
-
-            FlameAndFlame();
-            
-        }
-        else if (otherWeaponType == WeaponType.WindGun)
-        {
-            FlameAndWind();
+            case WeaponType.Flamethrower:
+                FlameAndFlame();
+                break;
+            case WeaponType.FreezeGun:
+                FlameAndFreeze();
+                break;
+            case WeaponType.RocketLauncher:
+                FlameAndRocket();
+                break;
+            case WeaponType.WindGun:
+                FlameAndWind();
+                break;
         }
             
     }
 
+    private void FlameAndFreeze()
+    {
+        if(ListofEnemies.Length != 0){
+            foreach (BaseEnemy Enemy in ListofEnemies)
+            {
+                Enemy.TakeDamage(baseDamage * Time.deltaTime);
+            }
+        }
+    }
+
+    private void FlameAndRocket()
+    {
+        
+    }
     private void FlameAndFlame()
     {
         if(ListofEnemies.Length != 0){

@@ -44,7 +44,12 @@ public class FreezeGun : HitScanWeapon
 
     private void FreezeAndWind()
     {
-        throw new System.NotImplementedException();
+        if(IsCoolingDown()) return;
+        if (GetHitEnemy())
+        {
+            GetHitEnemy().TemperatureChange(-1);
+        }
+        StartCooldown();
     }
 
     private void FreezeAndRocket()
@@ -57,15 +62,22 @@ public class FreezeGun : HitScanWeapon
         if (IsCoolingDown()) return;
         if (GetHitEnemy())
         {
-            GetHitEnemy().TemperatureChange(-2);
-            
+            GetHitEnemy().TemperatureChange(-2.5f);
+            if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
+            {
+                GetHitEnemy().TakeDamage(20);
+            }
         }
         StartCooldown();
-        
     }
 
     private void FreezeAndFlame()
     {
-        throw new System.NotImplementedException();
+        if(IsCoolingDown()) return;
+        if (GetHitEnemy())
+        {
+            GetHitEnemy().TemperatureChange(-1f);
+        }
+        StartCooldown();
     }
 }

@@ -213,4 +213,9 @@ public class BaseEnemy : BaseCharacter
         Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
         rend.material.SetColor("_EmissionColor", newColor);
     }
+
+    public void SetSquashDamage(float newDamge)
+    {
+        squashDamage = newDamge;
+    }
 }
