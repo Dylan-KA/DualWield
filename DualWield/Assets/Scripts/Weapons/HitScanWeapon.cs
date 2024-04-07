@@ -28,7 +28,7 @@ public abstract class HitScanWeapon : BaseWeapon
         lineRend.enabled = true;
         //lineRend.SetPosition(0, transform.position);
         
-        if (Physics.Raycast(transform.parent.position, transform.TransformDirection(Vector3.forward), out hit, 500f, LayerMask.GetMask("Environment")))
+        if (Physics.Raycast(transform.parent.position, transform.TransformDirection(Vector3.forward), out hit, 500f))
         {
             //lineRend.SetPosition(1, hit.point);
             if (hit.transform.CompareTag("Enemy"))
