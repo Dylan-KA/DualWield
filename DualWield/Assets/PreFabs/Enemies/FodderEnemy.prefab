@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 996841942765347333}
   - component: {fileID: 6484569446916155432}
   - component: {fileID: 4130564927138700597}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FodderEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,8 +147,6 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
-  isAttacking: 0
-  currentAttackTimer: 0
   test: 0
 --- !u!1 &996841942851717684
 GameObject:
@@ -162,7 +160,7 @@ GameObject:
   - component: {fileID: 996841942851717640}
   - component: {fileID: 996841942851717687}
   - component: {fileID: 996841942851717686}
-  m_Layer: 2
+  m_Layer: 7
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
