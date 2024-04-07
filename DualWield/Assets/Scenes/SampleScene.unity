@@ -4922,7 +4922,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponRight
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 833108082891488990, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: m_Materials.Array.data[0]
