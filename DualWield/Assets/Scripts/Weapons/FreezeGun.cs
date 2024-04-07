@@ -73,6 +73,11 @@ public class FreezeGun : HitScanWeapon
 
     private void FreezeAndFlame()
     {
-        throw new System.NotImplementedException();
+        if(IsCoolingDown()) return;
+        if (GetHitEnemy())
+        {
+            GetHitEnemy().TemperatureChange(-1f);
+        }
+        StartCooldown();
     }
 }
