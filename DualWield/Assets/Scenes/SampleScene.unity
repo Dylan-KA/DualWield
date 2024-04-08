@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3252,6 +3252,17 @@ Transform:
   m_Father: {fileID: 1812621918}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1351708300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4133027080259971852, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+  m_PrefabInstance: {fileID: 7386831455913691742}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1383255154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4917,17 +4928,53 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: UIPlayerHealth
+      value: 
+      objectReference: {fileID: 1351708300}
+    - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponLeft
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponRight
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 833108082891488990, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0dd8f82069ad5af4a95915534ab041d2, type: 2}
+    - target: {fileID: 892431121165699558, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2153582804017626837, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4133027080259971852, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155062305465383523, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885110130345654703, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885110130345654703, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 4885110130345654703, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842417550096982914, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
