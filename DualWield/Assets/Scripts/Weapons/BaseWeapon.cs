@@ -6,6 +6,7 @@ public abstract class BaseWeapon : MonoBehaviour
 {
     [SerializeField] protected Vector3 handOffset;
     [SerializeField] protected WeaponType weaponType;
+    [SerializeField] protected float roundsPerMinute;
     [SerializeField] AudioSource weaponEmptySound;
     [SerializeField] AudioSource weaponFireSound; 
     [SerializeField] AudioSource weaponFiringSound;
@@ -13,6 +14,8 @@ public abstract class BaseWeapon : MonoBehaviour
     protected Hand hand;
     protected bool isFiring = false;
     public void SetFiring(bool bIsFiring) { isFiring = bIsFiring; }
+    protected float lastFireTime = 0f;
+    protected bool canFire { get { return Time.time > lastFireTime + (60f/roundsPerMinute); } }
 
     protected virtual void Start()
     {
@@ -25,7 +28,10 @@ public abstract class BaseWeapon : MonoBehaviour
         if (isFiring)
         {
             if (GameManager.Instance.GetAmmo() > 0)
-                Fire();
+            {
+                if (canFire)
+                    Fire();
+            }
             else
             {
                 SetFiring(false);
@@ -84,7 +90,10 @@ public abstract class BaseWeapon : MonoBehaviour
         gameObject.transform.localPosition = handOffset;
     }
 
-    public abstract void Fire();
+    public virtual void Fire()
+    {
+        lastFireTime = Time.time;
+    }
 
     public void PlayWeaponEmptySFX()
     {
