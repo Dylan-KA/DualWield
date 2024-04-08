@@ -83,9 +83,9 @@ public class Flamethrower : ParticleWeapon
 
     private void IncreaseFlameSize()
     {
-        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y, 16);
+        GetComponent<BoxCollider>().size = new Vector3(GetComponent<BoxCollider>().size.x,GetComponent<BoxCollider>().size.y, 20);
         GetComponent<BoxCollider>().center =
-            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 6);
+            new Vector3(GetComponent<BoxCollider>().center.x, GetComponent<BoxCollider>().center.y, 8);
         base.SetParticleRangeExtended();
     }
 

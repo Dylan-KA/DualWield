@@ -495,7 +495,7 @@ MonoBehaviour:
   ammoPerSecond: 12
   NormalRangeParticles: {fileID: 3024551849334972390}
   ExtendedRangeParticles: {fileID: 0}
-  WeaponParticles: {fileID: 0}
+  WeaponParticles: {fileID: 3024551849334972390}
   baseWindPower: 0.2
   windAndWindMultiplier: 10
 --- !u!65 &1899282685372793615

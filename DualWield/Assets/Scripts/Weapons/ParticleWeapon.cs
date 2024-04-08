@@ -82,14 +82,12 @@ public abstract class ParticleWeapon : BaseWeapon
 
     public void SetParticleRangeNormal()
     {
-        Debug.Log("Set Particle Range to Normal");
         if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
         WeaponParticles = NormalRangeParticles;
     }
 
     public void SetParticleRangeExtended()
     {
-        Debug.Log("Set Particle Range to Extended");
         if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
         WeaponParticles = ExtendedRangeParticles;
     }
