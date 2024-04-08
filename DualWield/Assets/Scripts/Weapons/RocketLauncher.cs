@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class RocketLauncher : ProjectileWeapon
 {
-    [SerializeField] protected float explosiveRange;
-    [SerializeField] protected float explosiveMaxDamage;
-
     protected override void Start()
     {
         base.Start();
@@ -21,7 +18,7 @@ public class RocketLauncher : ProjectileWeapon
 
     public override void Fire()
     {
-        base.Fire(explosiveRange, explosiveMaxDamage);
+        base.Fire();
 
         /*switch (otherWeaponType)
         {

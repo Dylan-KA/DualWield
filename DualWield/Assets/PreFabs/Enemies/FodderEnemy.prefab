@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 996841942765347333}
   - component: {fileID: 6484569446916155432}
   - component: {fileID: 4130564927138700597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FodderEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -147,8 +147,6 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
-  isAttacking: 0
-  currentAttackTimer: 0
   test: 0
 --- !u!1 &996841942851717684
 GameObject:
@@ -161,8 +159,7 @@ GameObject:
   - component: {fileID: 996841942851717685}
   - component: {fileID: 996841942851717640}
   - component: {fileID: 996841942851717687}
-  - component: {fileID: 996841942851717686}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,16 +231,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &996841942851717686
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996841942851717684}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
