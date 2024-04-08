@@ -35,8 +35,8 @@ public class GameManager : MonoBehaviour
     private void SetAmmoDisplay(float amount)
     {
         if (!ammoDisplay) { return; }
-        
-        ammoDisplay.text = amount + "%";
+        int amountInt = (int)amount;
+        ammoDisplay.text = amountInt + "%";
         ammoDisplay.color = GetAmmo() <= LowAmmoMax ? Color.red : Color.white; // When ammo gets low
     }
     
