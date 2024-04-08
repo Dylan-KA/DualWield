@@ -84,6 +84,9 @@ public class PlayerCharacter: BaseCharacter
             case WeaponType.FreezeGun:
                 weapon = Instantiate(FreezeGunPrefab, playerCamera.transform);
                 break;
+            case WeaponType.RocketLauncher:
+                weapon = Instantiate(RocketGunPrefab, playerCamera.transform);
+                break;
             default:
                 Debug.LogError("Unknown weapon type! Add it to this switch statement or something");
                 break;
