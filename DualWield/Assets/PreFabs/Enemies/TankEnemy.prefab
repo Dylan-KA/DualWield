@@ -335,7 +335,7 @@ MonoBehaviour:
   attackRange: 4.5
   extendedAttackRange: 1
   attackWaitTime: 2
-  squashDamage: 10
+  squashDamage: 30
   squashThreshHold: 200
   playerMask:
     serializedVersion: 2

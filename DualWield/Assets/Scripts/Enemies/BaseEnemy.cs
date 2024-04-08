@@ -124,7 +124,7 @@ public class BaseEnemy : BaseCharacter
         else if (isPlayerSeen)
         {
             isPlayerSeen = false;
-        }
+        }   
     }
     protected virtual void EnemyAttackAtCertainRange()
     {
@@ -133,6 +133,7 @@ public class BaseEnemy : BaseCharacter
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
             {
+                LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
@@ -140,10 +141,12 @@ public class BaseEnemy : BaseCharacter
                 else if (isAttacking && currentAttackTimer >= attackWaitTime)
                 {
                     Attack();
+                    ResetAttackWaitTime();
                 }
             }
             else
             {
+                LookAtPlayer();
                 ResetAttack();
                 MoveTowardsTarget();
             }
@@ -153,7 +156,6 @@ public class BaseEnemy : BaseCharacter
     {
         if (playerTransform != null)
         {
-            transform.LookAt(playerTransform);
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
         }
     }
@@ -175,10 +177,13 @@ public class BaseEnemy : BaseCharacter
     {
         return isAttacking && currentAttackTimer >= attackWaitTime;
     }
+    protected virtual void LookAtPlayer()
+    {
+        transform.LookAt(playerTransform);
+    }
     protected virtual void Attack()
     {
         DamagePlayer();
-        ResetAttackWaitTime();
     }
     protected void DamagePlayer()
     {
@@ -197,12 +202,12 @@ public class BaseEnemy : BaseCharacter
     {
         Color newColor = new Color(1.0f, 0.0f, 0.0f);
         rend.material.SetColor("_Color", newColor);
-        Invoke("ResetDamageFlicker", dmgFlickerRate);
+        Invoke(nameof(ResetDamageFlicker), dmgFlickerRate);
     }
     private void ResetDamageFlicker()
     {
         rend.material.SetColor("_Color", enemyMaterialColor);
-        Invoke("ReadyForNextFlicker", dmgFlickerRate);
+        Invoke(nameof(ReadyForNextFlicker), dmgFlickerRate);
     }
 
     private void ReadyForNextFlicker()
