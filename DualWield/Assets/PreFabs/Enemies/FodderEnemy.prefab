@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 996841942765347333}
   - component: {fileID: 6484569446916155432}
   - component: {fileID: 4130564927138700597}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FodderEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}

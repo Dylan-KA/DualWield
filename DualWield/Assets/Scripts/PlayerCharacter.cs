@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(CharacterController))]
@@ -12,6 +13,7 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private BaseWeapon windGunPrefab;
     [SerializeField] private BaseWeapon FreezeGunPrefab;
     [SerializeField] private BaseWeapon RocketGunPrefab;
+    [SerializeField] private Image UIPlayerHealth;
     private BaseWeapon leftWeapon;
     private BaseWeapon rightWeapon;
     
@@ -33,7 +35,7 @@ public class PlayerCharacter: BaseCharacter
 
     [SerializeField] private LayerMask groundlayer;
     private bool isGrounded;
-
+    
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -43,7 +45,21 @@ public class PlayerCharacter: BaseCharacter
         EquipWeapon(startingWeaponRight, Hand.Right);
         EquipWeapon(startingWeaponLeft, Hand.Left);
     }
-    
+
+    public override void TakeDamage(float damageAmount)
+    {
+        base.TakeDamage(damageAmount);
+        //Update red screen
+        float newTransparency = (1 - (health / 100));
+        Color newColor = new Color(
+        UIPlayerHealth.color.r,
+        UIPlayerHealth.color.g,
+        UIPlayerHealth.color.b,
+        newTransparency
+        );
+        UIPlayerHealth.color = newColor;
+    }
+
     /// <summary>
     /// Equips a weapon in the specified hand
     /// </summary>
@@ -67,6 +83,9 @@ public class PlayerCharacter: BaseCharacter
                 break;
             case WeaponType.FreezeGun:
                 weapon = Instantiate(FreezeGunPrefab, playerCamera.transform);
+                break;
+            case WeaponType.RocketLauncher:
+                weapon = Instantiate(RocketGunPrefab, playerCamera.transform);
                 break;
             default:
                 Debug.LogError("Unknown weapon type! Add it to this switch statement or something");
@@ -154,4 +173,5 @@ public class PlayerCharacter: BaseCharacter
     {
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
     }
+
 }

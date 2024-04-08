@@ -15,12 +15,11 @@ public class BaseCharacter : MonoBehaviour
 {
     [SerializeField] protected float movementSpeed;
     [SerializeField] protected const float maxHealth = 100;
-    [SerializeField]protected float health = maxHealth;
-    [SerializeField]protected StatusEffect statusEffect = StatusEffect.None;
+    [SerializeField] protected float health = maxHealth;
+    [SerializeField] protected StatusEffect statusEffect = StatusEffect.None;
     [SerializeField] private float Temperature;
     [SerializeField] protected PhysicMaterial freezeMaterial;
-    
-   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +39,7 @@ public class BaseCharacter : MonoBehaviour
     {
         Debug.Log("Health: " + health + " || Damage: " + damageAmount);
         health -= damageAmount;
+
     }
 
     public virtual StatusEffect GetStatueEffect()
