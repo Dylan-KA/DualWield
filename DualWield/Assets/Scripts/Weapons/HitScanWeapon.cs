@@ -7,20 +7,14 @@ using UnityEngine;
 
 public abstract class HitScanWeapon : BaseWeapon
 {
-    [SerializeField] private float fireRate = 15f;
     [SerializeField] private LineRenderer lineRend;
     private float _nextFireTime;
 
-    
-    public bool IsCoolingDown()
+    public override void Fire()
     {
-        return Time.time < _nextFireTime;
+        base.Fire();
     }
 
-    public void StartCooldown()
-    {
-        _nextFireTime = Time.time + 1f/ fireRate;
-    }
     public BaseEnemy GetHitEnemy()
     {
         RaycastHit hit;

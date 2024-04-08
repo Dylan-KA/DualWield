@@ -24,6 +24,7 @@ public class FreezeGun : HitScanWeapon
 
     public override void Fire()
     {
+        base.Fire();
         switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:
@@ -44,12 +45,10 @@ public class FreezeGun : HitScanWeapon
 
     private void FreezeAndWind()
     {
-        if(IsCoolingDown()) return;
         if (GetHitEnemy())
         {
             GetHitEnemy().TemperatureChange(-1);
         }
-        StartCooldown();
     }
 
     private void FreezeAndRocket()
@@ -59,25 +58,21 @@ public class FreezeGun : HitScanWeapon
 
     private void FreezeAndFreeze()
     {
-        if (IsCoolingDown()) return;
         if (GetHitEnemy())
         {
             GetHitEnemy().TemperatureChange(-2.5f);
             if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
             {
-                GetHitEnemy().TakeDamage(20);
+                GetHitEnemy().TakeDamage(5f);
             }
         }
-        StartCooldown();
     }
 
     private void FreezeAndFlame()
     {
-        if(IsCoolingDown()) return;
         if (GetHitEnemy())
         {
             GetHitEnemy().TemperatureChange(-1f);
         }
-        StartCooldown();
     }
 }
