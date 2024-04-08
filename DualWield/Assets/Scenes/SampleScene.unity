@@ -596,6 +596,30 @@ PrefabInstance:
       propertyPath: LowAmmoMaximum
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 38303907334071466, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 81b4ee72962de41858de6f2b947585ba, type: 3}
+    - target: {fileID: 38303907334071466, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38303907334071466, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38303907334071466, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38303907334071467, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 38303907334071467, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
