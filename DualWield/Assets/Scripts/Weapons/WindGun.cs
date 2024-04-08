@@ -35,18 +35,40 @@ public class WindGun : ParticleWeapon
     public override void Fire()
     {
         ManagePlayerFlying();
-        if (otherWeaponType == WeaponType.WindGun)
+        switch (otherWeaponType)
         {
-            WindAndWind();
-        }
-            
-        else if (otherWeaponType == WeaponType.Flamethrower)
-        {
-            WindAndFlame();
+            case WeaponType.Flamethrower:
+                WindAndFlame();
+                break;
+            case WeaponType.FreezeGun:
+                WindAndFreeze();
+                break;
+            case WeaponType.RocketLauncher:
+                WindAndRocket();
+                break;
+            case WeaponType.WindGun:
+                WindAndWind();
+                break;
         }
             
     }
 
+    private void WindAndFreeze()
+    {
+        foreach (BaseEnemy Enemy in ListofEnemies)
+        {
+            if (Enemy.GetStatueEffect() == StatusEffect.Freeze)
+            {
+                PushEnemiesInRange(25f);
+            }
+        }
+        PushEnemiesInRange(baseWindPower);
+    }
+
+    private void WindAndRocket()
+    {
+        
+    }
     private void WindAndWind()
     {
         PushEnemiesInRange(windAndWindMultiplier);

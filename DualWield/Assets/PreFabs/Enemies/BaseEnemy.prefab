@@ -130,16 +130,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 1
+  health: 100
+  statusEffect: 0
+  Temperature: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 60
   viewDistance: 6
   attackRange: 2
   attackSpeed: 1
+  squashDamage: 10
+  squashThreshHold: 2
   playerMask:
     serializedVersion: 2
     m_Bits: 64
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  test: 0
 --- !u!1 &3639179134719600237
 GameObject:
   m_ObjectHideFlags: 0

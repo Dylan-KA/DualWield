@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 28e00e644b81ce44a9c662981f95dd2a
+guid: 576b484ce30a24943912369a10c635d8
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

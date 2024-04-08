@@ -10,12 +10,15 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private WeaponType startingWeaponLeft;
     [SerializeField] private BaseWeapon flamethrowerPrefab;
     [SerializeField] private BaseWeapon windGunPrefab;
+    [SerializeField] private BaseWeapon FreezeGunPrefab;
+    [SerializeField] private BaseWeapon RocketGunPrefab;
     private BaseWeapon leftWeapon;
     private BaseWeapon rightWeapon;
     
     public Camera playerCamera;
     public float gravity = 10f;
     private Vector3 velocity;
+    private float maxFallingSpeed = -50.0f;
 
     public float lookspeed = 2f;
     public float lookXLimit = 90f;
@@ -62,6 +65,9 @@ public class PlayerCharacter: BaseCharacter
             case WeaponType.WindGun:
                 weapon = Instantiate(windGunPrefab, playerCamera.transform);
                 break;
+            case WeaponType.FreezeGun:
+                weapon = Instantiate(FreezeGunPrefab, playerCamera.transform);
+                break;
             default:
                 Debug.LogError("Unknown weapon type! Add it to this switch statement or something");
                 break;
@@ -80,12 +86,7 @@ public class PlayerCharacter: BaseCharacter
             rightWeapon.SetOtherWeaponType(leftWeapon.GetWeaponType());
         }
 
-       
-        
-        
     }
-
-
     
     void Update()
     {
@@ -96,14 +97,23 @@ public class PlayerCharacter: BaseCharacter
         IsGrounded();
         if (!isFlying)
         {
-            velocity.y -= gravity * Time.deltaTime ;
-            if (velocity.y <= -50f)
+            if (!isGrounded)
             {
-                velocity.y = -50f;
+                velocity.y -= gravity * Time.deltaTime;
+
+                // limit to maximum falling speed 
+                if (velocity.y <= maxFallingSpeed)
+                {
+                    velocity.y = maxFallingSpeed;
+                }
             }
-            
+            else
+            {
+                velocity.y = 0;
+            }
+
         }
-        
+
         characterController.Move(velocity * Time.deltaTime);
         characterController.Move(moveDirection * Time.deltaTime);
         if (canMove)
@@ -115,20 +125,17 @@ public class PlayerCharacter: BaseCharacter
         }
 
         // firing
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //True on first frame of mouse click/unclick
+        if (Input.GetKeyDown(KeyCode.Mouse0)) //True on first frame of mouse click
         {
             //Debug.Log("Firing");
             leftWeapon.SetFiring(true);
-            leftWeapon.PlayWeaponFireSFX();
             rightWeapon.SetFiring(true);
-            rightWeapon.PlayWeaponFireSFX();
-        } else if (Input.GetKeyUp(KeyCode.Mouse0))
+        } else if (Input.GetKeyUp(KeyCode.Mouse0)) //True on first frame of mouse release
         {
             //Debug.Log("Not Firing");
             leftWeapon.SetFiring(false);
-            leftWeapon.ClearWeaponSFX();
             rightWeapon.SetFiring(false);
-            rightWeapon.ClearWeaponSFX();
+            isFlying = false;
         }
         else
         {

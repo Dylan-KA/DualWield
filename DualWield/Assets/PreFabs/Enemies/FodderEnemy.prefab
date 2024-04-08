@@ -130,10 +130,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 3.5
   health: 100
+  statusEffect: 0
+  Temperature: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 350
   viewDistance: 100
-  attackRange: 1.5
-  attackSpeed: 3
+  attackDamage: 10
+  attackRange: 1.75
+  extendedAttackRange: 0.25
+  attackWaitTime: 2
   squashDamage: 10
   squashThreshHold: 2
   playerMask:
@@ -141,7 +146,8 @@ MonoBehaviour:
     m_Bits: 64
   obstructionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  test: 0
 --- !u!1 &996841942851717684
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +160,7 @@ GameObject:
   - component: {fileID: 996841942851717640}
   - component: {fileID: 996841942851717687}
   - component: {fileID: 996841942851717686}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +175,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996841942851717684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0.115, z: 0.362}
+  m_LocalPosition: {x: 0, y: 0.115, z: 0.362}
   m_LocalScale: {x: 0.675, y: 0.2337, z: 0.5426784}
   m_ConstrainProportionsScale: 0
   m_Children: []
