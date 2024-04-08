@@ -36,7 +36,7 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private LayerMask groundlayer;
     private bool isGrounded;
     
-    void Start()
+    protected override void Start()
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;

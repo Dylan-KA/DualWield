@@ -23,8 +23,6 @@ public class BaseEnemy : BaseCharacter
     private bool isPlayerSeen = false;
     protected bool isAttacking = false;
     protected float currentAttackTimer = 0f;
-    private Renderer rend;
-    private Color enemyMaterialColor;
     private bool isFlickering = false;
     private float dmgFlickerRate = 0.15f;
     public float test = 0.0f;
@@ -47,8 +45,9 @@ public class BaseEnemy : BaseCharacter
     }
 
     // Start is called before the first frame update
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
         try
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -58,9 +57,6 @@ public class BaseEnemy : BaseCharacter
         {
             Debug.Log("Player cannot be found");
         }
-
-        rend = GetComponent<Renderer>();
-        enemyMaterialColor = rend.material.color;
     }
 
     // Update is called once per frame
@@ -71,7 +67,6 @@ public class BaseEnemy : BaseCharacter
         {
             currentAttackTimer += Time.deltaTime;
         }
-        VisualFreezeEffect(test);
     }
 
     protected override void OnCollisionEnter(Collision collision)
@@ -206,20 +201,13 @@ public class BaseEnemy : BaseCharacter
     }
     private void ResetDamageFlicker()
     {
-        rend.material.SetColor("_Color", enemyMaterialColor);
-        Invoke(nameof(ReadyForNextFlicker), dmgFlickerRate);
+        rend.material.SetColor("_Color", characterColor);
+        Invoke("ReadyForNextFlicker", dmgFlickerRate);
     }
 
     private void ReadyForNextFlicker()
     {
         isFlickering = false;
-    }
-
-    // frozenPercentage of 0.0 is normal, 1.0 is fully frozen
-    private void VisualFreezeEffect(float frozenPercentage) 
-    {
-        Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
-        rend.material.SetColor("_EmissionColor", newColor);
     }
 
     public void SetSquashDamage(float newDamge)

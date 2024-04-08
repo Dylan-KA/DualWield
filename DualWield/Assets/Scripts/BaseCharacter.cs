@@ -19,11 +19,15 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField] protected StatusEffect statusEffect = StatusEffect.None;
     [SerializeField] private float Temperature;
     [SerializeField] protected PhysicMaterial freezeMaterial;
+    protected MeshRenderer rend;
+    protected Color characterColor;
+
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        
+        rend = GetComponent<MeshRenderer>();
+        characterColor = rend.material.color;
     }
 
     // Update is called once per frame
@@ -61,10 +65,18 @@ public class BaseCharacter : MonoBehaviour
     public void Freeze()
     {
         statusEffect = StatusEffect.Freeze;
+        VisualFreezeEffect(1.0f);
         this.gameObject.GetComponent<BoxCollider>().material = freezeMaterial;
         if (this.gameObject.GetComponent<BaseEnemy>())
         {
             this.gameObject.GetComponent<BaseEnemy>().SetSquashDamage(999999);
         }
+    }
+
+    // frozenPercentage of 0.0 is normal, 1.0 is fully frozen
+    private void VisualFreezeEffect(float frozenPercentage)
+    {
+        Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
+        rend.material.SetColor("_EmissionColor", newColor);
     }
 }
