@@ -17,7 +17,6 @@ public abstract class ParticleWeapon : BaseWeapon
     protected override void Start()
     {
         base.Start();
-        SetParticleRangeNormal();
     }
 
     protected override void Update()
@@ -38,8 +37,11 @@ public abstract class ParticleWeapon : BaseWeapon
         GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
     }
 
-   
-    
+
+    public override void SetOtherWeaponType(WeaponType otherWeaponType)
+    {
+        base.SetOtherWeaponType(otherWeaponType);
+    }
 
     private void FixedUpdate()
     {
@@ -80,12 +82,14 @@ public abstract class ParticleWeapon : BaseWeapon
 
     public void SetParticleRangeNormal()
     {
+        Debug.Log("Set Particle Range to Normal");
         if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
         WeaponParticles = NormalRangeParticles;
     }
 
     public void SetParticleRangeExtended()
     {
+        Debug.Log("Set Particle Range to Extended");
         if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
         WeaponParticles = ExtendedRangeParticles;
     }
