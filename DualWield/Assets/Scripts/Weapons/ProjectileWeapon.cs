@@ -17,7 +17,7 @@ public class ProjectileWeapon : BaseWeapon
         base.Fire();
         GameManager.Instance.DrainAmmo(ammoPerShot);
         Projectile projectile = Instantiate(projectilePrefab, transform.position, transform.rotation);
-        projectile.Initialize(1);
+        //projectile.Initialize(1);
     }
 
     protected override void Start()
