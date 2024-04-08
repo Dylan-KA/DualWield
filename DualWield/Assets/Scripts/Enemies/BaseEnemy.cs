@@ -126,9 +126,9 @@ public class BaseEnemy : BaseCharacter
             isPlayerSeen = false;
         }
     }
-    protected void EnemyAttackAtCertainRange()
+    protected virtual void EnemyAttackAtCertainRange()
     {
-        if (isPlayerSeen)
+        if (isPlayerSeen && statusEffect != StatusEffect.Freeze)
         {
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
@@ -139,8 +139,7 @@ public class BaseEnemy : BaseCharacter
                 }
                 else if (isAttacking && currentAttackTimer >= attackWaitTime)
                 {
-                    DamagePlayer();
-                    ResetAttackWaitTime();
+                    Attack();
                 }
             }
             else
@@ -176,10 +175,14 @@ public class BaseEnemy : BaseCharacter
     {
         return isAttacking && currentAttackTimer >= attackWaitTime;
     }
+    protected virtual void Attack()
+    {
+        DamagePlayer();
+        ResetAttackWaitTime();
+    }
     protected void DamagePlayer()
     {
         playerTransform.gameObject.GetComponentInParent<BaseCharacter>().TakeDamage(attackDamage);
-        currentAttackTimer = 0f;
     }
     protected void ResetAttackWaitTime()
     {

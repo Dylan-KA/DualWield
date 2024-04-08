@@ -49,7 +49,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   health: 100
+  statusEffect: 0
   Temperature: 0
+  freezeMaterial: {fileID: 0}
   startingWeaponRight: 0
   startingWeaponLeft: 1
   flamethrowerPrefab: {fileID: 9019822857827249870, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}

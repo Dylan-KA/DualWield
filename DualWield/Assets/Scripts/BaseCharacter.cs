@@ -38,6 +38,7 @@ public class BaseCharacter : MonoBehaviour
     }
     public virtual void TakeDamage(float damageAmount)
     {
+        Debug.Log("Health: " + health + " || Damage: " + damageAmount);
         health -= damageAmount;
     }
 
