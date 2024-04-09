@@ -136,9 +136,9 @@ MonoBehaviour:
   fieldOfView: 350
   viewDistance: 100
   attackDamage: 10
-  attackRange: 1.75
+  attackRange: 1.5
   extendedAttackRange: 0.25
-  attackWaitTime: 2
+  attackWaitTime: 1
   squashDamage: 10
   squashThreshHold: 2
   playerMask:

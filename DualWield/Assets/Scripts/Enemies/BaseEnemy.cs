@@ -21,8 +21,8 @@ public class BaseEnemy : BaseCharacter
     public LayerMask obstructionMask;
     private Transform playerTransform;
     private bool isPlayerSeen = false;
-    protected bool isAttacking = false;
-    protected float currentAttackTimer = 0f;
+    [SerializeField] protected bool isAttacking = false;
+    [SerializeField] protected float currentAttackTimer = 0f;
     private bool isFlickering = false;
     private float dmgFlickerRate = 0.15f;
     public float test = 0.0f;
@@ -119,27 +119,29 @@ public class BaseEnemy : BaseCharacter
         else if (isPlayerSeen)
         {
             isPlayerSeen = false;
-        }
+        }   
     }
-    protected void EnemyAttackAtCertainRange()
+    protected virtual void EnemyAttackAtCertainRange()
     {
-        if (isPlayerSeen)
+        if (isPlayerSeen && statusEffect != StatusEffect.Freeze)
         {
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
             {
+                LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
                 }
                 else if (isAttacking && currentAttackTimer >= attackWaitTime)
                 {
-                    DamagePlayer();
+                    Attack();
                     ResetAttackWaitTime();
                 }
             }
             else
             {
+                LookAtPlayer();
                 ResetAttack();
                 MoveTowardsTarget();
             }
@@ -149,7 +151,6 @@ public class BaseEnemy : BaseCharacter
     {
         if (playerTransform != null)
         {
-            transform.LookAt(playerTransform);
             transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
         }
     }
@@ -171,10 +172,17 @@ public class BaseEnemy : BaseCharacter
     {
         return isAttacking && currentAttackTimer >= attackWaitTime;
     }
+    protected virtual void LookAtPlayer()
+    {
+        transform.LookAt(playerTransform);
+    }
+    protected virtual void Attack()
+    {
+        DamagePlayer();
+    }
     protected void DamagePlayer()
     {
         playerTransform.gameObject.GetComponentInParent<BaseCharacter>().TakeDamage(attackDamage);
-        currentAttackTimer = 0f;
     }
     protected void ResetAttackWaitTime()
     {
@@ -189,12 +197,12 @@ public class BaseEnemy : BaseCharacter
     {
         Color newColor = new Color(1.0f, 0.0f, 0.0f);
         rend.material.SetColor("_Color", newColor);
-        Invoke("ResetDamageFlicker", dmgFlickerRate);
+        Invoke(nameof(ResetDamageFlicker), dmgFlickerRate);
     }
     private void ResetDamageFlicker()
     {
         rend.material.SetColor("_Color", characterColor);
-        Invoke("ReadyForNextFlicker", dmgFlickerRate);
+        Invoke(nameof(ReadyForNextFlicker), dmgFlickerRate);
     }
 
     private void ReadyForNextFlicker()

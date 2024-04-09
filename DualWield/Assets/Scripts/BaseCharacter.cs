@@ -42,7 +42,6 @@ public class BaseCharacter : MonoBehaviour
     public virtual void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
-
     }
 
     public virtual StatusEffect GetStatueEffect()
