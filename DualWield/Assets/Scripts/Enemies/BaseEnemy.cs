@@ -21,8 +21,8 @@ public class BaseEnemy : BaseCharacter
     public LayerMask obstructionMask;
     private Transform playerTransform;
     private bool isPlayerSeen = false;
-    protected bool isAttacking = false;
-    protected float currentAttackTimer = 0f;
+    [SerializeField] protected bool isAttacking = false;
+    [SerializeField] protected float currentAttackTimer = 0f;
     private bool isFlickering = false;
     private float dmgFlickerRate = 0.15f;
     public float test = 0.0f;
@@ -202,7 +202,7 @@ public class BaseEnemy : BaseCharacter
     private void ResetDamageFlicker()
     {
         rend.material.SetColor("_Color", characterColor);
-        Invoke("ReadyForNextFlicker", dmgFlickerRate);
+        Invoke(nameof(ReadyForNextFlicker), dmgFlickerRate);
     }
 
     private void ReadyForNextFlicker()

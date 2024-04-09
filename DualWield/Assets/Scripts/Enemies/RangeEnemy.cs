@@ -6,6 +6,8 @@ public class RangeEnemy : BaseEnemy
 {
     [SerializeField] private Transform projectileSpawnTransform;
     [SerializeField] private GameObject projectile;
+    [SerializeField] private float projectileSpeed;
+    [SerializeField] private float speedMult;
 
     protected override void Start()
     {
@@ -18,6 +20,7 @@ public class RangeEnemy : BaseEnemy
     }
     protected override void Attack()
     {
-        Instantiate(projectile, projectileSpawnTransform);
+        GameObject bullet = Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        bullet.GetComponent<BulletProjectile>().SetProjectileProperties(attackDamage, projectileSpeed);
     }
 }

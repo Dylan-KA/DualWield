@@ -395,7 +395,7 @@ MonoBehaviour:
   weaponFireSound: {fileID: 1421068829247303149}
   weaponFiringSound: {fileID: 4057917665161291875}
   ammoPerShot: 5
-  projectilePrefab: {fileID: 7206235113394284760, guid: 169b92b58b7194c4baf53c55d8832473, type: 3}
+  projectilePrefab: {fileID: 0}
 --- !u!1 &7902554488955207113
 GameObject:
   m_ObjectHideFlags: 0

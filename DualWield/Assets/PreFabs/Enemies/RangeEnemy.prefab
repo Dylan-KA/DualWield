@@ -430,8 +430,8 @@ MonoBehaviour:
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 350
   viewDistance: 100
-  attackDamage: 10
-  attackRange: 10
+  attackDamage: 20
+  attackRange: 15
   extendedAttackRange: 1
   attackWaitTime: 2
   squashDamage: 10
@@ -442,8 +442,13 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
+  currentAttackTimer: 0
   test: 0
-  projectile: {fileID: 0}
+  projectileSpawnTransform: {fileID: 4773306059254048216}
+  projectile: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
+  projectileSpeed: 30
+  speedMult: 1
 --- !u!1 &5152685604806786903
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9024955895214356585}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.182, z: 0.59}
+  m_LocalPosition: {x: 0, y: 0.182, z: 0.538}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
