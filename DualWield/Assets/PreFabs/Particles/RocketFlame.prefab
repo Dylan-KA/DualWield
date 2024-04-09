@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6806309461152955467}
   - component: {fileID: 8337018952189802219}
-  - component: {fileID: 7206235113394284760}
   - component: {fileID: 8469150828523419308}
   - component: {fileID: 1810425974116196070}
   - component: {fileID: 7886936718939716577}
+  - component: {fileID: 3317579496633857605}
   m_Layer: 8
-  m_Name: RocketProjectile
+  m_Name: RocketFlame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,21 +49,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2, z: 1.1319373}
   m_Center: {x: 0, y: 0, z: -0.36564547}
---- !u!114 &7206235113394284760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8400576231693495393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbac60e15e6677d419b2a0192cd89d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseSpeed: 50
-  explosiveRange: 12
-  explosiveMaxDamage: 50
 --- !u!33 &8469150828523419308
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -130,3 +115,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &3317579496633857605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400576231693495393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbec61ce5d18da14aa4fbcaccfbdd6bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseSpeed: 20
+  speedMult: 1
+  baseDamage: 50
+  isFiredByEnemy: 0
+  explosiveRange: 6

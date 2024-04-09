@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class RocketLauncher : ProjectileWeapon
 {
+    [SerializeField] private ExplosiveProjectile rocketRocketPrefab;
+    [SerializeField] private ExplosiveProjectile rocketWindPrefab;
+    [SerializeField] private ExplosiveProjectile rocketFlamePrefab;
+    [SerializeField] private ExplosiveProjectile rocketFreezePrefab;
+
+
     protected override void Start()
     {
         base.Start();
@@ -20,7 +26,7 @@ public class RocketLauncher : ProjectileWeapon
     {
         base.Fire();
 
-        /*switch (otherWeaponType)
+        switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:
                 RocketAndFlame();
@@ -34,26 +40,26 @@ public class RocketLauncher : ProjectileWeapon
             case WeaponType.WindGun:
                 RocketAndWind();
                 break;
-        }*/
+        }
     }
 
     private void RocketAndRocket()
     {
-
+        Projectile projectile = Instantiate(rocketRocketPrefab, transform.position, transform.rotation);
     }
 
     private void RocketAndWind()
     {
-
+        Projectile projectile = Instantiate(rocketWindPrefab, transform.position, transform.rotation);
     }
 
     private void RocketAndFlame()
     {
-
+        Projectile projectile = Instantiate(rocketFlamePrefab, transform.position, transform.rotation);
     }
 
     private void RocketAndFreeze()
     {
-
+        Projectile projectile = Instantiate(rocketFreezePrefab, transform.position, transform.rotation);
     }
 }

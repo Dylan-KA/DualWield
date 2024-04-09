@@ -42,6 +42,7 @@ public abstract class BaseWeapon : MonoBehaviour
         // Weapon Audio 
         if (Input.GetKeyUp(KeyCode.Mouse0)) //First frame of mouse release
         {
+            if (weaponType == WeaponType.RocketLauncher) { return; }
             ClearWeaponSFX();
         }
 
