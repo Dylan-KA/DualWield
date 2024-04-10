@@ -77,4 +77,13 @@ public class BaseCharacter : MonoBehaviour
         Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
         rend.material.SetColor("_EmissionColor", newColor);
     }
+
+    public void RecoverHP(float recovedAmount)
+    {
+        health += recovedAmount;
+        if (health > 100)
+        {
+            health = 100;
+        }
+    }
 }

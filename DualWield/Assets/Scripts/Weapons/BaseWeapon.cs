@@ -12,6 +12,7 @@ public abstract class BaseWeapon : MonoBehaviour
     [SerializeField] AudioSource weaponFiringSound;
     protected WeaponType otherWeaponType;
     protected Hand hand;
+    
     protected bool isFiring = false;
     public void SetFiring(bool bIsFiring) { isFiring = bIsFiring; }
     protected float lastFireTime = 0f;
