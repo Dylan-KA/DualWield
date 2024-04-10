@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c55d3eb-df09-46bf-860d-cbbc0a400599" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/PreFabs/UI/FreezeGunPickUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/UI/FreezeGunPickUp.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BaseCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BaseCharacter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/FreezeGun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/FreezeGun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/HitScanWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/HitScanWeapon.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +117,7 @@
       <workItem from="1712292452234" duration="15610000" />
       <workItem from="1712382200698" duration="8737000" />
       <workItem from="1712446509781" duration="2111000" />
-      <workItem from="1712705194327" duration="5131000" />
+      <workItem from="1712705194327" duration="5794000" />
     </task>
     <servers />
   </component>
