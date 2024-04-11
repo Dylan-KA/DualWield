@@ -194,6 +194,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3173527327373848840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4352097445053983793}
+  m_Layer: 3
+  m_Name: BombThrowPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4352097445053983793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3173527327373848840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8766485580880972849}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8766485580880972853
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +238,7 @@ GameObject:
   - component: {fileID: 8766485580880972855}
   - component: {fileID: 8766485580880972848}
   - component: {fileID: 3278761031660881437}
-  - component: {fileID: 5561691199968490240}
+  - component: {fileID: 5220197290439816401}
   m_Layer: 3
   m_Name: TankEnemy
   m_TagString: Enemy
@@ -230,6 +261,7 @@ Transform:
   - {fileID: 8766485581059367936}
   - {fileID: 779083664942915607}
   - {fileID: 3365624276477053588}
+  - {fileID: 4352097445053983793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -312,7 +344,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5561691199968490240
+--- !u!114 &5220197290439816401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,18 +353,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8766485580880972853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f768b299365fe441b1b465f9d92f206, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a9c3784282313c4680721f3be5bdb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 2
-  health: 750
+  movementSpeed: 3
+  health: 250
   statusEffect: 0
   Temperature: 0
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 350
   viewDistance: 100
   attackDamage: 20
-  attackRange: 4.5
+  attackRange: 10
   extendedAttackRange: 1
   attackWaitTime: 2
   squashDamage: 30
@@ -343,7 +375,10 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
-  test: 0
+  isAttacking: 0
+  currentAttackTimer: 0
+  bomb: {fileID: 8942733761729262019, guid: 0386b47c476068144915d38126fe5c18, type: 3}
+  bombSpawnTransform: {fileID: 4352097445053983793}
 --- !u!1 &8766485581059367937
 GameObject:
   m_ObjectHideFlags: 0

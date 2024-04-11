@@ -25,7 +25,6 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float currentAttackTimer = 0f;
     private bool isFlickering = false;
     private float dmgFlickerRate = 0.15f;
-    public float test = 0.0f;
 
     public float GetFieldOfView()
     {
@@ -178,6 +177,7 @@ public class BaseEnemy : BaseCharacter
     }
     protected virtual void Attack()
     {
+        Debug.Log("Damagin Player");
         DamagePlayer();
     }
     protected void DamagePlayer()
