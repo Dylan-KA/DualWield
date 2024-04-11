@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c55d3eb-df09-46bf-860d-cbbc0a400599" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PreFabs/UI/PickUpAmmo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PreFabs/UI/PickUpAmmo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIPickupPopup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIPickupPopup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCharacter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCharacter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +116,8 @@
       <workItem from="1712382200698" duration="8737000" />
       <workItem from="1712446509781" duration="2111000" />
       <workItem from="1712705194327" duration="6077000" />
-      <workItem from="1712753453417" duration="2408000" />
+      <workItem from="1712753453417" duration="5041000" />
+      <workItem from="1712821427299" duration="5831000" />
     </task>
     <servers />
   </component>

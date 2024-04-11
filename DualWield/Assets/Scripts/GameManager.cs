@@ -77,6 +77,15 @@ public class GameManager : MonoBehaviour
         currentAmmoAmount = amount;
         SetAmmoDisplay(currentAmmoAmount);
     }
+    public void RefillAddAmmoCustom(float amount)
+    {
+        currentAmmoAmount = currentAmmoAmount + amount;
+        if (currentAmmoAmount > 100)
+        {
+            currentAmmoAmount = 100;
+        }
+        SetAmmoDisplay(currentAmmoAmount);
+    }
     
     /// <summary>
     /// Gets ammo amount shown on screen (and essentially in GameManager & UI memory).
