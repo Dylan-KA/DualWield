@@ -19,7 +19,9 @@ public class FreezeGun : HitScanWeapon
     protected override void Update()
     {
         base.Update();
-       
+
+        //First frame of mouse release
+        if (Input.GetKeyUp(KeyCode.Mouse0)) { lineRend.enabled = false; }
     }
 
 

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public abstract class HitScanWeapon : BaseWeapon
 {
-    [SerializeField] private LineRenderer lineRend;
+    [SerializeField] protected LineRenderer lineRend;
     private float _nextFireTime;
 
     public override void Fire()
@@ -23,7 +23,6 @@ public abstract class HitScanWeapon : BaseWeapon
         
         if (Physics.Raycast(transform.parent.position, transform.TransformDirection(Vector3.forward), out hit, 500f, LayerMask.GetMask("Enemy")))
         {
-            Debug.Log("Hit: " + hit);
             if (hit.transform.CompareTag("Enemy"))
             {
                 return hit.transform.GetComponent<BaseEnemy>();
