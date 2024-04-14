@@ -7,8 +7,7 @@ public class BaseEnemy : BaseCharacter
 {
     protected GameObject enemyModel;
     protected EnemyTypes enemyType;
-    [Range(0, 360)]
-    [SerializeField] protected float fieldOfView;
+    protected float fieldOfView = 350;
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackDamage;
     [SerializeField] protected float attackRange = 1;
@@ -19,7 +18,7 @@ public class BaseEnemy : BaseCharacter
     //[SerializeField] protected float rotationSpeed;
     public LayerMask playerMask;
     public LayerMask obstructionMask;
-    private Transform playerTransform;
+    protected Transform playerTransform;
     private bool isPlayerSeen = false;
     [SerializeField] protected bool isAttacking = false;
     [SerializeField] protected float currentAttackTimer = 0f;
@@ -147,7 +146,7 @@ public class BaseEnemy : BaseCharacter
             }
         }
     }
-    private void MoveTowardsTarget()
+    protected virtual void MoveTowardsTarget()
     {
         if (playerTransform != null)
         {
