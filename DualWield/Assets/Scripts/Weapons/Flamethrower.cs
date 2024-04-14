@@ -5,6 +5,7 @@ using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.PlayerLoop;
+using static UnityEngine.ParticleSystem;
 
 public class Flamethrower : ParticleWeapon
 {
@@ -30,7 +31,7 @@ public class Flamethrower : ParticleWeapon
         {
             if (!isFiring)
             {
-                damageMultiplier = 1.0f;
+                ResetMultiplier();
                 ResetFlame();
             }
         }
@@ -131,7 +132,7 @@ public class Flamethrower : ParticleWeapon
         damageMultiplier += (muliplierIncreaseRate * Time.deltaTime);
     }
 
-    public void RestMultiplier() { damageMultiplier = 1.0f; }
+    public void ResetMultiplier() { damageMultiplier = 1.0f; }
 
     
     private void BlueDamageFlame()
@@ -141,31 +142,39 @@ public class Flamethrower : ParticleWeapon
         if (clampedMultiplier > 0.5f) { clampedMultiplier = 0.8f; }
         if (clampedMultiplier > 1.0f) { clampedMultiplier = 1.0f; }
         Color parentLerpCol = Color.Lerp(defaultParticleColors[0], BlueFlameColors[0], clampedMultiplier);
-        WeaponParticles.startColor = parentLerpCol;
+        var mainModule = WeaponParticles.main;
+        mainModule.startColor = parentLerpCol;
         ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
         for (int i = 1; i < ChildParticles.Length; i++)
         {
             Color lerpedColor = Color.Lerp(defaultParticleColors[i], BlueFlameColors[i], clampedMultiplier);
-            ChildParticles[i].startColor = lerpedColor;
+            var particleMainModule = ChildParticles[i].main;
+            particleMainModule.startColor = lerpedColor;
         }
     }
 
     private void ResetFlame()
     {
         if (defaultParticleColors.Count == 0) { PopulateDefaultColours(); }
-        WeaponParticles.startColor = defaultParticleColors[0];
+        var mainModule = WeaponParticles.main;
+        mainModule.startColor = defaultParticleColors[0];
         ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
         for (int i = 1; i < ChildParticles.Length; i++)
         {
-            ChildParticles[i].startColor = defaultParticleColors[i];
+            var particleMainModule = ChildParticles[i].main;
+            particleMainModule.startColor = defaultParticleColors[i];
         }
     }
 
     private void PopulateDefaultColours()
     {
-        //defaultParticleColors.Add(WeaponParticles.startColor);
         ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
-        foreach (ParticleSystem particle in ChildParticles) { defaultParticleColors.Add(particle.startColor); }
+        foreach (ParticleSystem particle in ChildParticles)
+        {
+            var particleMainModule = particle.main;
+            Color color = particleMainModule.startColor.color;
+            defaultParticleColors.Add(color);
+        }
     }
     
 }
