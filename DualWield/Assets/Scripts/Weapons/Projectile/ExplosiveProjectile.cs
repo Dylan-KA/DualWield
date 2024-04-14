@@ -30,7 +30,7 @@ public class ExplosiveProjectile : Projectile
 
                 enemy.TakeDamage(baseDamage * damagePercent);
                 if (gameObject.name == "RocketFreeze(Clone)") 
-                    enemy.TemperatureChange(damagePercent * -5);
+                    enemy.AddFreezePercent(damagePercent * -5);
             }
         }
     }

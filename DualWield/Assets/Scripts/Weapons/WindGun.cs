@@ -7,7 +7,7 @@ public class WindGun : ParticleWeapon
     private Camera playerCamera;
     private PlayerCharacter player;
     private float maxCameraXRotation = 90;
-    [SerializeField] private float baseWindPower = .2f;
+    [SerializeField] private float baseWindPower = 0.5f;
     [SerializeField] private float windAndWindMultiplier = 10f;
     private float flyingForce = 10;
 
@@ -35,6 +35,7 @@ public class WindGun : ParticleWeapon
     public override void Fire()
     {
         ManagePlayerFlying();
+        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
         switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:
