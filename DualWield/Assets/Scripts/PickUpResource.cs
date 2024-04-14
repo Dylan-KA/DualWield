@@ -10,6 +10,12 @@ public class PickUpResource : MonoBehaviour
     [SerializeField] private ResourceType resourceType;
 
     [SerializeField] float resource;
+
+    private void Start()
+    {
+        gameManager = GameManager.Instance;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Player"))

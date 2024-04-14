@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
@@ -141,6 +142,19 @@ public class PlayerCharacter: BaseCharacter
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookspeed, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //May need to implement a cooldown for this.
+            Collider[] colliders =  Physics.OverlapSphere(transform.position, 3, LayerMask.GetMask("Enemy"));
+            foreach (Collider EnemyCollider in colliders)
+            {
+                Vector3 directionFromPlayer = EnemyCollider.transform.position - transform.position;
+                directionFromPlayer.Normalize();
+                EnemyCollider.GetComponent<Rigidbody>().AddForce(50f * directionFromPlayer, ForceMode.Impulse);
+                GameManager.Instance.RefillAddAmmoCustom(5);
+            }
         }
 
         // firing

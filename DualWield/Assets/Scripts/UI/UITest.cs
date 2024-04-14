@@ -9,8 +9,8 @@ public class UITest : MonoBehaviour
     
     // WeaponDrainCooldown
     private float time;
-    private float cooldown = 1f;
-    
+    // private float cooldown = 1f; The field 'UITest.cooldown' is assigned but its value is never used
+
     // Start is called before the first frame update
     void Start()
     {

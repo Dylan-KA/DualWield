@@ -11,7 +11,7 @@ public abstract class ParticleWeapon : BaseWeapon
 
     [SerializeField] private ParticleSystem NormalRangeParticles;
     [SerializeField] private ParticleSystem ExtendedRangeParticles;
-    [SerializeField] private ParticleSystem WeaponParticles; // The value is swapped between the 2 ranges above
+    [SerializeField] protected ParticleSystem WeaponParticles; // The value is swapped between the 2 ranges above
     private bool particlesPlaying = false;
 
     protected override void Start()

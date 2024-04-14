@@ -18,6 +18,7 @@ public class UIPickupPopup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager = GameManager.Instance;
         if (!Camera.main) { Debug.LogWarning("Main Camera is missing."); }
         if (!GameManager) { Debug.LogError("GameManager reference is missing from UIManager."); }
         mainCamera = Camera.main; // If null, there is no safety net.

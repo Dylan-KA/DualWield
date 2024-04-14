@@ -52,7 +52,7 @@ public class BaseCharacter : MonoBehaviour
     public virtual void TemperatureChange(float tempChange)
     {
         Temperature += tempChange;
-        movementSpeed += Temperature;
+        movementSpeed += Temperature/10;
         if (movementSpeed <= 0)
         {
             movementSpeed = 0;
