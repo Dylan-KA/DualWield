@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5164133204860312571}
   - component: {fileID: 812473043958034688}
   - component: {fileID: 6085703277371472853}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 7429270685409401501}
   - component: {fileID: 834705992233288143}
   - component: {fileID: 6434393485216149326}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Hat (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 3269783542073460402}
   - component: {fileID: 655354079926264050}
   - component: {fileID: 7603471268521308097}
-  m_Layer: 2
+  m_Layer: 3
   m_Name: Hat (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 5152685604686321510}
   - component: {fileID: 1417133843314122059}
   - component: {fileID: 6326313642449997335}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RangeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ MonoBehaviour:
   movementSpeed: 3
   health: 100
   statusEffect: 0
-  Temperature: 0
+  FreezePercent: 0
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   fieldOfView: 350
   viewDistance: 100
@@ -444,7 +444,6 @@ MonoBehaviour:
     m_Bits: 128
   isAttacking: 0
   currentAttackTimer: 0
-  test: 0
   projectileSpawnTransform: {fileID: 4773306059254048216}
   projectile: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
   projectileSpeed: 30
@@ -461,7 +460,7 @@ GameObject:
   - component: {fileID: 5152685604806786923}
   - component: {fileID: 5152685604806786900}
   - component: {fileID: 5152685604806786901}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -555,7 +554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4773306059254048216}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}

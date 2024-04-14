@@ -69,21 +69,19 @@ public class BaseCharacter : MonoBehaviour
         }
     }
 
-    // frozenPercentage of 0.0 is normal, 1.0 is fully frozen
     private void VisualFreezeEffect(float frozenPercentage)
     {
         float frozenFloat = frozenPercentage / 100.0f;
         Color newColor = new Color(frozenFloat, frozenFloat, frozenFloat);
         rend.material.SetColor("_EmissionColor", newColor);
-        Debug.Log("Visual Freeze Effect: " + frozenPercentage + " newColor: " + newColor);
     }
 
     public void RecoverHP(float recovedAmount)
     {
         health += recovedAmount;
-        if (health > 100)
+        if (health > maxHealth)
         {
-            health = 100;
+            health = maxHealth;
         }
     }
 }
