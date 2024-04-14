@@ -5,22 +5,36 @@ using System.Net.NetworkInformation;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.PlayerLoop;
+using static UnityEngine.ParticleSystem;
 
 public class Flamethrower : ParticleWeapon
 {
     [SerializeField] private float baseDamage;
-    [SerializeField] private float flameAndFlameMultiplier;
+    [SerializeField] private float damageMultiplier = 1.0f;
+    private float maxMultiplier = 7.0f;
+    private float muliplierIncreaseRate = 30.0f;
+
+    [SerializeField] private List<Color> defaultParticleColors;
+    [SerializeField] private List<Color> BlueFlameColors;
 
     protected override void Start()
     {
         
         base.Start();
+        damageMultiplier = 1.0f;
     }
 
     protected override void Update()
     {
         base.Update();
-       
+        if (otherWeaponType == WeaponType.Flamethrower)
+        {
+            if (!isFiring)
+            {
+                ResetMultiplier();
+                ResetFlame();
+            }
+        }
     }
     
     /// <summary>
@@ -67,9 +81,11 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(baseDamage * flameAndFlameMultiplier * Time.deltaTime);
+                Enemy.TakeDamage(baseDamage * damageMultiplier * Time.deltaTime);
             }
         }
+        IncreaseMultiplier();
+        BlueDamageFlame();
     }
     private void FlameAndWind()
     {
@@ -110,4 +126,55 @@ public class Flamethrower : ParticleWeapon
         }
     }
 
+    private void IncreaseMultiplier()
+    {
+        if (damageMultiplier >= maxMultiplier) { damageMultiplier = maxMultiplier; }
+        damageMultiplier += (muliplierIncreaseRate * Time.deltaTime);
+    }
+
+    public void ResetMultiplier() { damageMultiplier = 1.0f; }
+
+    
+    private void BlueDamageFlame()
+    {
+        if (defaultParticleColors.Count == 0) { PopulateDefaultColours(); }
+        float clampedMultiplier = (damageMultiplier / 5);
+        if (clampedMultiplier > 0.5f) { clampedMultiplier = 0.8f; }
+        if (clampedMultiplier > 1.0f) { clampedMultiplier = 1.0f; }
+        Color parentLerpCol = Color.Lerp(defaultParticleColors[0], BlueFlameColors[0], clampedMultiplier);
+        var mainModule = WeaponParticles.main;
+        mainModule.startColor = parentLerpCol;
+        ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
+        for (int i = 1; i < ChildParticles.Length; i++)
+        {
+            Color lerpedColor = Color.Lerp(defaultParticleColors[i], BlueFlameColors[i], clampedMultiplier);
+            var particleMainModule = ChildParticles[i].main;
+            particleMainModule.startColor = lerpedColor;
+        }
+    }
+
+    private void ResetFlame()
+    {
+        if (defaultParticleColors.Count == 0) { PopulateDefaultColours(); }
+        var mainModule = WeaponParticles.main;
+        mainModule.startColor = defaultParticleColors[0];
+        ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
+        for (int i = 1; i < ChildParticles.Length; i++)
+        {
+            var particleMainModule = ChildParticles[i].main;
+            particleMainModule.startColor = defaultParticleColors[i];
+        }
+    }
+
+    private void PopulateDefaultColours()
+    {
+        ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
+        foreach (ParticleSystem particle in ChildParticles)
+        {
+            var particleMainModule = particle.main;
+            Color color = particleMainModule.startColor.color;
+            defaultParticleColors.Add(color);
+        }
+    }
+    
 }

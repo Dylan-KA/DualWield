@@ -9,7 +9,7 @@ public abstract class Projectile : MonoBehaviour
     [SerializeField] protected float speedMult = 1;
     [SerializeField] protected float baseDamage;
     [SerializeField] protected bool isFiredByEnemy = false;
-    protected Rigidbody rigidbody;
+    protected Rigidbody rb;
 
     public void SetProjectileProperties(float baseDamage, float baseSpeed, float speedMult = 1)
     {
@@ -20,8 +20,8 @@ public abstract class Projectile : MonoBehaviour
 
     protected virtual void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.velocity = isFiredByEnemy ? baseSpeed * speedMult * transform.forward : baseSpeed * speedMult * -transform.forward;
+        rb = GetComponent<Rigidbody>();
+        rb.velocity = isFiredByEnemy ? baseSpeed * speedMult * transform.forward : baseSpeed * speedMult * -transform.forward;
         gameObject.layer = isFiredByEnemy ? 9 : 8;
     }
 
