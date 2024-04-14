@@ -10,8 +10,8 @@ public class Flamethrower : ParticleWeapon
 {
     [SerializeField] private float baseDamage;
     [SerializeField] private float damageMultiplier = 1.0f;
-    private float maxMultiplier = 5.0f;
-    private float muliplierIncreaseRate = 20.0f;
+    private float maxMultiplier = 7.0f;
+    private float muliplierIncreaseRate = 30.0f;
 
     [SerializeField] private List<Color> defaultParticleColors;
     [SerializeField] private List<Color> BlueFlameColors;
@@ -26,7 +26,14 @@ public class Flamethrower : ParticleWeapon
     protected override void Update()
     {
         base.Update();
-       
+        if (otherWeaponType == WeaponType.Flamethrower)
+        {
+            if (!isFiring)
+            {
+                damageMultiplier = 1.0f;
+                ResetFlame();
+            }
+        }
     }
     
     /// <summary>
@@ -77,6 +84,7 @@ public class Flamethrower : ParticleWeapon
             }
         }
         IncreaseMultiplier();
+        BlueDamageFlame();
     }
     private void FlameAndWind()
     {
@@ -125,11 +133,13 @@ public class Flamethrower : ParticleWeapon
 
     public void RestMultiplier() { damageMultiplier = 1.0f; }
 
-    /*
+    
     private void BlueDamageFlame()
     {
-        if (defaultParticleColors == null) { PopulateDefaultColours(); }
-        float clampedMultiplier = damageMultiplier / 5;
+        if (defaultParticleColors.Count == 0) { PopulateDefaultColours(); }
+        float clampedMultiplier = (damageMultiplier / 5);
+        if (clampedMultiplier > 0.5f) { clampedMultiplier = 0.8f; }
+        if (clampedMultiplier > 1.0f) { clampedMultiplier = 1.0f; }
         Color parentLerpCol = Color.Lerp(defaultParticleColors[0], BlueFlameColors[0], clampedMultiplier);
         WeaponParticles.startColor = parentLerpCol;
         ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
@@ -140,9 +150,9 @@ public class Flamethrower : ParticleWeapon
         }
     }
 
-    private void ResetBlueFlame()
+    private void ResetFlame()
     {
-        if (defaultParticleColors == null) { PopulateDefaultColours(); }
+        if (defaultParticleColors.Count == 0) { PopulateDefaultColours(); }
         WeaponParticles.startColor = defaultParticleColors[0];
         ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
         for (int i = 1; i < ChildParticles.Length; i++)
@@ -153,9 +163,9 @@ public class Flamethrower : ParticleWeapon
 
     private void PopulateDefaultColours()
     {
-        defaultParticleColors.Add(WeaponParticles.startColor);
+        //defaultParticleColors.Add(WeaponParticles.startColor);
         ParticleSystem[] ChildParticles = WeaponParticles.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem particle in ChildParticles) { defaultParticleColors.Add(particle.startColor); }
     }
-    */
+    
 }

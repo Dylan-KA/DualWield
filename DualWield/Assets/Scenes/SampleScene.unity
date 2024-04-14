@@ -5441,7 +5441,7 @@ PrefabInstance:
       objectReference: {fileID: 1351708300}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponLeft
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: startingWeaponRight
