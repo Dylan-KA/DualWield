@@ -31,12 +31,15 @@ public abstract class BaseWeapon : MonoBehaviour
             if (GameManager.Instance.GetAmmo() > 0)
             {
                 if (canFire)
+                {
                     Fire();
+                    if (weaponType == WeaponType.RocketLauncher) { PlayWeaponFireSFX(); }
+                }
             }
             else
             {
                 SetFiring(false);
-                ClearWeaponSFX();
+                if (weaponType != WeaponType.RocketLauncher) { ClearWeaponSFX(); }
             }
         }
 
@@ -57,6 +60,7 @@ public abstract class BaseWeapon : MonoBehaviour
         {
             if (GameManager.Instance.GetAmmo() > 0)
             {
+                if (weaponType == WeaponType.RocketLauncher) { return; }
                 PlayWeaponFireSFX();
             } else
             {
