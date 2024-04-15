@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 457973482277645902}
   - component: {fileID: 3166364781568940929}
   m_Layer: 0
-  m_Name: RangeEnemyProjectile
+  m_Name: FlyingRangeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 122337fdec0326342b88e45a6f760ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 15
+  baseSpeed: 30
   speedMult: 1
-  baseDamage: 2
+  baseDamage: 20
   isFiredByEnemy: 1
 --- !u!54 &457973482277645902
 Rigidbody:

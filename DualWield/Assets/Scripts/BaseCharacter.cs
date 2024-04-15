@@ -60,7 +60,7 @@ public class BaseCharacter : MonoBehaviour
         }
     }
 
-    public void Freeze()
+    public virtual void Freeze()
     {
         statusEffect = StatusEffect.Freeze;
         VisualFreezeEffect(1.0f);
