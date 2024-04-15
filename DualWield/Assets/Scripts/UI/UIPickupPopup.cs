@@ -8,7 +8,7 @@ public class UIPickupPopup : MonoBehaviour
 {
     [SerializeField] private GameObject UIPopup;
     [SerializeField] private GameObject pickup;
-    [SerializeField] GameManager GameManager;
+    private GameManager GameManager;
     private Camera mainCamera;
 
     [Header("Settings")]
@@ -20,7 +20,6 @@ public class UIPickupPopup : MonoBehaviour
     {
         GameManager = GameManager.Instance;
         if (!Camera.main) { Debug.LogWarning("Main Camera is missing."); }
-        if (!GameManager) { Debug.LogError("GameManager reference is missing from UIManager."); }
         mainCamera = Camera.main; // If null, there is no safety net.
     }
     
