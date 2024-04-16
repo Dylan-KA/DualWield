@@ -5,9 +5,20 @@ using UnityEngine;
 
 public class BaseEnemy : BaseCharacter
 {
+    public LayerMask playerMask;
+    public LayerMask obstructionMask;
+
+    private bool isFlickering = false;
+    private bool isPlayerSeen = false;
+    private float dmgFlickerRate = 0.15f;
+
     protected GameObject enemyModel;
+    protected Transform playerTransform;
     protected EnemyTypes enemyType;
+    protected bool isAttacking = false;
+    protected float currentAttackTimer = 0f;
     protected float fieldOfView = 350;
+
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackDamage;
     [SerializeField] protected float attackRange = 1;
@@ -15,16 +26,6 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float attackWaitTime = 1;
     [SerializeField] protected float squashDamage = 10;
     [SerializeField] protected float squashThreshHold = 2;
-    //[SerializeField] protected float rotationSpeed;
-    public LayerMask playerMask;
-    public LayerMask obstructionMask;
-    protected Transform playerTransform;
-    private bool isPlayerSeen = false;
-    [SerializeField] protected bool isAttacking = false;
-    [SerializeField] protected float currentAttackTimer = 0f;
-    private bool isFlickering = false;
-    private float dmgFlickerRate = 0.15f;
-    public float test = 0.0f;
 
     public float GetFieldOfView()
     {
