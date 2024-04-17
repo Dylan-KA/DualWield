@@ -131,7 +131,6 @@ public class BaseEnemy : BaseCharacter
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
             {
-                //LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
@@ -144,7 +143,6 @@ public class BaseEnemy : BaseCharacter
             }
             else
             {
-                //LookAtPlayer();
                 ResetAttack();
                 MoveTowardsTarget();
             }
