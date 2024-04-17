@@ -115,11 +115,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5fb3aafbb9f704f94bb31a6770ba85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  baseMovementSpeed: 3
   health: 100
   statusEffect: 0
-  Temperature: 0
+  FreezePercent: 0
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 128
   viewDistance: 100
   attackDamage: 20
   attackRange: 15
@@ -127,15 +133,6 @@ MonoBehaviour:
   attackWaitTime: 1
   squashDamage: 10
   squashThreshHold: 2
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 128
-  isAttacking: 0
-  currentAttackTimer: 0
-  test: 0
   maxFlyingHeight: 5
   projectileSpawnTransform: {fileID: 589142606214024216}
   projectile: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}

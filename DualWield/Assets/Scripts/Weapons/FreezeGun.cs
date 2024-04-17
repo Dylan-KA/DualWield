@@ -51,7 +51,7 @@ public class FreezeGun : HitScanWeapon
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().AddFreezePercent(1.0f);
+            GetHitEnemy().AddFreezePercent(2.5f);
         }
     }
 
@@ -64,7 +64,7 @@ public class FreezeGun : HitScanWeapon
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().AddFreezePercent(1.0f);
+            GetHitEnemy().AddFreezePercent(2.5f);
             if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
             {
                 GetHitEnemy().TakeDamage(5.0f);

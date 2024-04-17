@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c773e70d748d8b45ae48dcd62245539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  baseMovementSpeed: 10
   health: 100
   statusEffect: 0
-  Temperature: 0
+  FreezePercent: 0
   freezeMaterial: {fileID: 0}
   startingWeaponRight: 0
   startingWeaponLeft: 1

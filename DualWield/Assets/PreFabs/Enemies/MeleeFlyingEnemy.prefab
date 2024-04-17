@@ -261,7 +261,7 @@ Transform:
   - {fileID: 866040129436938274}
   - {fileID: 7016169176799961037}
   m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7269447939106450805
 MeshFilter:
@@ -338,10 +338,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b1464467520b142964ee656adda144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  baseMovementSpeed: 3
   health: 100
   statusEffect: 0
-  Temperature: 0
+  FreezePercent: 0
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   playerMask:
     serializedVersion: 2

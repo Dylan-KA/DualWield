@@ -13,6 +13,7 @@ public class BaseEnemy : BaseCharacter
     private bool isPlayerSeen = false;
     private float dmgFlickerRate = 0.15f;
 
+    protected float currentMovementSpeed;
     protected GameObject enemyModel;
     protected Transform playerTransform;
     protected NavMeshAgent navAgent;
@@ -65,6 +66,7 @@ public class BaseEnemy : BaseCharacter
     // Update is called once per frame
     protected virtual void Update()
     {
+        SetMovementSpeed();
         EnemyAttackAtCertainRange();
         if (isAttacking && currentAttackTimer < attackWaitTime)
         {
@@ -155,6 +157,19 @@ public class BaseEnemy : BaseCharacter
             navAgent.SetDestination(playerTransform.position);
         }
     }
+
+    // Sets the movement speed based on how frzozen the enemy is
+    protected virtual void SetMovementSpeed()
+    {
+        if (navAgent) //Ground enemies using NavMesh
+        {
+            navAgent.speed = baseMovementSpeed * (1-(FreezePercent / 100));
+        } else //Flying enemies using Vector3.MoveTowards
+        {
+            currentMovementSpeed = baseMovementSpeed * (1 - (FreezePercent / 100));
+        }
+    }
+
     public override void TakeDamage(float damageAmount)
     {
         if (health <= 0) return;

@@ -13,11 +13,11 @@ public enum StatusEffect
 
 public class BaseCharacter : MonoBehaviour
 {
-    [SerializeField] protected float movementSpeed;
+    [SerializeField] protected float baseMovementSpeed;
     [SerializeField] protected const float maxHealth = 100;
     [SerializeField] protected float health = maxHealth;
     [SerializeField] protected StatusEffect statusEffect = StatusEffect.None;
-    [SerializeField] private float FreezePercent = 0.0f;
+    [SerializeField] protected float FreezePercent = 0.0f;
     [SerializeField] protected PhysicMaterial freezeMaterial;
     protected MeshRenderer rend;
     protected Color characterColor;
