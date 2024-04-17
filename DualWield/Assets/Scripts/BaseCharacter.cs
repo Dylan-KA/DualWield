@@ -17,11 +17,10 @@ public class BaseCharacter : MonoBehaviour
     [SerializeField] protected const float maxHealth = 100;
     [SerializeField] protected float health = maxHealth;
     [SerializeField] protected StatusEffect statusEffect = StatusEffect.None;
-    [SerializeField] private float Temperature;
+    [SerializeField] private float FreezePercent = 0.0f;
     [SerializeField] protected PhysicMaterial freezeMaterial;
     protected MeshRenderer rend;
     protected Color characterColor;
-
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -49,21 +48,20 @@ public class BaseCharacter : MonoBehaviour
         return statusEffect;
     }
 
-    public virtual void TemperatureChange(float tempChange)
+    public virtual void AddFreezePercent(float freezeChange)
     {
-        Temperature += tempChange;
-        movementSpeed += Temperature/10;
-        if (movementSpeed <= 0)
+        FreezePercent += freezeChange;
+        if (FreezePercent >= 100.0f)
         {
-            movementSpeed = 0;
+            FreezePercent = 100.0f;
             Freeze();
         }
+        VisualFreezeEffect(FreezePercent);
     }
 
     public virtual void Freeze()
     {
         statusEffect = StatusEffect.Freeze;
-        VisualFreezeEffect(1.0f);
         this.gameObject.GetComponent<BoxCollider>().material = freezeMaterial;
         if (this.gameObject.GetComponent<BaseEnemy>())
         {
@@ -71,19 +69,19 @@ public class BaseCharacter : MonoBehaviour
         }
     }
 
-    // frozenPercentage of 0.0 is normal, 1.0 is fully frozen
     private void VisualFreezeEffect(float frozenPercentage)
     {
-        Color newColor = new Color(frozenPercentage, frozenPercentage, frozenPercentage);
+        float frozenFloat = frozenPercentage / 100.0f;
+        Color newColor = new Color(frozenFloat, frozenFloat, frozenFloat);
         rend.material.SetColor("_EmissionColor", newColor);
     }
 
     public void RecoverHP(float recovedAmount)
     {
         health += recovedAmount;
-        if (health > 100)
+        if (health > maxHealth)
         {
-            health = 100;
+            health = maxHealth;
         }
     }
 }

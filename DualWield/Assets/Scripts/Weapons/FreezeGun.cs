@@ -7,7 +7,8 @@ using UnityEngine;
 
 public class FreezeGun : HitScanWeapon
 {
-    
+    [SerializeField] protected float ammoPerSecond;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -18,13 +19,16 @@ public class FreezeGun : HitScanWeapon
     protected override void Update()
     {
         base.Update();
-       
+
+        //First frame of mouse release
+        if (Input.GetKeyUp(KeyCode.Mouse0)) { lineRend.enabled = false; }
     }
 
 
     public override void Fire()
     {
         base.Fire();
+        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
         switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:
@@ -47,7 +51,7 @@ public class FreezeGun : HitScanWeapon
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().TemperatureChange(-1);
+            GetHitEnemy().AddFreezePercent(1.0f);
         }
     }
 
@@ -60,10 +64,10 @@ public class FreezeGun : HitScanWeapon
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().TemperatureChange(-1f);
+            GetHitEnemy().AddFreezePercent(1.0f);
             if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
             {
-                GetHitEnemy().TakeDamage(5f);
+                GetHitEnemy().TakeDamage(5.0f);
             }
         }
     }
@@ -72,7 +76,7 @@ public class FreezeGun : HitScanWeapon
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().TemperatureChange(-1f);
+            GetHitEnemy().AddFreezePercent(1.0f);
         }
     }
 }

@@ -426,7 +426,7 @@ MonoBehaviour:
   movementSpeed: 3
   health: 100
   statusEffect: 0
-  Temperature: 0
+  FreezePercent: 0
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   viewDistance: 100
   attackDamage: 20
@@ -443,7 +443,6 @@ MonoBehaviour:
     m_Bits: 128
   isAttacking: 0
   currentAttackTimer: 0
-  test: 0
   projectileSpawnTransform: {fileID: 4773306059254048216}
   projectile: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
   projectileSpeed: 30
