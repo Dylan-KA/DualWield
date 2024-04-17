@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BaseEnemy : BaseCharacter
 {
@@ -14,6 +15,7 @@ public class BaseEnemy : BaseCharacter
 
     protected GameObject enemyModel;
     protected Transform playerTransform;
+    protected NavMeshAgent navAgent;
     protected EnemyTypes enemyType;
     protected bool isAttacking = false;
     protected float currentAttackTimer = 0f;
@@ -51,6 +53,7 @@ public class BaseEnemy : BaseCharacter
         try
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            navAgent = GetComponent<NavMeshAgent>();
             StartCoroutine(FOVRoutine());
         }
         catch
@@ -128,7 +131,7 @@ public class BaseEnemy : BaseCharacter
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
             {
-                LookAtPlayer();
+                //LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
@@ -141,7 +144,7 @@ public class BaseEnemy : BaseCharacter
             }
             else
             {
-                LookAtPlayer();
+                //LookAtPlayer();
                 ResetAttack();
                 MoveTowardsTarget();
             }
@@ -149,9 +152,9 @@ public class BaseEnemy : BaseCharacter
     }
     protected virtual void MoveTowardsTarget()
     {
-        if (playerTransform != null)
+        if (navAgent != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, movementSpeed * Time.deltaTime);
+            navAgent.SetDestination(playerTransform.position);
         }
     }
     public override void TakeDamage(float damageAmount)
