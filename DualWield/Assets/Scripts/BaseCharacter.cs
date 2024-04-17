@@ -59,7 +59,7 @@ public class BaseCharacter : MonoBehaviour
         VisualFreezeEffect(FreezePercent);
     }
 
-    public void Freeze()
+    public virtual void Freeze()
     {
         statusEffect = StatusEffect.Freeze;
         this.gameObject.GetComponent<BoxCollider>().material = freezeMaterial;
