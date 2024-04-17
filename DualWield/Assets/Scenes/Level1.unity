@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311915, g: 0.3807396, b: 0.35872662, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -111,7 +111,7 @@ NavMeshSettings:
     agentSlope: 45
     agentClimb: 0.4
     ledgeDropHeight: 0
-    maxJumpAcrossDistance: 0
+    maxJumpAcrossDistance: 10
     minRegionArea: 2
     manualCellSize: 0
     cellSize: 0.16666667
@@ -504,6 +504,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -548,6 +552,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 32
@@ -566,7 +574,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216564
+  m_Name: pb_Mesh23652
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -737,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -780,6 +792,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -1486,7 +1502,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -1494,7 +1510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 12.22
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1534,7 +1550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -1898,7 +1914,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216376
+  m_Name: pb_Mesh23460
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2644,6 +2660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2687,6 +2707,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -2826,6 +2850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2870,6 +2898,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 32
@@ -2893,6 +2925,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Name
       value: FodderEnemy (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -2937,6 +2973,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -3004,6 +3044,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3048,6 +3092,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 20
@@ -3071,6 +3119,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Name
       value: FodderEnemy (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -3115,6 +3167,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -3325,7 +3381,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216612
+  m_Name: pb_Mesh23700
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -3496,6 +3552,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3540,6 +3600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 32
@@ -3558,7 +3622,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh215876
+  m_Name: pb_Mesh22964
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -3731,7 +3795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -3779,7 +3843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: health
@@ -3878,7 +3942,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh215916
+  m_Name: pb_Mesh23002
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -4147,6 +4211,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4190,6 +4258,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -4312,6 +4384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4355,6 +4431,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -4993,6 +5073,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5037,6 +5121,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 20
@@ -5060,6 +5148,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Name
       value: FodderEnemy (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -5104,6 +5196,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -5322,6 +5418,7 @@ GameObject:
   - component: {fileID: 511604881}
   - component: {fileID: 511604880}
   - component: {fileID: 511604879}
+  - component: {fileID: 511604885}
   m_Layer: 7
   m_Name: GreyboxMap
   m_TagString: Untagged
@@ -37902,6 +37999,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &511604885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511604878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 05e577dcb7d962a48866759388f26721, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &545862481
 GameObject:
   m_ObjectHideFlags: 0
@@ -37948,6 +38075,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -37991,6 +38122,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -38545,7 +38680,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216218
+  m_Name: pb_Mesh23304
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -38710,7 +38845,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216158
+  m_Name: pb_Mesh23244
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -42243,6 +42378,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -42286,6 +42425,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -43149,7 +43292,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216088
+  m_Name: pb_Mesh23174
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -45070,7 +45213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -45118,7 +45261,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: health
@@ -45146,7 +45289,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216144
+  m_Name: pb_Mesh23230
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -45317,6 +45460,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -45360,6 +45507,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -46097,6 +46248,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -46140,6 +46295,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -46259,6 +46418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -46302,6 +46465,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -49880,7 +50047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -49888,7 +50055,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 3.65
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -49928,7 +50095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -49948,7 +50115,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216180
+  m_Name: pb_Mesh23266
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -50179,6 +50346,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1085092902}
+  - component: {fileID: 1085092903}
   m_Layer: 7
   m_Name: OutsideMap
   m_TagString: Untagged
@@ -50213,6 +50381,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1085092903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085092901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: d5e6544753371bd48bcd0503aaa184af, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1108506594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50224,6 +50422,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Name
       value: FodderEnemy (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -50269,6 +50471,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 32
@@ -50287,7 +50493,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216550
+  m_Name: pb_Mesh23638
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -50452,7 +50658,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh215852
+  m_Name: pb_Mesh22940
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -50795,6 +51001,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -50839,6 +51049,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 20
@@ -50862,6 +51076,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Name
       value: FodderEnemy (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -50906,6 +51124,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -51160,7 +51382,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh215894
+  m_Name: pb_Mesh22982
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -51497,6 +51719,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -51541,6 +51767,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 20
@@ -51559,7 +51789,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216588
+  m_Name: pb_Mesh23676
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -51808,7 +52038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -51824,7 +52054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.16
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51856,7 +52086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -51876,7 +52106,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216302
+  m_Name: pb_Mesh23388
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -52480,7 +52710,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216472
+  m_Name: pb_Mesh23560
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -52995,6 +53225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -53038,6 +53272,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -53160,6 +53398,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -53204,6 +53446,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 20
@@ -53236,6 +53482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1520803931}
+  - component: {fileID: 1520803932}
   m_Layer: 7
   m_Name: Tunnel
   m_TagString: Untagged
@@ -53260,6 +53507,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1520803932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520803930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 97ae81fada2592a47ba5391b7d74906b, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1524049386
 GameObject:
   m_ObjectHideFlags: 0
@@ -53305,6 +53582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -53348,6 +53629,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -55377,6 +55662,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -55421,6 +55710,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
       value: 32
@@ -55442,6 +55735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1622131499}
+  - component: {fileID: 1622131500}
   m_Layer: 7
   m_Name: MountainCliff
   m_TagString: Untagged
@@ -55467,13 +55761,43 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1622131500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622131498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 685bf650bd10e174cafa448ef4f7282b, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!43 &1642227632
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216490
+  m_Name: pb_Mesh23578
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -56063,6 +56387,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -56106,6 +56434,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -57555,7 +57887,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216536
+  m_Name: pb_Mesh23624
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -57720,7 +58052,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216126
+  m_Name: pb_Mesh23212
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -58029,7 +58361,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216316
+  m_Name: pb_Mesh23402
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -58202,6 +58534,7 @@ GameObject:
   - component: {fileID: 1817781280}
   - component: {fileID: 1817781279}
   - component: {fileID: 1817781278}
+  - component: {fileID: 1817781284}
   m_Layer: 7
   m_Name: Road
   m_TagString: Untagged
@@ -58556,6 +58889,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817781284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817781277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 0ce7e005cb333724886e6f4be24be2aa, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1850789199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58741,6 +59104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857617677}
+  - component: {fileID: 1857617678}
   m_Layer: 0
   m_Name: MountainCliffEnemies
   m_TagString: Untagged
@@ -58784,6 +59148,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1857617678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857617676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  m_UseGeometry: 0
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 4de2508b7d6f0324bb2c007cf9a3d949, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1001 &1870364719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58798,7 +59192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -58846,7 +59240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: health
@@ -58899,7 +59293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216636
+  m_Name: pb_Mesh23724
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -59064,7 +59458,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216272
+  m_Name: pb_Mesh23358
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -59300,7 +59694,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216194
+  m_Name: pb_Mesh23280
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -59473,7 +59867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -59481,7 +59875,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 9.23
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalPosition.y
@@ -59521,7 +59915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -59546,6 +59940,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_Name
       value: FodderEnemy (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
@@ -59590,6 +59988,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
@@ -59836,7 +60238,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh216346
+  m_Name: pb_Mesh23430
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -60007,6 +60409,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FodderEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 996841942765347328, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -60050,6 +60456,10 @@ PrefabInstance:
     - target: {fileID: 996841942765347332, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 996841942851717684, guid: 959dbc297a801cd4db094becc581da47, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4130564927138700597, guid: 959dbc297a801cd4db094becc581da47, type: 3}
       propertyPath: viewDistance
