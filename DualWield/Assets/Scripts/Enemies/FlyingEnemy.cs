@@ -11,6 +11,33 @@ public class FlyingEnemy : BaseEnemy
         base.Start();
     }
 
+    protected override void EnemyAttackAtCertainRange()
+    {
+        if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
+        {
+            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
+                (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
+            {
+                LookAtPlayer();
+                if (!isAttacking)
+                {
+                    isAttacking = true;
+                }
+                else if (isAttacking && currentAttackTimer >= attackWaitTime)
+                {
+                    Attack();
+                    ResetAttackWaitTime();
+                }
+            }
+            else
+            {
+                LookAtPlayer();
+                ResetAttack();
+                MoveTowardsTarget();
+            }
+        }
+    }
+
     protected override void MoveTowardsTarget()
     {
         if (playerTransform != null && statusEffect != StatusEffect.Freeze)
