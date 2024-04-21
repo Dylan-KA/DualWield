@@ -51,5 +51,6 @@ public class FlyingEnemy : BaseEnemy
     {
         base.Freeze();
         gameObject.AddComponent<Rigidbody>();
+        gameObject.GetComponent<Collider>().isTrigger = false;
     }
 }
