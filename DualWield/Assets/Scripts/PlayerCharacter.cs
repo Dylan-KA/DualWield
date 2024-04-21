@@ -15,8 +15,8 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private BaseWeapon FreezeGunPrefab;
     [SerializeField] private BaseWeapon RocketGunPrefab;
     [SerializeField] private Image UIPlayerHealth;
-    private BaseWeapon leftWeapon;
-    private BaseWeapon rightWeapon;
+    public BaseWeapon leftWeapon { get; private set; }
+    public BaseWeapon rightWeapon { get; private set; }
     
     public Camera playerCamera;
     public float gravity = 10f;
@@ -45,6 +45,20 @@ public class PlayerCharacter: BaseCharacter
 
         EquipWeapon(startingWeaponRight, Hand.Right);
         EquipWeapon(startingWeaponLeft, Hand.Left);
+    }
+
+    public void SetMouseLocked(bool locked)
+    {
+        if (locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public override void TakeDamage(float damageAmount)
@@ -136,7 +150,7 @@ public class PlayerCharacter: BaseCharacter
 
         characterController.Move(velocity * Time.deltaTime);
         characterController.Move(moveDirection * Time.deltaTime);
-        if (canMove)
+        if (canMove && Cursor.visible == false)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookspeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);

@@ -4,4 +4,5 @@ public enum WeaponType
     WindGun,
     FreezeGun,
     RocketLauncher,
+    None,
 }
