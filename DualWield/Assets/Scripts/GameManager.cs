@@ -68,23 +68,22 @@ public class GameManager : MonoBehaviour
     }
     
     /// <summary>
-    /// Refills ammo to amount%. Use this if you want a custom amount of ammo instead.
+    /// Refills ammo +amount%. Use this if you want a custom amount of ammo instead.
     /// Saves amount in memory (currentAmmoAmount).
     /// </summary>
-    /// <param name="amount">Will set the currentAmmoAmount to amount.</param>
-    public void RefillAmmoCustom(float amount)
+    /// <param name="amount">Will add amount to the currentAmmoAmount.</param>
+    public bool RefillAmmoCustom(float amount)
     {
-        currentAmmoAmount = amount;
-        SetAmmoDisplay(currentAmmoAmount);
-    }
-    public void RefillAddAmmoCustom(float amount)
-    {
-        currentAmmoAmount = currentAmmoAmount + amount;
-        if (currentAmmoAmount > 100)
+        if (currentAmmoAmount >= 100) // If we're already at max
+        {
+            return false;
+        }
+        if ((currentAmmoAmount += amount) >= 100) // If adding goes over max
         {
             currentAmmoAmount = 100;
         }
         SetAmmoDisplay(currentAmmoAmount);
+        return true;
     }
     
     /// <summary>

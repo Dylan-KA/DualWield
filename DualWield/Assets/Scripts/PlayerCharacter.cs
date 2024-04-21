@@ -153,7 +153,7 @@ public class PlayerCharacter: BaseCharacter
                 Vector3 directionFromPlayer = EnemyCollider.transform.position - transform.position;
                 directionFromPlayer.Normalize();
                 EnemyCollider.GetComponent<Rigidbody>().AddForce(50f * directionFromPlayer, ForceMode.Impulse);
-                GameManager.Instance.RefillAddAmmoCustom(5);
+                GameManager.Instance.RefillAmmoCustom(5);
             }
         }
 
