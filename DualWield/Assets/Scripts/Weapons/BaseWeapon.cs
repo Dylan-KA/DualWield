@@ -33,7 +33,19 @@ public abstract class BaseWeapon : MonoBehaviour
                 if (canFire)
                 {
                     Fire();
-                    if (weaponType == WeaponType.RocketLauncher) { PlayWeaponFireSFX(); }
+                    if (weaponType == WeaponType.RocketLauncher)
+                    {
+                        if (weaponType == otherWeaponType)
+                        {
+                            if (hand == Hand.Right)
+                            {
+                                PlayWeaponFireSFX();
+                            }
+                        } else
+                        {
+                            PlayWeaponFireSFX();
+                        }
+                    }
                 }
             }
             else
