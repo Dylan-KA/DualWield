@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEditor;
-using UnityEditor.Timeline;
 using UnityEngine;
 
 public class FreezeGun : HitScanWeapon
