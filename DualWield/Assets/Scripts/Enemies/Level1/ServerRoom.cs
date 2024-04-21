@@ -28,7 +28,7 @@ public class ServerRoom : BaseEnemy
         {
             currentHealth = base.health; 
         }
-        if (currentHealth <= 100)
+        if (currentHealth <= 125)
         {
             door.SetActive(false);
             

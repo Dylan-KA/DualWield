@@ -20,17 +20,18 @@ public class PickUpResource : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
+            bool success = false; // default
             switch (resourceType)
             {
                 case ResourceType.ammo:
-                    gameManager.RefillAmmoCustom(resource);
+                    success = gameManager.RefillAmmoCustom(resource);
                     break;
                 case ResourceType.health:
                     other.gameObject.GetComponent<BaseCharacter>().RecoverHP(resource);
                     break;
             }
             
-            Destroy(this.gameObject);
+            if (success) { Destroy(this.gameObject); }
         }
     }
 }
