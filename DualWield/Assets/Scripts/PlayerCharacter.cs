@@ -36,6 +36,9 @@ public class PlayerCharacter: BaseCharacter
 
     [SerializeField] private LayerMask groundlayer;
     private bool isGrounded;
+
+    private float cooldownTime = 2f;
+    private float lastUsedTime;
     
     protected override void Start()
     {
@@ -161,15 +164,23 @@ public class PlayerCharacter: BaseCharacter
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //May need to implement a cooldown for this.
-            Collider[] colliders =  Physics.OverlapSphere(transform.position, 3, LayerMask.GetMask("Enemy"));
-            foreach (Collider EnemyCollider in colliders)
+            if (Time.time - lastUsedTime >= cooldownTime)
             {
-                Vector3 directionFromPlayer = EnemyCollider.transform.position - transform.position;
-                directionFromPlayer.Normalize();
-                EnemyCollider.GetComponent<Rigidbody>().AddForce(50f * directionFromPlayer, ForceMode.Impulse);
-                GameManager.Instance.RefillAmmoCustom(5);
+                Collider[] colliders =  Physics.OverlapSphere(transform.position, 3, LayerMask.GetMask("Enemy"));
+                foreach (Collider EnemyCollider in colliders)
+                {
+                    Vector3 directionFromPlayer = EnemyCollider.transform.position - transform.position;
+                    directionFromPlayer.Normalize();
+                    EnemyCollider.GetComponent<Rigidbody>().AddForce(50f * directionFromPlayer, ForceMode.Impulse);
+                    GameManager.Instance.RefillAmmoCustom(5);
+                    
+                }
+
+                lastUsedTime = Time.time;
             }
         }
+        
+        
 
         // firing
         if (Input.GetKeyDown(KeyCode.Mouse0)) //True on first frame of mouse click
