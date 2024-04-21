@@ -15,6 +15,7 @@ public class PlayerCharacter: BaseCharacter
     [SerializeField] private BaseWeapon FreezeGunPrefab;
     [SerializeField] private BaseWeapon RocketGunPrefab;
     [SerializeField] private Image UIPlayerHealth;
+    private Crosshair crosshair;
     public BaseWeapon leftWeapon { get; private set; }
     public BaseWeapon rightWeapon { get; private set; }
     
@@ -45,9 +46,10 @@ public class PlayerCharacter: BaseCharacter
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
         EquipWeapon(startingWeaponRight, Hand.Right);
         EquipWeapon(startingWeaponLeft, Hand.Left);
+        crosshair = FindObjectOfType<Crosshair>();
+        crosshair.UpdateCrosshair(leftWeapon.GetWeaponType(), rightWeapon.GetWeaponType());
     }
 
     public void SetMouseLocked(bool locked)
@@ -123,6 +125,8 @@ public class PlayerCharacter: BaseCharacter
             rightWeapon.SetOtherWeaponType(leftWeapon.GetWeaponType());
         }
 
+        if (crosshair)
+            crosshair.UpdateCrosshair(leftWeapon.GetWeaponType(), rightWeapon.GetWeaponType());
     }
     
     void Update()
