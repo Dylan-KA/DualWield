@@ -19,7 +19,7 @@ public abstract class HitScanWeapon : BaseWeapon
         
         lineRend.enabled = true;
         
-        if (Physics.Raycast(transform.parent.position, transform.TransformDirection(Vector3.forward), out hit, 500f, LayerMask.GetMask("Enemy")))
+        if (Physics.Raycast(transform.parent.position, transform.TransformDirection(Vector3.forward), out hit, 500f, LayerMask.GetMask("Enemy", "Environment")))
         {
             if (hit.transform.CompareTag("Enemy"))
             {
