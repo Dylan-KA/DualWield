@@ -32,6 +32,7 @@ public abstract class BaseWeapon : MonoBehaviour
             {
                 if (canFire)
                 {
+                    
                     Fire();
                     if (weaponType == WeaponType.RocketLauncher)
                     {
