@@ -357,7 +357,7 @@ MonoBehaviour:
   squashDamage: 10
   squashThreshHold: 2
   maxFlyingHeight: 5
-  diveSpeed: 7
+  diveSpeed: 55
   returnSpeed: 5
   velocity: {x: 0, y: 0, z: 0}
   attackHitRange: 1
