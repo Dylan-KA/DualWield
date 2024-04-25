@@ -35,6 +35,7 @@ public class MeleeFlyingEnemy : FlyingEnemy
             transform.position = Vector3.MoveTowards(transform.position, initialPosition, returnSpeed * Time.deltaTime);
             yield return null;
         }
+        ResetAttackWaitTime();
         isDiving = false;
     }
     void OnTriggerEnter(Collider other)

@@ -16,7 +16,6 @@ public class BaseEnemy : BaseCharacter
     protected float currentMovementSpeed;
     protected GameObject enemyModel;
     protected Transform playerTransform;
-    protected NavMeshAgent navAgent;
     protected EnemyTypes enemyType;
     protected bool isAttacking = false;
     protected float currentAttackTimer = 0f;
@@ -54,7 +53,6 @@ public class BaseEnemy : BaseCharacter
         try
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            navAgent = GetComponent<NavMeshAgent>();
             StartCoroutine(FOVRoutine());
         }
         catch
@@ -66,7 +64,6 @@ public class BaseEnemy : BaseCharacter
     // Update is called once per frame
     protected virtual void Update()
     {
-        SetMovementSpeed();
         EnemyAttackAtCertainRange();
         if (isAttacking && currentAttackTimer < attackWaitTime)
         {
@@ -84,6 +81,14 @@ public class BaseEnemy : BaseCharacter
             TakeDamage(squashDamage);   
         }
     }
+
+    // Implemented in enemies ground/flying
+    protected virtual void EnemyAttackAtCertainRange() { }
+    protected virtual void MoveTowardsTarget() { }
+
+    // Implemented in the individual enemy script
+    protected virtual void Attack() { }
+
     private IEnumerator FOVRoutine()
     {
         float delay = 0.2f;
@@ -95,8 +100,10 @@ public class BaseEnemy : BaseCharacter
             FieldOfViewCheck();
         }
     }
+
     private void FieldOfViewCheck()
     {
+        Debug.Log("FOV");
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, viewDistance, playerMask);
 
         if (rangeChecks.Length != 0)
@@ -126,48 +133,10 @@ public class BaseEnemy : BaseCharacter
             isPlayerSeen = false;
         }   
     }
-    protected virtual void EnemyAttackAtCertainRange()
-    {
-        if (isPlayerSeen && statusEffect != StatusEffect.Freeze)
-        {
-            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
-                (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
-            {
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                }
-                else if (isAttacking && currentAttackTimer >= attackWaitTime)
-                {
-                    Attack();
-                    ResetAttackWaitTime();
-                }
-            }
-            else
-            {
-                ResetAttack();
-                MoveTowardsTarget();
-            }
-        }
-    }
-    protected virtual void MoveTowardsTarget()
-    {
-        if (navAgent != null)
-        {
-            navAgent.SetDestination(playerTransform.position);
-        }
-    }
 
-    // Sets the movement speed based on how frzozen the enemy is
-    protected virtual void SetMovementSpeed()
+    protected virtual void LookAtPlayer()
     {
-        if (navAgent) //Ground enemies using NavMesh
-        {
-            navAgent.speed = baseMovementSpeed * (1-(FreezePercent / 100));
-        } else //Flying enemies using Vector3.MoveTowards
-        {
-            currentMovementSpeed = baseMovementSpeed * (1 - (FreezePercent / 100));
-        }
+        transform.LookAt(playerTransform);
     }
 
     public override void TakeDamage(float damageAmount)
@@ -184,37 +153,14 @@ public class BaseEnemy : BaseCharacter
             isFlickering = true;
         }
     }
-    protected bool IsAttackingValid()
-    {
-        return isAttacking && currentAttackTimer >= attackWaitTime;
-    }
-    protected virtual void LookAtPlayer()
-    {
-        transform.LookAt(playerTransform);
-    }
-    protected virtual void Attack()
-    {
-        DamagePlayer();
-    }
-    protected void DamagePlayer()
-    {
-        playerTransform.gameObject.GetComponentInParent<BaseCharacter>().TakeDamage(attackDamage);
-    }
-    protected void ResetAttackWaitTime()
-    {
-        currentAttackTimer = 0;
-    }
-    protected void ResetAttack()
-    {
-        isAttacking = false;
-        currentAttackTimer = 0f;
-    }
+
     private void RedDamageFlicker()
     {
         Color newColor = new Color(1.0f, 0.0f, 0.0f);
         rend.material.SetColor("_Color", newColor);
         Invoke(nameof(ResetDamageFlicker), dmgFlickerRate);
     }
+
     private void ResetDamageFlicker()
     {
         rend.material.SetColor("_Color", characterColor);
@@ -229,5 +175,26 @@ public class BaseEnemy : BaseCharacter
     public void SetSquashDamage(float newDamge)
     {
         squashDamage = newDamge;
+    }
+
+    protected void DamagePlayer()
+    {
+        playerTransform.gameObject.GetComponentInParent<BaseCharacter>().TakeDamage(attackDamage);
+    }
+
+    protected bool IsAttackingValid()
+    {
+        return isAttacking && currentAttackTimer >= attackWaitTime;
+    }
+
+    protected void ResetAttack()
+    {
+        isAttacking = false;
+        currentAttackTimer = 0f;
+    }
+
+    protected void ResetAttackWaitTime()
+    {
+        currentAttackTimer = 0;
     }
 }
