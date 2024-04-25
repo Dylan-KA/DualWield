@@ -29,7 +29,6 @@ public class GroundEnemy : BaseEnemy
     {
         if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
         {
-            Debug.Log("Player seen");
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
             {
@@ -52,12 +51,55 @@ public class GroundEnemy : BaseEnemy
 
     protected override void MoveTowardsTarget()
     {
-        navAgent.SetDestination(playerTransform.position);
+        if (navAgent.enabled != false)
+        {
+            navAgent.SetDestination(playerTransform.position);
+        }
+        else
+        {
+            StartCoroutine(ResetNavMesh());
+        }
     }
 
     // Sets the movement speed based on how frzozen the enemy is
     protected virtual void SetMovementSpeed()
     {
         navAgent.speed = baseMovementSpeed * (1 - (FreezePercent / 100));
+    }
+
+    public void PushEnemy()
+    {
+        navAgent.enabled = false;
+        StopCoroutine(ResetNavMesh());
+    }
+
+    private IEnumerator ResetNavMesh()
+    {
+        float delay = 0.65f;
+        WaitForSeconds wait = new(delay);
+        yield return wait;
+        Ray ray = new(transform.position, Vector3.down);
+        if (Physics.Raycast(ray, out RaycastHit hit, 1, obstructionMask))
+        {
+            if (NavMesh.SamplePosition(hit.point, out _, 1.0f, NavMesh.AllAreas))
+            {
+                if (!navAgent.enabled)
+                {
+                    navAgent.enabled = true;
+                    navAgent.SetDestination(transform.position);
+                }
+            }
+        }
+    }
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+
+    }
+
+    protected void OnCollisionExit(Collision collision)
+    {
+        
     }
 }

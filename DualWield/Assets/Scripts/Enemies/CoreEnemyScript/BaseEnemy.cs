@@ -101,7 +101,7 @@ public class BaseEnemy : BaseCharacter
 
     private IEnumerator FOVRoutine()
     {
-        float delay = 0.2f;
+        float delay = 2f;
         WaitForSeconds wait = new(delay);
 
         while (true)
@@ -113,7 +113,6 @@ public class BaseEnemy : BaseCharacter
 
     private void FieldOfViewCheck()
     {
-        Debug.Log("FOV");
         Collider[] rangeChecks = Physics.OverlapSphere(transform.position, viewDistance, playerMask);
 
         if (rangeChecks.Length != 0)
