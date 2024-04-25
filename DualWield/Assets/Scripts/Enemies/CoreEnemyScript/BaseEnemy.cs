@@ -61,6 +61,16 @@ public class BaseEnemy : BaseCharacter
         }
     }
 
+    private void OnEnable()
+    {
+        StartCoroutine(FOVRoutine());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
