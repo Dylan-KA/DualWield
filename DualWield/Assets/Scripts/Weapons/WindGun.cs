@@ -93,6 +93,14 @@ public class WindGun : ParticleWeapon
                     Vector3 directionFromPlayer = Enemy.gameObject.transform.position - player.gameObject.transform.position;
                     directionFromPlayer.Normalize();
                     enemyRb.AddForce(multiplier * baseWindPower * directionFromPlayer, ForceMode.Impulse);
+                    try
+                    {
+                        Enemy.GetComponent<GroundEnemy>().PushEnemy();
+                    }
+                    catch
+                    {
+                        Debug.Log("Enemy Pushed error");
+                    }
                 }
             } 
         }

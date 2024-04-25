@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankEnemy : BaseEnemy
+public class TankEnemy : GroundEnemy
 {
     protected override void Start()
     {

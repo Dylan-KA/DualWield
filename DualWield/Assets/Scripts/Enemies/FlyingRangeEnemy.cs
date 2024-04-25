@@ -10,5 +10,6 @@ public class FlyingRangeEnemy : FlyingEnemy
     protected override void Attack()
     {
         Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        ResetAttackWaitTime();
     }
 }

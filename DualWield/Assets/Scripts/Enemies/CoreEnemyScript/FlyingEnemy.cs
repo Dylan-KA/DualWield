@@ -11,6 +11,11 @@ public class FlyingEnemy : BaseEnemy
         base.Start();
     }
 
+    protected override void Update()
+    {
+        base.Update();
+    }
+
     protected override void EnemyAttackAtCertainRange()
     {
         if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
@@ -26,7 +31,6 @@ public class FlyingEnemy : BaseEnemy
                 else if (isAttacking && currentAttackTimer >= attackWaitTime)
                 {
                     Attack();
-                    ResetAttackWaitTime();
                 }
             }
             else
@@ -37,12 +41,15 @@ public class FlyingEnemy : BaseEnemy
             }
         }
     }
-
+    protected virtual void SetMovementSpeed()
+    {
+        currentMovementSpeed = baseMovementSpeed * (1 - (FreezePercent / 100));
+    }
     protected override void MoveTowardsTarget()
     {
         if (playerTransform != null && statusEffect != StatusEffect.Freeze)
         {
-            Vector3 flyingDistination = new Vector3(playerTransform.position.x, maxFlyingHeight + playerTransform.position.y, playerTransform.position.y);
+            Vector3 flyingDistination = new (playerTransform.position.x, maxFlyingHeight + playerTransform.position.y, playerTransform.position.y);
             transform.position = Vector3.MoveTowards(transform.position, flyingDistination, currentMovementSpeed * Time.deltaTime);
         }
     }

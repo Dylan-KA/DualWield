@@ -21,6 +21,11 @@ public class BaseCharacter : MonoBehaviour
     protected MeshRenderer rend;
     protected Color characterColor;
 
+    protected virtual void Awake()
+    {
+
+    }
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
