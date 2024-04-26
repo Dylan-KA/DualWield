@@ -18,10 +18,10 @@ public class WindGun : ParticleWeapon
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        player = FindObjectOfType<PlayerCharacter>();
+        playerCamera = FindObjectOfType<Camera>();
         //Due to human error/more consistency to register
-        maxCameraXRotation = player.lookXLimit-1;
+        maxCameraXRotation = player.lookXLimit - 1;
     }
 
     protected override void Update()
