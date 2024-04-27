@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeEnemy : BaseEnemy
+public class RangeEnemy : GroundEnemy
 {
     [SerializeField] private Transform projectileSpawnTransform;
     [SerializeField] private GameObject projectile;
