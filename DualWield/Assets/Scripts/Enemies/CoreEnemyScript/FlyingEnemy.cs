@@ -16,6 +16,17 @@ public class FlyingEnemy : BaseEnemy
         base.Update();
     }
 
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+
+        if (collision.gameObject.CompareTag("Floor") && statusEffect == StatusEffect.Freeze)
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            TakeDamage(squashDamage);
+        }
+    }
+
     protected override void EnemyAttackAtCertainRange()
     {
         if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)

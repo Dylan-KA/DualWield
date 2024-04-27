@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 457973482277645902}
   - component: {fileID: 3166364781568940929}
   m_Layer: 0
-  m_Name: FlyingRangeEnemy
+  m_Name: FlyingRangeProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

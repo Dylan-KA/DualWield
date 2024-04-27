@@ -5,11 +5,11 @@ using UnityEngine;
 public class FlyingRangeEnemy : FlyingEnemy
 {
     [SerializeField] private Transform projectileSpawnTransform;
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject projectilePrefab;
 
     protected override void Attack()
     {
-        Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        Instantiate(projectilePrefab, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
         ResetAttackWaitTime();
     }
 }

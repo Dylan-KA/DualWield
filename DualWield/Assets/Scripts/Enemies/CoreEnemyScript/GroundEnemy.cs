@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class GroundEnemy : BaseEnemy
 {
     protected NavMeshAgent navAgent;
+    private bool isPushed = false;
 
     protected override void Start()
     {
@@ -23,6 +24,18 @@ public class GroundEnemy : BaseEnemy
     protected override void Update()
     {
         base.Update();
+    }
+
+    protected override void OnCollisionEnter(Collision collision)
+    {
+        base.OnCollisionEnter(collision);
+
+        if (collision.relativeVelocity.magnitude > squashThreshHold && collision.gameObject.CompareTag("Untagged") && isPushed)
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            TakeDamage(squashDamage);
+            isPushed = false;
+        }
     }
 
     protected override void EnemyAttackAtCertainRange()
@@ -80,6 +93,7 @@ public class GroundEnemy : BaseEnemy
     public void PushEnemy()
     {
         navAgent.enabled = false;
+        isPushed = true;
         StopCoroutine(ResetNavMesh());
     }
 
@@ -100,16 +114,6 @@ public class GroundEnemy : BaseEnemy
                 }
             }
         }
-    }
-
-    protected override void OnCollisionEnter(Collision collision)
-    {
-        base.OnCollisionEnter(collision);
-
-    }
-
-    protected void OnCollisionExit(Collision collision)
-    {
-        
+        isPushed = false;
     }
 }

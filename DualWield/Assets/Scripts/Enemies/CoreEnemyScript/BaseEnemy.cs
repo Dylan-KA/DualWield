@@ -84,18 +84,11 @@ public class BaseEnemy : BaseCharacter
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-
-        if (collision.relativeVelocity.magnitude > squashThreshHold && collision.gameObject.CompareTag("Untagged"))
-        {
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            TakeDamage(squashDamage);   
-        }
     }
 
     // Implemented in enemies ground/flying
     protected virtual void EnemyAttackAtCertainRange() { }
     protected virtual void MoveTowardsTarget() { }
-
     // Implemented in the individual enemy script
     protected virtual void Attack() { }
 
