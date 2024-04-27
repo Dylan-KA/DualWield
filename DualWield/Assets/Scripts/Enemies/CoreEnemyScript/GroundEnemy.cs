@@ -32,6 +32,7 @@ public class GroundEnemy : BaseEnemy
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
                 (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
             {
+                LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
@@ -43,10 +44,19 @@ public class GroundEnemy : BaseEnemy
             }
             else
             {
+                LookAtPlayer();
                 ResetAttack();
                 MoveTowardsTarget();
             }
         }
+    }
+
+    protected override void LookAtPlayer()
+    {
+        transform.LookAt(playerTransform);
+        Vector3 currentRotation = transform.eulerAngles;
+        currentRotation.x = 0f;
+        transform.eulerAngles = currentRotation;
     }
 
     protected override void MoveTowardsTarget()
