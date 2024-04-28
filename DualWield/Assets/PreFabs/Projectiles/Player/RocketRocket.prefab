@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7886936718939716577}
   - component: {fileID: 3317579496633857605}
   m_Layer: 8
-  m_Name: RocketWind
+  m_Name: RocketRocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8400576231693495393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 20
-  speedMult: 3
-  baseDamage: 50
+  speedMult: 0.6
+  baseDamage: 100
   isFiredByEnemy: 0
-  explosiveRange: 6
+  explosiveRange: 9
+  explosionPrefab: {fileID: 198357973136645638, guid: 75a392c0908c45643a18825a3df3af49, type: 3}
