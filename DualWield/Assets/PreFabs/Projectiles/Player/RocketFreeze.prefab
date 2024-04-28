@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7886936718939716577}
   - component: {fileID: 3317579496633857605}
   m_Layer: 8
-  m_Name: RocketFlame
+  m_Name: RocketFreeze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,3 +132,4 @@ MonoBehaviour:
   baseDamage: 50
   isFiredByEnemy: 0
   explosiveRange: 6
+  explosionPrefab: {fileID: 198357973136645638, guid: 75a392c0908c45643a18825a3df3af49, type: 3}

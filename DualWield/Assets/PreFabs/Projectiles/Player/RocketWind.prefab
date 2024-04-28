@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7886936718939716577}
   - component: {fileID: 3317579496633857605}
   m_Layer: 8
-  m_Name: RocketFreeze
+  m_Name: RocketWind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 20
-  speedMult: 1
+  speedMult: 3
   baseDamage: 50
   isFiredByEnemy: 0
-  applyFreezing: 1
   explosiveRange: 6
+  explosionPrefab: {fileID: 198357973136645638, guid: 75a392c0908c45643a18825a3df3af49, type: 3}

@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8469150828523419308}
   - component: {fileID: 1810425974116196070}
   - component: {fileID: 7886936718939716577}
-  - component: {fileID: 3317579496633857605}
+  - component: {fileID: 4566046122037690725}
   m_Layer: 8
-  m_Name: RocketRocket
+  m_Name: RocketFlame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8400576231693495393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &3317579496633857605
+--- !u!114 &4566046122037690725
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 20
-  speedMult: 0.6
-  baseDamage: 100
+  speedMult: 1
+  baseDamage: 50
   isFiredByEnemy: 0
-  explosiveRange: 9
+  explosiveRange: 6
+  explosionPrefab: {fileID: 198357973136645638, guid: 1fe0142b59c84e041be01a71139c9693, type: 3}
