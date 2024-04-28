@@ -487,12 +487,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handOffset: {x: 0.5, y: -0.35, z: 0.8}
   weaponType: 1
-  roundsPerMinute: 100
+  roundsPerMinute: 900
   weaponEmptySound: {fileID: 5291053269580226556}
   weaponFireSound: {fileID: 9114793080312682140}
   weaponFiringSound: {fileID: 7351466167822645370}
   ListofEnemies: []
-  ammoPerSecond: 3
+  ammoPerSecond: 50
   NormalRangeParticles: {fileID: 3024551849334972390}
   ExtendedRangeParticles: {fileID: 0}
   WeaponParticles: {fileID: 3024551849334972390}

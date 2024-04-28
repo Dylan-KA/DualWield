@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class FreezeGun : HitScanWeapon
 {
-    [SerializeField] protected float ammoPerSecond;
-
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -27,7 +25,6 @@ public class FreezeGun : HitScanWeapon
     public override void Fire()
     {
         base.Fire();
-        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
         switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:
