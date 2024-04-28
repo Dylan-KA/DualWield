@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7c55d3eb-df09-46bf-860d-cbbc0a400599" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/BaseWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;WhackEnemy-&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Level2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -118,6 +119,8 @@
       <workItem from="1712753453417" duration="5041000" />
       <workItem from="1712821427299" duration="5831000" />
       <workItem from="1713749029012" duration="482000" />
+      <workItem from="1714031983605" duration="2356000" />
+      <workItem from="1714114385326" duration="626000" />
     </task>
     <servers />
   </component>
