@@ -135,7 +135,7 @@ MonoBehaviour:
   squashThreshHold: 2
   maxFlyingHeight: 5
   projectileSpawnTransform: {fileID: 589142606214024216}
-  projectile: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
+  projectilePrefab: {fileID: 7263172056655484054, guid: ee3af580214e9724c8d0a50a7adafa4f, type: 3}
 --- !u!1 &977627224761374359
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,12 +5,14 @@ using UnityEngine;
 
 public abstract class HitScanWeapon : BaseWeapon
 {
+    [SerializeField] protected float ammoPerSecond;
     [SerializeField] protected LineRenderer lineRend;
     private float _nextFireTime;
 
     public override void Fire()
     {
         base.Fire();
+        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime * (3600f / roundsPerMinute));
     }
 
     public BaseEnemy GetHitEnemy()

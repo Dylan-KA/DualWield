@@ -183,7 +183,13 @@ public class PlayerCharacter: BaseCharacter
         
 
         // firing
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //True on first frame of mouse click
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q)) // stop firing when swapping weapons
+        {
+            leftWeapon.SetFiring(false);
+            rightWeapon.SetFiring(false);
+            isFlying = false;
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0)) //True on first frame of mouse click
         {
             //Debug.Log("Firing");
             leftWeapon.SetFiring(true);
