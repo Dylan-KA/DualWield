@@ -194,6 +194,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7955216632550757811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336491838915822305}
+  m_Layer: 3
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336491838915822305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955216632550757811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.071, z: 0.515}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8766485580880972849}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8766485580880972853
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,7 +238,7 @@ GameObject:
   - component: {fileID: 8766485580880972855}
   - component: {fileID: 8766485580880972848}
   - component: {fileID: 3278761031660881437}
-  - component: {fileID: 5561691199968490240}
+  - component: {fileID: -4536706849049509449}
   - component: {fileID: 6539471664427866905}
   m_Layer: 3
   m_Name: TankEnemy
@@ -228,6 +259,7 @@ Transform:
   m_LocalScale: {x: 3.4636, y: 3.8661, z: 3.4938014}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1336491838915822305}
   - {fileID: 8766485581059367936}
   - {fileID: 779083664942915607}
   - {fileID: 3365624276477053588}
@@ -313,7 +345,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5561691199968490240
+--- !u!114 &-4536706849049509449
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -322,11 +354,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8766485580880972853}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f768b299365fe441b1b465f9d92f206, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a9c3784282313c4680721f3be5bdb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 2
-  health: 300
+  baseMovementSpeed: 6
+  health: 500
   statusEffect: 0
   FreezePercent: 0
   freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
@@ -337,12 +369,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   viewDistance: 100
-  attackDamage: 20
-  attackRange: 4.5
+  attackDamage: 0
+  attackRange: 20
   extendedAttackRange: 1
-  attackWaitTime: 2
+  attackWaitTime: 3
   squashDamage: 30
-  squashThreshHold: 200
+  squashThreshHold: 2000
+  projectileSpawnTransform: {fileID: 1336491838915822305}
+  projectile: {fileID: 7263172056655484054, guid: d234828c4bd75474fb72842671ca28ea, type: 3}
 --- !u!195 &6539471664427866905
 NavMeshAgent:
   m_ObjectHideFlags: 0
