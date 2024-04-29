@@ -53,7 +53,10 @@ public class FreezeGun : HitScanWeapon
 
     private void FreezeAndRocket()
     {
-        throw new System.NotImplementedException();
+        if (GetHitEnemy())
+        {
+            GetHitEnemy().AddFreezePercent(2.5f);
+        }
     }
 
     private void FreezeAndFreeze()
