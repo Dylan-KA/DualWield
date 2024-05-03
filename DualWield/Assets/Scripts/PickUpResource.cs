@@ -24,14 +24,22 @@ public class PickUpResource : MonoBehaviour
             switch (resourceType)
             {
                 case ResourceType.ammo:
-                    success = gameManager.RefillAmmoCustom(resource);
+                    success = gameManager.RefillAmmoCustom(100f); // used to be RefillAmmoCustom(resource)
                     break;
                 case ResourceType.health:
                     other.gameObject.GetComponent<BaseCharacter>().RecoverHP(resource);
                     break;
             }
             
-            if (success) { Destroy(this.gameObject); }
+            if (success) {
+                gameObject.SetActive(false);
+                Invoke("Respawn", 30f);
+            }
         }
+    }
+
+    private void Respawn()
+    {
+        gameObject.SetActive(true);
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ExplosiveProjectile : Projectile
 {
     [SerializeField] private float explosiveRange;
+    [SerializeField] private ParticleSystem explosionPrefab;
+    [SerializeField] private GameObject molotovPrefab;
 
     protected override void OnImpact(Collider _)
     {
@@ -32,6 +34,19 @@ public class ExplosiveProjectile : Projectile
                 if (gameObject.name == "RocketFreeze(Clone)") 
                     enemy.AddFreezePercent(damagePercent * 50f);
             }
+            
+            if (molotovPrefab)
+            {
+                if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo, 4f, LayerMask.GetMask("Environment")))
+                {
+                    Debug.Log("did u work");
+                    Instantiate<GameObject>(molotovPrefab, hitInfo.point + Vector3.up * 0.1f, Quaternion.identity);
+                }
+
+            }
+            
+            ParticleSystem explosion = Instantiate<ParticleSystem>(explosionPrefab, transform.position, new Quaternion());
+            Destroy(explosion, 1.9f);
         }
     }
 }

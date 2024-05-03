@@ -40,7 +40,7 @@ public class WaveManager : MonoBehaviour
     {
         isArenaStarted = true;
         EnableCurrentWave();
-        ToggleDoor();
+        ToggleDoor(false);
     }
 
     private void NextWave()
@@ -60,7 +60,7 @@ public class WaveManager : MonoBehaviour
     {
         isArenaStarted = false;
         DisableAllWaves();
-        ToggleDoor();
+        ToggleDoor(true);
     }
 
     private void EnableCurrentWave()
@@ -76,7 +76,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    private void ToggleDoor()
+    private void ToggleDoor(bool isOpen)
     {
         if (doorList.Count == 0) Debug.Log($"Door Missing in Arena Script: {gameObject.name}");
 
@@ -85,7 +85,7 @@ public class WaveManager : MonoBehaviour
             try
             {
                 // Animator string name is not final nor if it is a trigger/boolean
-                door.GetComponent<Animator>().SetTrigger("function");
+                door.GetComponent<Animator>().SetBool("isOpen", isOpen);
             }
             catch
             {

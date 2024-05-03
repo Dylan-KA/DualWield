@@ -34,8 +34,9 @@ public class WindGun : ParticleWeapon
     /// </summary>
     public override void Fire()
     {
+        base.Fire();
+
         ManagePlayerFlying();
-        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
         switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:
