@@ -3,7 +3,62 @@ guid: 959e4aa94f12ab14097b2ba3b41a86bc
 ModelImporter:
   serializedVersion: 22103
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Accent
+    second: {fileID: 2100000, guid: 3b7bd024c109d26479acd2ea5ca31db4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blank Material
+    second: {fileID: 2100000, guid: 9867c80e259ab1141895634548af6fb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling
+    second: {fileID: 2100000, guid: 4d367b9d0e9a2b340b30fac5d6fa8e62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ceiling 2
+    second: {fileID: 2100000, guid: bfa9de39496728d47a4497f6c06f818c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 562709ba593bc0847820f0e8e7eb10cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor 2
+    second: {fileID: 2100000, guid: e0fd10330f794ee46afd616b00c406e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: b203d347f2ff995448827a8ce69a0863, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pilar
+    second: {fileID: 2100000, guid: 7c4b74190a0af0a4aac3c8fb9a283c3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 1
+    second: {fileID: 2100000, guid: b52b3073816e23d4aa5a5a4eb57f0464, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 2
+    second: {fileID: 2100000, guid: fcd55bfe9b5310d4d8c5ed825745d315, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Window Trim
+    second: {fileID: 2100000, guid: 00aa3e4f2dc595b4ab1c27f4aeaab0b6, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -96,7 +151,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
