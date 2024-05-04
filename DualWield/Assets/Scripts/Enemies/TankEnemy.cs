@@ -18,7 +18,6 @@ public class TankEnemy : GroundEnemy
     }
     protected override void Attack()
     {
-        // Rotate the projectile spawn based on player position
         AimAtPlayer();
         GameObject bullet = Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
         ResetAttackWaitTime();
