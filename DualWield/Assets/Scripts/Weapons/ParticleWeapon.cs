@@ -34,7 +34,7 @@ public abstract class ParticleWeapon : BaseWeapon
     public override void Fire()
     {
         base.Fire();
-        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
+        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime * (3600f/roundsPerMinute));
     }
 
 

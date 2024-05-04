@@ -18,10 +18,10 @@ public class WindGun : ParticleWeapon
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
-        playerCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        player = FindObjectOfType<PlayerCharacter>();
+        playerCamera = FindObjectOfType<Camera>();
         //Due to human error/more consistency to register
-        maxCameraXRotation = player.lookXLimit-1;
+        maxCameraXRotation = player.lookXLimit - 1;
     }
 
     protected override void Update()
@@ -34,8 +34,9 @@ public class WindGun : ParticleWeapon
     /// </summary>
     public override void Fire()
     {
+        base.Fire();
+
         ManagePlayerFlying();
-        GameManager.Instance.DrainAmmo(ammoPerSecond * Time.deltaTime);
         switch (otherWeaponType)
         {
             case WeaponType.Flamethrower:

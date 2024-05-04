@@ -394,10 +394,10 @@ MonoBehaviour:
   weaponEmptySound: {fileID: 5045373985556383770}
   weaponFireSound: {fileID: 1421068829247303149}
   weaponFiringSound: {fileID: 4057917665161291875}
-  ammoPerShot: 5
+  ammoPerShot: 4
   rocketRocketPrefab: {fileID: 3317579496633857605, guid: 169b92b58b7194c4baf53c55d8832473, type: 3}
   rocketWindPrefab: {fileID: 3317579496633857605, guid: 5d7ae2b5065243341b96eaa0313559ea, type: 3}
-  rocketFlamePrefab: {fileID: 3317579496633857605, guid: d2a55030beffada408f8ce8894ced2f9, type: 3}
+  rocketFlamePrefab: {fileID: 4566046122037690725, guid: d2a55030beffada408f8ce8894ced2f9, type: 3}
   rocketFreezePrefab: {fileID: 3317579496633857605, guid: 0d5aa536f2b083f4eb5454f2a3f70678, type: 3}
 --- !u!1 &7902554488955207113
 GameObject:
