@@ -133,3 +133,4 @@ MonoBehaviour:
   isFiredByEnemy: 0
   explosiveRange: 6
   explosionPrefab: {fileID: 198357973136645638, guid: 1fe0142b59c84e041be01a71139c9693, type: 3}
+  molotovPrefab: {fileID: 2832603045535365351, guid: 1840d70910db9834cbfd07db46d4b4ea, type: 3}

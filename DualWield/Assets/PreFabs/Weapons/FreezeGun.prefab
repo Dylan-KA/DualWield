@@ -308,7 +308,7 @@ MonoBehaviour:
   weaponEmptySound: {fileID: 2010603728431467183}
   weaponFireSound: {fileID: 4788318397373144328}
   weaponFiringSound: {fileID: 4788318397373144328}
-  ammoPerSecond: 50
+  ammoPerSecond: 15
   lineRend: {fileID: 3241542965103208407}
 --- !u!120 &3241542965103208407
 LineRenderer:

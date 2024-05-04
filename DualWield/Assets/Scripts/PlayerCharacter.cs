@@ -4,42 +4,41 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerCharacter: BaseCharacter
+public class PlayerCharacter : BaseCharacter
 {
     [SerializeField] private WeaponType startingWeaponRight;
     [SerializeField] private WeaponType startingWeaponLeft;
+    [SerializeField] private LayerMask groundlayer;
     [SerializeField] private BaseWeapon flamethrowerPrefab;
     [SerializeField] private BaseWeapon windGunPrefab;
     [SerializeField] private BaseWeapon FreezeGunPrefab;
     [SerializeField] private BaseWeapon RocketGunPrefab;
     [SerializeField] private Image UIPlayerHealth;
+
     public BaseWeapon leftWeapon { get; private set; }
     public BaseWeapon rightWeapon { get; private set; }
-    
+    public bool isFlying { private get; set; }
+    public CharacterController characterController;
     public Camera playerCamera;
+    public bool canMove = true;
     public float gravity = 10f;
-    private Vector3 velocity;
-    private float maxFallingSpeed = -50.0f;
-
     public float lookspeed = 2f;
     public float lookXLimit = 90f;
 
+    private Coroutine healthRegenCoroutine;
+    private Vector3 velocity;
     private Vector3 moveDirection = Vector3.zero;
-    private float rotationX = 0;
-
-    public bool canMove = true;
-    public bool isFlying { private get; set; }
-
-    public CharacterController characterController;
-
-    [SerializeField] private LayerMask groundlayer;
     private bool isGrounded;
-
+    private float maxFallingSpeed = -50.0f;
+    private float rotationX = 0;
     private float cooldownTime = 2f;
     private float lastUsedTime;
-    
+    private float healthRegenDelay = 5f;
+    private float healthRegenRate = 10f;
+
     protected override void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -67,7 +66,12 @@ public class PlayerCharacter: BaseCharacter
     public override void TakeDamage(float damageAmount)
     {
         base.TakeDamage(damageAmount);
-        //Update red screen
+        UpdatePlayerRedScreen();
+        TriggerHealthRegen();
+    }
+
+    private void UpdatePlayerRedScreen()
+    {
         float newTransparency = (1 - (health / 100));
         Color newColor = new Color(
         UIPlayerHealth.color.r,
@@ -94,7 +98,7 @@ public class PlayerCharacter: BaseCharacter
         {
             case WeaponType.Flamethrower:
                 weapon = Instantiate(flamethrowerPrefab, playerCamera.transform);
-                
+
                 break;
             case WeaponType.WindGun:
                 weapon = Instantiate(windGunPrefab, playerCamera.transform);
@@ -124,7 +128,7 @@ public class PlayerCharacter: BaseCharacter
         }
 
     }
-    
+
     void Update()
     {
         // movement and camera
@@ -166,21 +170,19 @@ public class PlayerCharacter: BaseCharacter
             //May need to implement a cooldown for this.
             if (Time.time - lastUsedTime >= cooldownTime)
             {
-                Collider[] colliders =  Physics.OverlapSphere(transform.position, 3, LayerMask.GetMask("Enemy"));
+                Collider[] colliders = Physics.OverlapSphere(transform.position, 3, LayerMask.GetMask("Enemy"));
                 foreach (Collider EnemyCollider in colliders)
                 {
                     Vector3 directionFromPlayer = EnemyCollider.transform.position - transform.position;
                     directionFromPlayer.Normalize();
                     EnemyCollider.GetComponent<Rigidbody>().AddForce(50f * directionFromPlayer, ForceMode.Impulse);
                     GameManager.Instance.RefillAmmoCustom(5);
-                    
+
                 }
 
                 lastUsedTime = Time.time;
             }
         }
-        
-        
 
         // firing
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q)) // stop firing when swapping weapons
@@ -219,4 +221,26 @@ public class PlayerCharacter: BaseCharacter
         isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
     }
 
+    private void TriggerHealthRegen()
+    {
+        if (healthRegenCoroutine != null)
+        {
+            StopCoroutine(healthRegenCoroutine);
+        }
+        healthRegenCoroutine = StartCoroutine(RegenerateHealth());
+    }
+
+    IEnumerator RegenerateHealth()
+    {
+        yield return new WaitForSeconds(healthRegenDelay);
+
+        while (health < maxHealth)
+        {
+            health += healthRegenRate * Time.deltaTime;
+            health = Mathf.Min(health, maxHealth);
+            UpdatePlayerRedScreen();
+            yield return null;
+        }
+        healthRegenCoroutine = null;
+    }
 }
