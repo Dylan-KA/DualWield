@@ -6058,25 +6058,9 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2024408992, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
-      propertyPath: m_Size.x
-      value: 2.868351
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024408992, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
-      propertyPath: m_Size.z
-      value: 6.3416333
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024408992, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
-      propertyPath: m_Center.x
-      value: -0.93417543
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024408992, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
-      propertyPath: m_Center.z
-      value: 2.6708167
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024408996, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
-      propertyPath: arena
-      value: 
+    - target: {fileID: 3111056627138181683, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
+      propertyPath: doorList.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3111056627138181708, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
       propertyPath: m_RootOrder
