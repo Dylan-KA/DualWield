@@ -157,7 +157,7 @@ public class BaseEnemy : BaseCharacter
 
     private void RedDamageFlicker()
     {
-        Color newColor = new Color(1.0f, 0.0f, 0.0f);
+        Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.5f);
         rend.material.SetColor("_Color", newColor);
         Invoke(nameof(ResetDamageFlicker), dmgFlickerRate);
     }
