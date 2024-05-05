@@ -114,7 +114,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!114 &4566046122037690725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 20
   speedMult: 1
-  baseDamage: 50
+  baseDamage: 40
   isFiredByEnemy: 0
   explosiveRange: 6
   explosionPrefab: {fileID: 198357973136645638, guid: 1fe0142b59c84e041be01a71139c9693, type: 3}

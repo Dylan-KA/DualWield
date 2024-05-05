@@ -18,6 +18,7 @@ public class ExplosiveProjectile : Projectile
             foreach (Collider collider in hitColliders)
             {
                 BaseEnemy enemy = collider.gameObject.GetComponent<BaseEnemy>();
+                if (!enemy) continue;
                 float distance =  (transform.position - enemy.transform.position).magnitude - enemy.transform.localScale.magnitude;
                 distance = Mathf.Clamp(distance, 0, explosiveRange);
                 
