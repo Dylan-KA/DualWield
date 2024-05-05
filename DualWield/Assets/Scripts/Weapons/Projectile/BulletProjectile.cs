@@ -16,7 +16,7 @@ public class BulletProjectile : Projectile
 
     protected override void OnImpact(Collider collider)
     {
-        if (collider.CompareTag("Player") || collider.CompareTag("Enemy"))
+        if (collider.CompareTag("Player") && isFiredByEnemy || collider.CompareTag("Enemy") && !isFiredByEnemy)
         {
             collider.GetComponent<BaseCharacter>().TakeDamage(baseDamage);
         }

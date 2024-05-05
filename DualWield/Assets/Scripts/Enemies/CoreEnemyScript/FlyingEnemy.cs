@@ -32,7 +32,7 @@ public class FlyingEnemy : BaseEnemy
         if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
         {
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
-                (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
+                isAttacking)
             {
                 LookAtPlayer();
                 if (!isAttacking)

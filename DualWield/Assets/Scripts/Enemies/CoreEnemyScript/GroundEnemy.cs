@@ -43,14 +43,18 @@ public class GroundEnemy : BaseEnemy
         if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
         {
             if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
-                (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
+                isAttacking)
             {
                 LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
+                    if (currentAttackTimer <= 0)
+                    {
+                        Attack();
+                    }
                 }
-                else if (isAttacking && currentAttackTimer >= attackWaitTime)
+                else if (isAttacking && currentAttackTimer <= 0)
                 {
                     Attack();
                 }

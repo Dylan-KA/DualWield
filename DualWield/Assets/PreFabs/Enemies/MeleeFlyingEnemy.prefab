@@ -352,8 +352,7 @@ MonoBehaviour:
   viewDistance: 100
   attackDamage: 25
   attackRange: 10
-  extendedAttackRange: 1
-  attackWaitTime: 1
+  attackWaitTime: 5
   squashDamage: 10
   squashThreshHold: 2
   maxFlyingHeight: 5
