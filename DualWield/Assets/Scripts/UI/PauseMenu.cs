@@ -16,6 +16,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         document = GetComponent<UIDocument>();
+        document.rootVisualElement.visible = false;
 
         settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
         settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
@@ -50,16 +51,16 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (document.enabled)
+            if (document.rootVisualElement.visible)
             {
                 player.SetMouseLocked(true);
-                document.enabled = false;
+                document.rootVisualElement.visible = false;
                 Time.timeScale = 1f;
             }
             else
             {
                 player.SetMouseLocked(false);
-                document.enabled = true;
+                document.rootVisualElement.visible = true;
                 Time.timeScale = 0f;
             }
         }
