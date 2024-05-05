@@ -34,7 +34,7 @@ Transform:
   - {fileID: 833108083828602932}
   - {fileID: 998046559337664832}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833108082530496965
 MonoBehaviour:
@@ -681,7 +681,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6761713783855641961}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7773853563850926114}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: RespawnPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!1 &3688248822349125062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,7 +1221,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8595274717564869753}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7773853563850926114}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: ReturnToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5984815912239203594
 GameObject:
   m_ObjectHideFlags: 0
