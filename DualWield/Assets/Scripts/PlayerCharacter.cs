@@ -210,6 +210,11 @@ public class PlayerCharacter : BaseCharacter
 
     }
 
+    public bool IsPlayerDead()
+    {
+        return health <= 0;
+    }
+
     public void AddFlyingForce(float force)
     {
         isFlying = true;
