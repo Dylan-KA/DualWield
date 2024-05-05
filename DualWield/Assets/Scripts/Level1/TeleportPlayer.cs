@@ -24,7 +24,7 @@ public class TeleportPlayer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        // if (!other.CompareTag("Player")) return;
         
         player.transform.localPosition = to.position;
         Debug.Log("Player: " + player.transform.position);
