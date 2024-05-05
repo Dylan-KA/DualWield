@@ -31,7 +31,6 @@ public class RollingExplosive : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player");
             Explode();
         }
         else if (!isFuseActive && !collision.gameObject.CompareTag("Enemy"))
