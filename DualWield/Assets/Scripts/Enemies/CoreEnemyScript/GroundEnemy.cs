@@ -125,6 +125,7 @@ public class GroundEnemy : BaseEnemy
     {
         if (navAgent.enabled != false)
         {
+            SetMovementSpeed();
             navAgent.SetDestination(playerTransform.position);
         }
         else

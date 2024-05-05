@@ -61,6 +61,7 @@ public class FlyingEnemy : BaseEnemy
     {
         if (playerTransform != null && statusEffect != StatusEffect.Freeze)
         {
+            SetMovementSpeed();
             Vector3 flyingDistination = new (playerTransform.position.x, maxFlyingHeight + playerTransform.position.y, playerTransform.position.y);
             transform.position = Vector3.MoveTowards(transform.position, flyingDistination, currentMovementSpeed * Time.deltaTime);
         }
