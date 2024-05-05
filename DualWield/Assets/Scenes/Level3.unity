@@ -631,6 +631,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1066,6 +1070,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1193,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1847,6 +1859,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2147,6 +2163,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -4447,6 +4467,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00df389de3af3064c9461bf5cfb59b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &289768368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6104786402218256542, guid: f9f5aa839dc1c4b39838835a8f886c15, type: 3}
+  m_PrefabInstance: {fileID: 556965078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5caabb92683784167b4f61372b602119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &290036296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4586,6 +4617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5631,6 +5666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -5695,6 +5734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6353,6 +6396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6574,6 +6621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -7679,6 +7730,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8339,6 +8394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8471,6 +8530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -8555,7 +8618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496964, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 833108082530496964, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8597,6 +8660,10 @@ PrefabInstance:
       propertyPath: characterController
       value: 
       objectReference: {fileID: 356636360}
+    - target: {fileID: 7217949700575983176, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
@@ -9435,6 +9502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -12524,6 +12595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13490,7 +13565,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh327198
+  m_Name: pb_Mesh154628
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -13661,6 +13736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13720,6 +13799,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -13781,7 +13864,7 @@ GameObject:
   - component: {fileID: 1095359221}
   - component: {fileID: 1095359220}
   - component: {fileID: 1095359219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13797,7 +13880,7 @@ MeshCollider:
   m_GameObject: {fileID: 1095359218}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -17484,6 +17567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -18191,7 +18278,7 @@ GameObject:
   - component: {fileID: 1261399138}
   - component: {fileID: 1261399137}
   - component: {fileID: 1261399136}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18207,7 +18294,7 @@ MeshCollider:
   m_GameObject: {fileID: 1261399135}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -22421,6 +22508,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -23900,6 +23991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -24202,6 +24297,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -25719,6 +25818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -28120,7 +28223,7 @@ GameObject:
   - component: {fileID: 1674519613}
   - component: {fileID: 1674519612}
   - component: {fileID: 1674519611}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28136,7 +28239,7 @@ MeshCollider:
   m_GameObject: {fileID: 1674519610}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -31428,6 +31531,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -31494,7 +31601,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh327736
+  m_Name: pb_Mesh155186
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -32732,6 +32839,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -32793,7 +32904,7 @@ GameObject:
   - component: {fileID: 1825923054}
   - component: {fileID: 1825923053}
   - component: {fileID: 1825923052}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32809,7 +32920,7 @@ MeshCollider:
   m_GameObject: {fileID: 1825923051}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -35443,6 +35554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -36476,6 +36591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -37665,6 +37784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -38116,7 +38239,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh327618
+  m_Name: pb_Mesh155068
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -38292,6 +38415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -38413,7 +38540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh327312
+  m_Name: pb_Mesh154738
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -39316,6 +39443,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -39805,6 +39936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickUpAmmo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1214994937368102640, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 289768368}
     - target: {fileID: 2913323362322230386, guid: 3ee9ad3d660598e44b2af89fd9762cef, type: 3}
       propertyPath: m_RootOrder
       value: -1
