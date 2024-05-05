@@ -33,7 +33,7 @@ public class ExplosiveProjectile : Projectile
 
                 enemy.TakeDamage(baseDamage * damagePercent);
                 if (gameObject.name == "RocketFreeze(Clone)") 
-                    enemy.AddFreezePercent(damagePercent * 50f);
+                    enemy.AddFreezePercent(damagePercent * 100f);
             }
             
             if (molotovPrefab)
