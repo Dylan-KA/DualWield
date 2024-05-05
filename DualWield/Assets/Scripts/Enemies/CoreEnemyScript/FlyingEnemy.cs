@@ -52,6 +52,7 @@ public class FlyingEnemy : BaseEnemy
             }
         }
     }
+
     protected virtual void SetMovementSpeed()
     {
         currentMovementSpeed = baseMovementSpeed * (1 - (FreezePercent / 100));

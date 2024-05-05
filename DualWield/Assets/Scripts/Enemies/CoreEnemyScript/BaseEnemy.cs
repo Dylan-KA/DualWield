@@ -28,6 +28,7 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float attackWaitTime = 1;
     [SerializeField] protected float squashDamage = 10;
     [SerializeField] protected float squashThreshHold = 2;
+    [SerializeField] protected bool isAlwaysHuntingTarget = false;
 
     public float GetFieldOfView()
     {
@@ -46,6 +47,16 @@ public class BaseEnemy : BaseCharacter
         return playerTransform;
     }
 
+    private void OnEnable()
+    {
+        SetEnemyVision();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -53,22 +64,12 @@ public class BaseEnemy : BaseCharacter
         try
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            StartCoroutine(FOVRoutine());
+            SetEnemyVision();
         }
         catch
         {
             Debug.Log("Player cannot be found");
         }
-    }
-
-    private void OnEnable()
-    {
-        StartCoroutine(FOVRoutine());
-    }
-
-    private void OnDisable()
-    {
-        StopAllCoroutines();
     }
 
     // Update is called once per frame
@@ -91,6 +92,11 @@ public class BaseEnemy : BaseCharacter
     protected virtual void MoveTowardsTarget() { }
     // Implemented in the individual enemy script
     protected virtual void Attack() { }
+
+    private void SetEnemyVision()
+    {
+        StartCoroutine(FOVRoutine());
+    }
 
     private IEnumerator FOVRoutine()
     {
