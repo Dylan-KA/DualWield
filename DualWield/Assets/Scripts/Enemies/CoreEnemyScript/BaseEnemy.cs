@@ -24,10 +24,10 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackDamage;
     [SerializeField] protected float attackRange = 1;
-    [SerializeField] protected float extendedAttackRange = 1;
     [SerializeField] protected float attackWaitTime = 1;
     [SerializeField] protected float squashDamage = 10;
-    [SerializeField] protected float squashThreshHold = 2;
+    [SerializeField] protected float squashThreshHold = 5;
+    [SerializeField] protected bool isAlwaysHuntingTarget = false;
 
     public float GetFieldOfView()
     {
@@ -46,24 +46,9 @@ public class BaseEnemy : BaseCharacter
         return playerTransform;
     }
 
-    // Start is called before the first frame update
-    protected override void Start()
-    {
-        base.Start();
-        try
-        {
-            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            StartCoroutine(FOVRoutine());
-        }
-        catch
-        {
-            Debug.Log("Player cannot be found");
-        }
-    }
-
     private void OnEnable()
     {
-        StartCoroutine(FOVRoutine());
+        SetEnemyVision();
     }
 
     private void OnDisable()
@@ -71,13 +56,28 @@ public class BaseEnemy : BaseCharacter
         StopAllCoroutines();
     }
 
+    // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+        try
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            SetEnemyVision();
+        }
+        catch
+        {
+            Debug.Log("Player cannot be found");
+        }
+    }
+
     // Update is called once per frame
     protected virtual void Update()
     {
         EnemyAttackAtCertainRange();
-        if (isAttacking && currentAttackTimer < attackWaitTime)
+        if (currentAttackTimer >= 0)
         {
-            currentAttackTimer += Time.deltaTime;
+            currentAttackTimer -= Time.deltaTime;
         }
     }
 
@@ -91,6 +91,11 @@ public class BaseEnemy : BaseCharacter
     protected virtual void MoveTowardsTarget() { }
     // Implemented in the individual enemy script
     protected virtual void Attack() { }
+
+    private void SetEnemyVision()
+    {
+        StartCoroutine(FOVRoutine());
+    }
 
     private IEnumerator FOVRoutine()
     {
@@ -158,7 +163,7 @@ public class BaseEnemy : BaseCharacter
 
     private void RedDamageFlicker()
     {
-        Color newColor = new Color(1.0f, 0.0f, 0.0f);
+        Color newColor = new Color(1.0f, 0.0f, 0.0f, 0.5f);
         rend.material.SetColor("_Color", newColor);
         Invoke(nameof(ResetDamageFlicker), dmgFlickerRate);
     }
@@ -192,11 +197,10 @@ public class BaseEnemy : BaseCharacter
     protected void ResetAttack()
     {
         isAttacking = false;
-        currentAttackTimer = 0f;
     }
 
     protected void ResetAttackWaitTime()
     {
-        currentAttackTimer = 0;
+        currentAttackTimer = attackWaitTime;
     }
 }

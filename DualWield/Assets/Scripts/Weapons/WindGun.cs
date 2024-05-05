@@ -59,6 +59,7 @@ public class WindGun : ParticleWeapon
     {
         foreach (BaseEnemy Enemy in ListofEnemies)
         {
+            Enemy.AddFreezePercent(2.5f);
             if (Enemy.GetStatueEffect() == StatusEffect.Freeze)
             {
                 PushEnemiesInRange(25f);

@@ -40,17 +40,35 @@ public class GroundEnemy : BaseEnemy
 
     protected override void EnemyAttackAtCertainRange()
     {
-        if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
+        if (statusEffect != StatusEffect.Freeze)
         {
-            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
-                (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange))
+            if (isAlwaysHuntingTarget)
+            {
+                ArenaBehaviour();
+            }
+            else
+            {
+                NormalBehaviour();
+            }
+        }
+    }
+
+    protected void NormalBehaviour()
+    {
+        if (GetIsPlayerSeen())
+        {
+            if (IsPlayerInAttackingRange())
             {
                 LookAtPlayer();
                 if (!isAttacking)
                 {
                     isAttacking = true;
+                    if (currentAttackTimer <= 0)
+                    {
+                        Attack();
+                    }
                 }
-                else if (isAttacking && currentAttackTimer >= attackWaitTime)
+                else if (isAttacking && currentAttackTimer <= 0)
                 {
                     Attack();
                 }
@@ -62,6 +80,37 @@ public class GroundEnemy : BaseEnemy
                 MoveTowardsTarget();
             }
         }
+    }
+
+    protected void ArenaBehaviour()
+    {
+        if (GetIsPlayerSeen() && IsPlayerInAttackingRange())
+        {
+            LookAtPlayer();
+            if (!isAttacking)
+            {
+                isAttacking = true;
+                if (currentAttackTimer <= 0)
+                {
+                    Attack();
+                }
+            }
+            else if (isAttacking && currentAttackTimer >= attackWaitTime)
+            {
+                Attack();
+            }
+        }
+        else
+        {
+            LookAtPlayer();
+            ResetAttack();
+            MoveTowardsTarget();
+        }
+    }
+
+    private bool IsPlayerInAttackingRange()
+    {
+        return Vector3.Distance(transform.position, playerTransform.position) <= attackRange;
     }
 
     protected override void LookAtPlayer()
