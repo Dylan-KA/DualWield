@@ -13,7 +13,7 @@ public class PauseMenu : MonoBehaviour
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
 
-    void Awake()
+    void Start()
     {
         document = GetComponent<UIDocument>();
 
@@ -22,15 +22,12 @@ public class PauseMenu : MonoBehaviour
         quitButton = document.rootVisualElement.Q("QuitButton") as Button;
         quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
 
-        allButtons = document.rootVisualElement.Query<Button>().ToList();
+        /*allButtons = document.rootVisualElement.Query<Button>().ToList();
         for (int i = 0; i < allButtons.Count; i++)
         {
             allButtons[i].RegisterCallback<ClickEvent>(OnAnyButtonClicked);
-        }
-    }
+        }*/
 
-    private void Start()
-    {
         player = FindObjectOfType<PlayerCharacter>();
     }
 
