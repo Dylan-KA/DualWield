@@ -48,5 +48,28 @@ public class ExplosiveProjectile : Projectile
             ParticleSystem explosion = Instantiate<ParticleSystem>(explosionPrefab, transform.position, new Quaternion());
             Destroy(explosion, 1.9f);
         }
+        else
+        {
+            int layerMask = 0;
+            layerMask |= 1 << 6; 
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosiveRange, layerMask);
+            foreach (Collider collider in hitColliders)
+            {
+                PlayerCharacter player = collider.gameObject.GetComponent<PlayerCharacter>();
+                float distance = (transform.position - player.transform.position).magnitude - player.transform.localScale.magnitude;
+                distance = Mathf.Clamp(distance, 0, explosiveRange);
+
+                float damagePercent;
+                if (distance < explosiveRange / 2f)
+                    // deal full damage
+                    damagePercent = 1;
+
+                else
+                    // deal fractional damage
+                    damagePercent = ((explosiveRange - distance) / 2f) / (explosiveRange / 2f);
+
+                player.TakeDamage(baseDamage * damagePercent);
+            }
+        }
     }
 }

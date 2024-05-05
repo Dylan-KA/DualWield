@@ -143,8 +143,7 @@ MonoBehaviour:
   viewDistance: 100
   attackDamage: 10
   attackRange: 1.5
-  extendedAttackRange: 0.25
-  attackWaitTime: 1
+  attackWaitTime: 3
   squashDamage: 10
   squashThreshHold: 2
 --- !u!195 &-1050066774347056340

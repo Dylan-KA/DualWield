@@ -63,8 +63,12 @@ public class GroundEnemy : BaseEnemy
                 if (!isAttacking)
                 {
                     isAttacking = true;
+                    if (currentAttackTimer <= 0)
+                    {
+                        Attack();
+                    }
                 }
-                else if (isAttacking && currentAttackTimer >= attackWaitTime)
+                else if (isAttacking && currentAttackTimer <= 0)
                 {
                     Attack();
                 }

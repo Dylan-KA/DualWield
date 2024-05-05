@@ -24,10 +24,9 @@ public class BaseEnemy : BaseCharacter
     [SerializeField] protected float viewDistance;
     [SerializeField] protected float attackDamage;
     [SerializeField] protected float attackRange = 1;
-    [SerializeField] protected float extendedAttackRange = 1;
     [SerializeField] protected float attackWaitTime = 1;
     [SerializeField] protected float squashDamage = 10;
-    [SerializeField] protected float squashThreshHold = 2;
+    [SerializeField] protected float squashThreshHold = 5;
     [SerializeField] protected bool isAlwaysHuntingTarget = false;
 
     public float GetFieldOfView()
@@ -76,9 +75,9 @@ public class BaseEnemy : BaseCharacter
     protected virtual void Update()
     {
         EnemyAttackAtCertainRange();
-        if (isAttacking && currentAttackTimer < attackWaitTime)
+        if (currentAttackTimer >= 0)
         {
-            currentAttackTimer += Time.deltaTime;
+            currentAttackTimer -= Time.deltaTime;
         }
     }
 
@@ -198,11 +197,10 @@ public class BaseEnemy : BaseCharacter
     protected void ResetAttack()
     {
         isAttacking = false;
-        currentAttackTimer = 0f;
     }
 
     protected void ResetAttackWaitTime()
     {
-        currentAttackTimer = 0;
+        currentAttackTimer = attackWaitTime;
     }
 }
