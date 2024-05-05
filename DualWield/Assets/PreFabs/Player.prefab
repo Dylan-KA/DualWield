@@ -63,6 +63,7 @@ MonoBehaviour:
   FreezeGunPrefab: {fileID: -1529562647357173759, guid: 4d4f672b0de8d4d49b8ae04f7b0204e6, type: 3}
   RocketGunPrefab: {fileID: 844610252149487880, guid: 58accf7880b7fd04a9e2e03f7f88ddf5, type: 3}
   UIPlayerHealth: {fileID: 4133027080259971852}
+  playerCanvas: {fileID: 6842417550096982914}
   characterController: {fileID: 833108082530496967}
   playerCamera: {fileID: 833108083828602931}
   canMove: 1
