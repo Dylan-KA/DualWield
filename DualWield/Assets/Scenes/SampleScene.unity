@@ -4492,6 +4492,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
+  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 0
   attackRange: 10
@@ -5926,6 +5928,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
+  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 0
   attackRange: 10
@@ -7112,9 +7116,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3111056626026339612, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
       insertIndex: 0
-      addedObject: {fileID: 8766485580532100002}
-    - targetCorrespondingSourceObject: {fileID: 3111056626026339612, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
-      insertIndex: 1
       addedObject: {fileID: 339929585}
     - targetCorrespondingSourceObject: {fileID: 3111056627390497961, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
       insertIndex: -1
@@ -7213,65 +7214,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 190927090}
   m_SourcePrefab: {fileID: 100100000, guid: 3f53e13069aaab843b4505ec97b772ff, type: 3}
---- !u!1001 &3255908318452500470
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 152317003}
-    m_Modifications:
-    - target: {fileID: 6091012312526416976, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_Name
-      value: TankEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_RootOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
 --- !u!1001 &7386831455913691742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7506,6 +7448,8 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
+  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 0
   attackRange: 10
@@ -7595,8 +7539,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257639822}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &8766485580532100002 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6091012312526416980, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
-  m_PrefabInstance: {fileID: 3255908318452500470}
-  m_PrefabAsset: {fileID: 0}

@@ -140,12 +140,15 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isAttacking: 0
+  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 10
-  attackRange: 1.5
+  attackRange: 2
   attackWaitTime: 3
   squashDamage: 10
   squashThreshHold: 2
+  isAlwaysHuntingTarget: 0
 --- !u!195 &-1050066774347056340
 NavMeshAgent:
   m_ObjectHideFlags: 0
