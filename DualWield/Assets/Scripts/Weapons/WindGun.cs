@@ -122,6 +122,6 @@ public class WindGun : ParticleWeapon
     private bool IsPlayerLookingStraightDown()
     {
         float adjustedRotationX = playerCamera.transform.localEulerAngles.x > 180 ? playerCamera.transform.localEulerAngles.x - 360 : playerCamera.transform.localEulerAngles.x;
-        return adjustedRotationX >= maxCameraXRotation-30; //Not exactly straight down (30) so the player can see better and use hover more easily.
+        return adjustedRotationX >= maxCameraXRotation-40; //Not exactly straight down (30) so the player can see better and use hover more easily.
     }
 }
