@@ -76,8 +76,8 @@ public class BaseCharacter : MonoBehaviour
     private void VisualFreezeEffect(float frozenPercentage)
     {
         float frozenFloat = frozenPercentage / 100.0f;
-        Color newColor = new Color(frozenFloat, frozenFloat, frozenFloat);
-        rend.material.SetColor("_EmissionColor", newColor);
+        Color newColor = new Color(frozenFloat, frozenFloat, frozenFloat, 0.5f);
+        rend.material.SetColor("_Color", newColor);
     }
 
     public void RecoverHP(float recovedAmount)
