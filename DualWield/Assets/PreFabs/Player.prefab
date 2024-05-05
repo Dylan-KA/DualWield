@@ -34,7 +34,7 @@ Transform:
   - {fileID: 833108083828602932}
   - {fileID: 998046559337664832}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &833108082530496965
 MonoBehaviour:
@@ -52,7 +52,7 @@ MonoBehaviour:
   health: 100
   statusEffect: 0
   FreezePercent: 0
-  freezeMaterial: {fileID: 0}
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
   startingWeaponRight: 0
   startingWeaponLeft: 0
   groundlayer:
@@ -63,7 +63,7 @@ MonoBehaviour:
   FreezeGunPrefab: {fileID: -1529562647357173759, guid: 4d4f672b0de8d4d49b8ae04f7b0204e6, type: 3}
   RocketGunPrefab: {fileID: 844610252149487880, guid: 58accf7880b7fd04a9e2e03f7f88ddf5, type: 3}
   UIPlayerHealth: {fileID: 4133027080259971852}
-  characterController: {fileID: 0}
+  characterController: {fileID: 833108082530496967}
   playerCamera: {fileID: 833108083828602931}
   canMove: 1
   gravity: 50
@@ -500,7 +500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8462108041306384602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7838455192982868044
