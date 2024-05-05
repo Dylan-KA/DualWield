@@ -235,9 +235,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7269447939106450802}
   - component: {fileID: 7269447939106450805}
+  - component: {fileID: 2965627672885505358}
   - component: {fileID: 7269447939106450804}
   - component: {fileID: 3515881512901175134}
-  - component: {fileID: 2965627672885505358}
   m_Layer: 3
   m_Name: ArenaMeleeFlyingEnemy
   m_TagString: Enemy
@@ -271,6 +271,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7269447939106450806}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2965627672885505358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269447939106450806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0b1464467520b142964ee656adda144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMovementSpeed: 3
+  health: 100
+  statusEffect: 0
+  FreezePercent: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  viewDistance: 100
+  attackDamage: 25
+  attackRange: 10
+  attackWaitTime: 1
+  squashDamage: 10
+  squashThreshHold: 2
+  isAlwaysHuntingTarget: 1
+  maxFlyingHeight: 5
+  diveSpeed: 55
+  returnSpeed: 5
+  velocity: {x: 0, y: 0, z: 0}
+  attackHitRange: 1
 --- !u!23 &7269447939106450804
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -326,39 +361,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2965627672885505358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7269447939106450806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0b1464467520b142964ee656adda144, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseMovementSpeed: 3
-  health: 100
-  statusEffect: 0
-  FreezePercent: 0
-  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 128
-  viewDistance: 100
-  attackDamage: 25
-  attackRange: 10
-  extendedAttackRange: 1
-  attackWaitTime: 1
-  squashDamage: 10
-  squashThreshHold: 2
-  isAlwaysHuntingTarget: 1
-  maxFlyingHeight: 5
-  diveSpeed: 55
-  returnSpeed: 5
-  velocity: {x: 0, y: 0, z: 0}
-  attackHitRange: 1

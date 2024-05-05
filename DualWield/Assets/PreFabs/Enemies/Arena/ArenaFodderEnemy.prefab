@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 996841942765347332}
+  - component: {fileID: 4130564927138700597}
   - component: {fileID: 996841942765347331}
   - component: {fileID: 996841942765347330}
   - component: {fileID: 996841942765347333}
   - component: {fileID: 6484569446916155432}
-  - component: {fileID: 4130564927138700597}
   - component: {fileID: -1050066774347056340}
   m_Layer: 3
   m_Name: ArenaFodderEnemy
@@ -38,6 +38,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4130564927138700597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996841942765347328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f768b299365fe441b1b465f9d92f206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMovementSpeed: 3.5
+  health: 100
+  statusEffect: 0
+  FreezePercent: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  viewDistance: 100
+  attackDamage: 10
+  attackRange: 1.5
+  attackWaitTime: 1
+  squashDamage: 10
+  squashThreshHold: 2
+  isAlwaysHuntingTarget: 1
 --- !u!33 &996841942765347331
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -117,37 +147,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4130564927138700597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 996841942765347328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f768b299365fe441b1b465f9d92f206, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseMovementSpeed: 3.5
-  health: 100
-  statusEffect: 0
-  FreezePercent: 0
-  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 128
-  viewDistance: 100
-  attackDamage: 10
-  attackRange: 1.5
-  extendedAttackRange: 0.25
-  attackWaitTime: 1
-  squashDamage: 10
-  squashThreshHold: 2
-  isAlwaysHuntingTarget: 1
 --- !u!195 &-1050066774347056340
 NavMeshAgent:
   m_ObjectHideFlags: 0

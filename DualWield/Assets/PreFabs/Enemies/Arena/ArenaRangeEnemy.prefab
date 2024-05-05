@@ -300,11 +300,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5152685604686321511}
+  - component: {fileID: 6326313642449997335}
   - component: {fileID: 5152685604686321504}
   - component: {fileID: 5152685604686321505}
   - component: {fileID: 5152685604686321510}
   - component: {fileID: 1417133843314122059}
-  - component: {fileID: 6326313642449997335}
   - component: {fileID: 8065606458212222771}
   m_Layer: 3
   m_Name: ArenaRangeEnemy
@@ -333,6 +333,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6326313642449997335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5152685604686321507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bafae597820620d4fa2a40250f9881b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMovementSpeed: 3
+  health: 100
+  statusEffect: 0
+  FreezePercent: 0
+  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 128
+  viewDistance: 100
+  attackDamage: 20
+  attackRange: 15
+  attackWaitTime: 2
+  squashDamage: 10
+  squashThreshHold: 2
+  isAlwaysHuntingTarget: 1
+  projectileSpawnTransform: {fileID: 4773306059254048216}
+  projectilePrefab: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
 --- !u!33 &5152685604686321504
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -412,39 +444,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6326313642449997335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152685604686321507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bafae597820620d4fa2a40250f9881b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baseMovementSpeed: 3
-  health: 100
-  statusEffect: 0
-  FreezePercent: 0
-  freezeMaterial: {fileID: 13400000, guid: b62447609345080448dcdcddc47bc140, type: 2}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 128
-  viewDistance: 100
-  attackDamage: 20
-  attackRange: 15
-  extendedAttackRange: 1
-  attackWaitTime: 2
-  squashDamage: 10
-  squashThreshHold: 2
-  isAlwaysHuntingTarget: 1
-  projectileSpawnTransform: {fileID: 4773306059254048216}
-  projectilePrefab: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
 --- !u!195 &8065606458212222771
 NavMeshAgent:
   m_ObjectHideFlags: 0

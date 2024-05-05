@@ -106,8 +106,7 @@ public class GroundEnemy : BaseEnemy
 
     private bool IsPlayerInAttackingRange()
     {
-        return Vector3.Distance(transform.position, playerTransform.position) <= attackRange || 
-            (isAttacking && Vector3.Distance(transform.position, playerTransform.position) <= attackRange + extendedAttackRange);
+        return Vector3.Distance(transform.position, playerTransform.position) <= attackRange;
     }
 
     protected override void LookAtPlayer()
