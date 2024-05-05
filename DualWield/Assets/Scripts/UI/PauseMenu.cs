@@ -41,8 +41,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnQuitClicked(ClickEvent evt)
     {
-        Debug.Log("AHHH");
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 
     private void OnAnyButtonClicked(ClickEvent evt)

@@ -9,6 +9,7 @@ using Button = UnityEngine.UIElements.Button;
 public class MainMenu : MonoBehaviour
 {
     private UIDocument document;
+    private UIDocument levelSelect;
 
     private Button playButton;
     private Button settingsButton;
@@ -36,11 +37,15 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-
+    private void Start()
+    {
+        levelSelect = FindObjectOfType<LevelSelect>().GetComponent<UIDocument>();
+    }
 
     private void OnPlayClicked(ClickEvent evt)
     {
-        SceneManager.LoadScene(1);
+        levelSelect.rootVisualElement.visible = true;
+        document.rootVisualElement.visible = false;
     }
 
     private void OnSettingsClicked(ClickEvent evt)
@@ -50,7 +55,7 @@ public class MainMenu : MonoBehaviour
 
     private void OnCreditsClicked(ClickEvent evt)
     {
-        
+        Application.OpenURL("https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran");
     }
 
     private void OnQuitClicked(ClickEvent evt)
