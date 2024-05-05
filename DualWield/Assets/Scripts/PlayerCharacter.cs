@@ -210,6 +210,11 @@ public class PlayerCharacter : BaseCharacter
 
     }
 
+    public bool IsPlayerDead()
+    {
+        return health <= 0;
+    }
+
     public void AddFlyingForce(float force)
     {
         isFlying = true;
@@ -218,7 +223,7 @@ public class PlayerCharacter : BaseCharacter
 
     public void IsGrounded()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, groundlayer);
     }
 
     private void TriggerHealthRegen()

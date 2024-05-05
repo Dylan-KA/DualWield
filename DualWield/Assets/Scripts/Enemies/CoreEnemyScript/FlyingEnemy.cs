@@ -31,8 +31,7 @@ public class FlyingEnemy : BaseEnemy
     {
         if (GetIsPlayerSeen() && statusEffect != StatusEffect.Freeze)
         {
-            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange ||
-                isAttacking)
+            if (Vector3.Distance(transform.position, playerTransform.position) <= attackRange)
             {
                 LookAtPlayer();
                 if (!isAttacking)
@@ -57,10 +56,12 @@ public class FlyingEnemy : BaseEnemy
     {
         currentMovementSpeed = baseMovementSpeed * (1 - (FreezePercent / 100));
     }
+
     protected override void MoveTowardsTarget()
     {
         if (playerTransform != null && statusEffect != StatusEffect.Freeze)
         {
+            SetMovementSpeed();
             Vector3 flyingDistination = new (playerTransform.position.x, maxFlyingHeight + playerTransform.position.y, playerTransform.position.y);
             transform.position = Vector3.MoveTowards(transform.position, flyingDistination, currentMovementSpeed * Time.deltaTime);
         }
