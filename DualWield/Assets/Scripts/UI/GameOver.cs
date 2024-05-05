@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] GameObject gameOverMenu;
-    [SerializeField] private PlayerCharacter playerCharacter;
+    private PlayerCharacter playerCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
         gameOverMenu.SetActive(false);
+        playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
     }
 
     private void Update()
@@ -31,7 +32,8 @@ public class GameOver : MonoBehaviour
     }
     public void RespawnPlayer()
     {
-
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
     }
 
     public void ReturnToMainMenu()
