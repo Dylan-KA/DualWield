@@ -74,7 +74,7 @@ public class WaveManager : MonoBehaviour
             wave.SetActive(false);
         }
     }
-    /*
+    
     private void ToggleDoor(bool isOpen)
     {
         if (doorList.Count == 0) Debug.Log($"Door Missing in Arena Script: {gameObject.name}");
@@ -92,7 +92,7 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
-    */
+    
     private void FinishArena()
     {
         foreach (GameObject Door in doorList)
