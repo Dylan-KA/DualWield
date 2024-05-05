@@ -223,7 +223,7 @@ public class PlayerCharacter : BaseCharacter
 
     public void IsGrounded()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 2, groundlayer);
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, groundlayer);
     }
 
     private void TriggerHealthRegen()

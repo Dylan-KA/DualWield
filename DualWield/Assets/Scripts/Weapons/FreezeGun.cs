@@ -47,26 +47,27 @@ public class FreezeGun : HitScanWeapon
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().AddFreezePercent(2.5f);
+            GetHitEnemy().AddFreezePercent(5f);
+            if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
+            {
+                GetHitEnemy().TakeDamage(2f);
+            }
         }
     }
 
     private void FreezeAndRocket()
     {
-        if (GetHitEnemy())
-        {
-            GetHitEnemy().AddFreezePercent(2.5f);
-        }
+        FreezeAndWind();
     }
 
     private void FreezeAndFreeze()
     {
         if (GetHitEnemy())
         {
-            GetHitEnemy().AddFreezePercent(20f);
+            GetHitEnemy().AddFreezePercent(15f);
             if (GetHitEnemy().GetStatueEffect() == StatusEffect.Freeze)
             {
-                GetHitEnemy().TakeDamage(20f);
+                GetHitEnemy().TakeDamage(3f);
             }
         }
     }
