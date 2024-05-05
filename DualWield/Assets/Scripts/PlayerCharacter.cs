@@ -17,6 +17,7 @@ public class PlayerCharacter : BaseCharacter
     [SerializeField] private BaseWeapon FreezeGunPrefab;
     [SerializeField] private BaseWeapon RocketGunPrefab;
     [SerializeField] private Image UIPlayerHealth;
+    [SerializeField] private GameObject playerCanvas;
 
     public BaseWeapon leftWeapon { get; private set; }
     public BaseWeapon rightWeapon { get; private set; }
@@ -131,6 +132,10 @@ public class PlayerCharacter : BaseCharacter
 
     void Update()
     {
+        if (IsPlayerDead())
+        {
+            playerCanvas.SetActive(false);
+        }
         // movement and camera
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
