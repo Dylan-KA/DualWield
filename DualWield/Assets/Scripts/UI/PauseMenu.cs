@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
         settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
         quitButton = document.rootVisualElement.Q("QuitButton") as Button;
         quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
+        Time.timeScale = 1f;
 
         /*allButtons = document.rootVisualElement.Query<Button>().ToList();
         for (int i = 0; i < allButtons.Count; i++)
