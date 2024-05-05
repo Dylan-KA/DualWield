@@ -38,9 +38,8 @@ public class TankEnemy : GroundEnemy
         float gravity = Mathf.Abs(Physics.gravity.y);
         float throwStrength = Mathf.Clamp(Mathf.Sqrt(gravity * (deltaY + Mathf.Sqrt(Mathf.Pow(deltaY, 2) + Mathf.Pow(deltaXZ, 2)))), 0.01f, maxThrowForce);
         float angle = Mathf.PI / 2f - (0.5f * Mathf.PI / 2 - (deltaY / deltaXZ));
-        Debug.Log($"deltaY: {deltaY} deltaXZ: {deltaXZ} gravity: {gravity} throwStrength: {throwStrength} angle: {angle}");
         Vector3 initalVelocity = Mathf.Cos(angle) * throwStrength * displacement.normalized + Mathf.Sin(angle) * throwStrength * Vector3.up;
-        Debug.Log(initalVelocity);
+        // Debug.Log($"deltaY: {deltaY} deltaXZ: {deltaXZ} gravity: {gravity} throwStrength: {throwStrength} angle: {angle} initalVelocity: {initalVelocity}");
         return initalVelocity;
     }
 }

@@ -3,53 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class RollingExplosive : Projectile
+public class RollingExplosive : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private ParticleSystem explosionParticles;
     [SerializeField] private Vector3 ThrowVector;
+    [SerializeField] private float baseDamage;
     [SerializeField] private float explosionTimer = 2.0f;
     [SerializeField] private float explosiveRange;
+    private bool isExploded = false;
+    private bool isFuseActive = false;
 
 
     // Start is called before the first frame update
-    protected override void Start()
+    private void Start()
     {
-        base.Start();
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
-        ActivateFuse();
     }
 
     // Update is called once per frame
-    protected override void Update()
+    private void Update()
     {
 
     }
 
-    protected override void OnImpact(Collider _)
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Player");
+            Explode();
+        }
+        else if (!isFuseActive && !collision.gameObject.CompareTag("Enemy"))
+        {
+            ActivateFuse();
+        }
     }
-
-    protected override void ProjectileMovement() { }
 
     //Throw bomb towards the player
     public void ActivateFuse()
     {
+        isFuseActive = true;
         Invoke(nameof(Explode), explosionTimer);
     }
 
     // Deal damage to any players/enemies in the range of the bomb
     private void Explode()
     {
-        Debug.Log("Bomb Exploded");
-
+        if (isExploded) return;
+        isExploded = true;
         int layerMask = 0;
         layerMask |= 1 << 6;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosiveRange, layerMask);
         foreach (Collider collider in hitColliders)
         {
-            PlayerCharacter player = collider.gameObject.GetComponent<PlayerCharacter>();
+            PlayerCharacter player = collider.gameObject.GetComponentInParent<PlayerCharacter>();
             float distance = (transform.position - player.transform.position).magnitude - player.transform.localScale.magnitude;
             distance = Mathf.Clamp(distance, 0, explosiveRange);
 
@@ -61,12 +69,12 @@ public class RollingExplosive : Projectile
             else
                 // deal fractional damage
                 damagePercent = ((explosiveRange - distance) / 2f) / (explosiveRange / 2f);
-
             player.TakeDamage(baseDamage * damagePercent);
         }
+        DestroySelf();
 
-        explosionParticles.Play();
-        Invoke(nameof(DestroySelf), 1.0f);
+        //explosionParticles.Play();
+        //Invoke(nameof(DestroySelf), 0.5f);
     }
 
     private void DestroySelf()
