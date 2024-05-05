@@ -17,7 +17,7 @@ public class RollingExplosive : Projectile
     {
         base.Start();
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
-        ThrowBomb();
+        ActivateFuse();
     }
 
     // Update is called once per frame
@@ -34,10 +34,8 @@ public class RollingExplosive : Projectile
     protected override void ProjectileMovement() { }
 
     //Throw bomb towards the player
-    public void ThrowBomb()
+    public void ActivateFuse()
     {
-        Debug.Log("Bomb Thrown");
-        rb.AddForce(ThrowVector, ForceMode.Impulse);
         Invoke(nameof(Explode), explosionTimer);
     }
 
@@ -73,8 +71,6 @@ public class RollingExplosive : Projectile
 
     private void DestroySelf()
     {
-        Debug.Log("Hiding Bomb Mesh");
-        meshRenderer.enabled = false;
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }

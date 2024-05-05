@@ -376,6 +376,7 @@ MonoBehaviour:
   squashThreshHold: 2000
   projectileSpawnTransform: {fileID: 1336491838915822305}
   projectile: {fileID: 7263172056655484054, guid: d234828c4bd75474fb72842671ca28ea, type: 3}
+  maxThrowForce: 50
 --- !u!195 &6539471664427866905
 NavMeshAgent:
   m_ObjectHideFlags: 0
