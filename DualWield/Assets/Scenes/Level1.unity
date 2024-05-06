@@ -4447,6 +4447,10 @@ PrefabInstance:
       propertyPath: m_text
       value: duel wield sprint 3
       objectReference: {fileID: 0}
+    - target: {fileID: 814183328845249987, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: playerCharacter
+      value: 
+      objectReference: {fileID: 1244124099}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
@@ -76119,6 +76123,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+--- !u!114 &1244124099 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 833108082530496965, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+  m_PrefabInstance: {fileID: 1244124098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588979724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c773e70d748d8b45ae48dcd62245539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1255197154
 GameObject:
   m_ObjectHideFlags: 0
