@@ -13,24 +13,23 @@ public class PauseMenu : MonoBehaviour
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
 
-    void Awake()
+    void Start()
     {
         document = GetComponent<UIDocument>();
+        document.rootVisualElement.visible = false;
 
         settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
         settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
         quitButton = document.rootVisualElement.Q("QuitButton") as Button;
         quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
+        Time.timeScale = 1f;
 
-        allButtons = document.rootVisualElement.Query<Button>().ToList();
+        /*allButtons = document.rootVisualElement.Query<Button>().ToList();
         for (int i = 0; i < allButtons.Count; i++)
         {
             allButtons[i].RegisterCallback<ClickEvent>(OnAnyButtonClicked);
-        }
-    }
+        }*/
 
-    private void Start()
-    {
         player = FindObjectOfType<PlayerCharacter>();
     }
 
@@ -53,16 +52,16 @@ public class PauseMenu : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (document.enabled)
+            if (document.rootVisualElement.visible)
             {
                 player.SetMouseLocked(true);
-                document.enabled = false;
+                document.rootVisualElement.visible = false;
                 Time.timeScale = 1f;
             }
             else
             {
                 player.SetMouseLocked(false);
-                document.enabled = true;
+                document.rootVisualElement.visible = true;
                 Time.timeScale = 0f;
             }
         }
