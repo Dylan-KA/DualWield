@@ -48,6 +48,7 @@ public class BaseEnemy : BaseCharacter
 
     private void OnEnable()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         SetEnemyVision();
     }
 
