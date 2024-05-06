@@ -15,7 +15,7 @@ public class BaseEnemy : BaseCharacter
 
     protected float currentMovementSpeed;
     protected GameObject enemyModel;
-    protected Transform playerTransform;
+    [SerializeField] protected Transform playerTransform;
     protected EnemyTypes enemyType;
     protected bool isAttacking = false;
     protected float currentAttackTimer = 0f;
