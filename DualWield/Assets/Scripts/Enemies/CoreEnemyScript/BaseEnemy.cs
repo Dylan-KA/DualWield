@@ -15,10 +15,10 @@ public class BaseEnemy : BaseCharacter
 
     protected float currentMovementSpeed;
     protected GameObject enemyModel;
-    protected Transform playerTransform;
+    [SerializeField] protected Transform playerTransform;
     protected EnemyTypes enemyType;
-    protected bool isAttacking = false;
-    protected float currentAttackTimer = 0f;
+    [SerializeField] protected bool isAttacking = false;
+    [SerializeField] protected float currentAttackTimer = 0f;
     protected float fieldOfView = 350;
 
     [SerializeField] protected float viewDistance;
@@ -48,6 +48,7 @@ public class BaseEnemy : BaseCharacter
 
     private void OnEnable()
     {
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         SetEnemyVision();
     }
 
