@@ -29,8 +29,15 @@ public class BaseCharacter : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        rend = GetComponent<MeshRenderer>();
-        characterColor = rend.material.color;
+        try
+        {
+            rend = GetComponent<MeshRenderer>();
+            characterColor = rend.material.color;
+        }
+        catch
+        {
+            Debug.Log("Mesh Renderer does not exist");
+        }
     }
 
     // Update is called once per frame

@@ -37,8 +37,12 @@ public class FlyingEnemy : BaseEnemy
                 if (!isAttacking)
                 {
                     isAttacking = true;
+                    if (currentAttackTimer <= 0)
+                    {
+                        Attack();
+                    }
                 }
-                else if (isAttacking && currentAttackTimer >= attackWaitTime)
+                else if (isAttacking && currentAttackTimer <= 0)
                 {
                     Attack();
                 }
@@ -52,18 +56,12 @@ public class FlyingEnemy : BaseEnemy
         }
     }
 
-    protected virtual void SetMovementSpeed()
-    {
-        currentMovementSpeed = baseMovementSpeed * (1 - (FreezePercent / 100));
-    }
-
     protected override void MoveTowardsTarget()
     {
-        if (playerTransform != null && statusEffect != StatusEffect.Freeze)
+        if (playerTransform != null && statusEffect != StatusEffect.Freeze && navAgent.enabled == true)
         {
             SetMovementSpeed();
-            Vector3 flyingDistination = new (playerTransform.position.x, maxFlyingHeight + playerTransform.position.y, playerTransform.position.y);
-            transform.position = Vector3.MoveTowards(transform.position, flyingDistination, currentMovementSpeed * Time.deltaTime);
+            navAgent.SetDestination(playerTransform.position);
         }
     }
 
