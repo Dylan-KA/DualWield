@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7955216632550757811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.1, z: 0.7}
+  m_LocalPosition: {x: -0, y: 0.3, z: 0.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5177,7 +5177,7 @@ Transform:
   - {fileID: 5216203245759657922}
   - {fileID: 4510668100001727026}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8766485580880972854
 MeshFilter:
@@ -5270,7 +5270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9c3784282313c4680721f3be5bdb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 9
+  baseMovementSpeed: 8
   health: 500
   statusEffect: 0
   FreezePercent: 0
@@ -5283,8 +5283,8 @@ MonoBehaviour:
     m_Bits: 128
   viewDistance: 100
   attackDamage: 0
-  attackRange: 10
-  attackWaitTime: 3
+  attackRange: 20
+  attackWaitTime: 1
   squashDamage: 30
   squashThreshHold: 2000
   isAlwaysHuntingTarget: 0

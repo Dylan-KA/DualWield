@@ -20,14 +20,22 @@ public class TankEnemy : GroundEnemy
     protected override void Attack()
     {
         transform.LookAt(playerTransform);
+        StopTankMovement();
         ThrowProjectile();
         ResetAttackWaitTime();
+    }
+    private void StopTankMovement()
+    {
+        navAgent.enabled = false;
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
     private void ThrowProjectile()
     {
         GameObject bullet = Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        Debug.Log(bullet.gameObject.name);
         bullet.GetComponent<Rigidbody>().velocity = 
             CalculateInitalVelocity(playerTransform.position + playerTransform.gameObject.GetComponent<CharacterController>().center, bullet.GetComponent<Transform>().position);
+        Debug.Log(bullet.GetComponent<Rigidbody>().velocity);
     }
 
     private Vector3 CalculateInitalVelocity(Vector3 targetPosition, Vector3 startPosition)
@@ -39,7 +47,8 @@ public class TankEnemy : GroundEnemy
         float throwStrength = Mathf.Clamp(Mathf.Sqrt(gravity * (deltaY + Mathf.Sqrt(Mathf.Pow(deltaY, 2) + Mathf.Pow(deltaXZ, 2)))), 0.01f, maxThrowForce);
         float angle = Mathf.PI / 2f - (0.5f * Mathf.PI / 2 - (deltaY / deltaXZ));
         Vector3 initalVelocity = Mathf.Cos(angle) * throwStrength * displacement.normalized + Mathf.Sin(angle) * throwStrength * Vector3.up;
-        // Debug.Log($"deltaY: {deltaY} deltaXZ: {deltaXZ} gravity: {gravity} throwStrength: {throwStrength} angle: {angle} initalVelocity: {initalVelocity}");
+        Debug.Log($"deltaY: {deltaY} deltaXZ: {deltaXZ} gravity: {gravity} throwStrength: {throwStrength} angle: {angle} initalVelocity: {initalVelocity}");
         return initalVelocity;
     }
+
 }
