@@ -5270,7 +5270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9c3784282313c4680721f3be5bdb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 10
+  baseMovementSpeed: 9
   health: 500
   statusEffect: 0
   FreezePercent: 0
@@ -5287,6 +5287,7 @@ MonoBehaviour:
   attackWaitTime: 3
   squashDamage: 30
   squashThreshHold: 2000
+  isAlwaysHuntingTarget: 0
   projectileSpawnTransform: {fileID: 1336491838915822305}
   projectile: {fileID: 7263172056655484054, guid: d234828c4bd75474fb72842671ca28ea, type: 3}
   maxThrowForce: 50

@@ -13,7 +13,10 @@ public class ArenaTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        arena.StartWave();
-        Destroy(this.gameObject);
+        if (other.CompareTag("Player"))
+        {
+            arena.StartWave();
+            Destroy(this.gameObject);
+        }
     }
 }

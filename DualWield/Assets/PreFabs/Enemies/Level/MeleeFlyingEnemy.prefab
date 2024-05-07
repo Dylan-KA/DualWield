@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b1464467520b142964ee656adda144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 3
+  baseMovementSpeed: 9
   health: 100
   statusEffect: 0
   FreezePercent: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   viewDistance: 100
-  attackDamage: 25
+  attackDamage: 30
   attackRange: 10
   attackWaitTime: 5
   squashDamage: 10
@@ -363,6 +363,7 @@ MonoBehaviour:
   returnSpeed: 5
   velocity: {x: 0, y: 0, z: 0}
   attackHitRange: 1
+  isDiving: 0
 --- !u!195 &-2102120428620293017
 NavMeshAgent:
   m_ObjectHideFlags: 0
