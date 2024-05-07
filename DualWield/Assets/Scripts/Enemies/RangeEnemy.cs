@@ -18,7 +18,12 @@ public class RangeEnemy : GroundEnemy
     }
     protected override void Attack()
     {
-        GameObject bullet = Instantiate(projectilePrefab, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        AimAtPlayer();
+        Instantiate(projectilePrefab, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
         ResetAttackWaitTime();
+    }
+    private void AimAtPlayer()
+    {
+        projectileSpawnTransform.LookAt(playerTransform);
     }
 }

@@ -9,6 +9,8 @@ public class FlyingEnemy : BaseEnemy
     protected override void Start()
     {
         base.Start();
+        navAgent.baseOffset = maxFlyingHeight;
+        navAgent.height = maxFlyingHeight;
     }
 
     protected override void Update()
