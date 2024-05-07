@@ -89,6 +89,13 @@ public class BaseEnemy : BaseCharacter
         base.OnCollisionEnter(collision);
     }
 
+    public override void Freeze()
+    {
+        base.Freeze();
+        StopEnemyMovement();
+
+    }
+
     // Implemented in ground/flying enemy script
     protected virtual void MoveTowardsTarget() { }
     // Implemented in the individual enemy script
@@ -260,6 +267,11 @@ public class BaseEnemy : BaseCharacter
     private void ReadyForNextFlicker()
     {
         isFlickering = false;
+    }
+    protected void StopEnemyMovement()
+    {
+        navAgent.enabled = false;
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public void SetSquashDamage(float newDamge)

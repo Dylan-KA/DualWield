@@ -20,14 +20,9 @@ public class TankEnemy : GroundEnemy
     protected override void Attack()
     {
         transform.LookAt(playerTransform);
-        StopTankMovement();
+        StopEnemyMovement();
         ThrowProjectile();
         ResetAttackWaitTime();
-    }
-    private void StopTankMovement()
-    {
-        navAgent.enabled = false;
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
     private void ThrowProjectile()
     {
