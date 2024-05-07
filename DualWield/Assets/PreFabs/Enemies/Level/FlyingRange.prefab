@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 977627224615763617}
   - component: {fileID: 6465362837724066955}
   - component: {fileID: 1811594734288257010}
+  - component: {fileID: 877792511862059148}
   m_Layer: 3
   m_Name: FlyingRange
   m_TagString: Enemy
@@ -133,9 +134,32 @@ MonoBehaviour:
   attackWaitTime: 1
   squashDamage: 10
   squashThreshHold: 2
+  isAlwaysHuntingTarget: 0
   maxFlyingHeight: 5
   projectileSpawnTransform: {fileID: 589142606214024216}
   projectilePrefab: {fileID: 7263172056655484054, guid: ee3af580214e9724c8d0a50a7adafa4f, type: 3}
+--- !u!195 &877792511862059148
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977627224615763619}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 5
+  m_BaseOffset: 5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &977627224761374359
 GameObject:
   m_ObjectHideFlags: 0
