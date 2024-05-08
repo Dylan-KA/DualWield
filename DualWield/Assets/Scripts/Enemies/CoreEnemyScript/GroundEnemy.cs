@@ -5,20 +5,11 @@ using UnityEngine.AI;
 
 public class GroundEnemy : BaseEnemy
 {
-    protected NavMeshAgent navAgent;
     private bool isPushed = false;
 
     protected override void Start()
     {
         base.Start();
-        try
-        {
-            navAgent = GetComponent<NavMeshAgent>();
-        }
-        catch
-        {
-            Debug.Log("NavMeshAgent cannot be found");
-        }
     }
 
     protected override void Update()
@@ -38,81 +29,6 @@ public class GroundEnemy : BaseEnemy
         }
     }
 
-    protected override void EnemyAttackAtCertainRange()
-    {
-        if (statusEffect != StatusEffect.Freeze)
-        {
-            if (isAlwaysHuntingTarget)
-            {
-                ArenaBehaviour();
-            }
-            else
-            {
-                NormalBehaviour();
-            }
-        }
-    }
-
-    protected void NormalBehaviour()
-    {
-        if (GetIsPlayerSeen())
-        {
-            if (IsPlayerInAttackingRange())
-            {
-                LookAtPlayer();
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                    if (currentAttackTimer <= 0)
-                    {
-                        Attack();
-                    }
-                }
-                else if (isAttacking && currentAttackTimer <= 0)
-                {
-                    Attack();
-                }
-            }
-            else
-            {
-                LookAtPlayer();
-                ResetAttack();
-                MoveTowardsTarget();
-            }
-        }
-    }
-
-    protected void ArenaBehaviour()
-    {
-        if (GetIsPlayerSeen() && IsPlayerInAttackingRange())
-        {
-            LookAtPlayer();
-            if (!isAttacking)
-            {
-                isAttacking = true;
-                if (currentAttackTimer <= 0)
-                {
-                    Attack();
-                }
-            }
-            else if (isAttacking && currentAttackTimer >= attackWaitTime)
-            {
-                Attack();
-            }
-        }
-        else
-        {
-            LookAtPlayer();
-            ResetAttack();
-            MoveTowardsTarget();
-        }
-    }
-
-    private bool IsPlayerInAttackingRange()
-    {
-        return Vector3.Distance(transform.position, playerTransform.position) <= attackRange;
-    }
-
     protected override void LookAtPlayer()
     {
         transform.LookAt(playerTransform);
@@ -121,9 +37,16 @@ public class GroundEnemy : BaseEnemy
         transform.eulerAngles = currentRotation;
     }
 
+    public void PushEnemy()
+    {
+        navAgent.enabled = false;
+        isPushed = true;
+        StopCoroutine(ResetNavMesh());
+    }
+
     protected override void MoveTowardsTarget()
     {
-        if (navAgent.enabled != false)
+        if (navAgent.enabled == true)
         {
             SetMovementSpeed();
             navAgent.SetDestination(playerTransform.position);
@@ -132,19 +55,6 @@ public class GroundEnemy : BaseEnemy
         {
             StartCoroutine(ResetNavMesh());
         }
-    }
-
-    // Sets the movement speed based on how frzozen the enemy is
-    protected virtual void SetMovementSpeed()
-    {
-        navAgent.speed = baseMovementSpeed * (1 - (FreezePercent / 100));
-    }
-
-    public void PushEnemy()
-    {
-        navAgent.enabled = false;
-        isPushed = true;
-        StopCoroutine(ResetNavMesh());
     }
 
     private IEnumerator ResetNavMesh()

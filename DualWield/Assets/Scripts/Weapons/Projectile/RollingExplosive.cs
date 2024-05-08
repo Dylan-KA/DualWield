@@ -7,7 +7,6 @@ public class RollingExplosive : MonoBehaviour
 {
     [SerializeField] private MeshRenderer meshRenderer;
     [SerializeField] private ParticleSystem explosionParticles;
-    [SerializeField] private Vector3 ThrowVector;
     [SerializeField] private float baseDamage;
     [SerializeField] private float explosionTimer = 2.0f;
     [SerializeField] private float explosiveRange;

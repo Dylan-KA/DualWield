@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bafae597820620d4fa2a40250f9881b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 3
+  baseMovementSpeed: 7
   health: 100
   statusEffect: 0
   FreezePercent: 0
@@ -443,6 +443,7 @@ MonoBehaviour:
   attackWaitTime: 2
   squashDamage: 10
   squashThreshHold: 2
+  isAlwaysHuntingTarget: 0
   projectileSpawnTransform: {fileID: 4773306059254048216}
   projectilePrefab: {fileID: 7263172056655484054, guid: 3f2e0675d8d0e944c8b46ed37d288db8, type: 3}
 --- !u!195 &8065606458212222771
