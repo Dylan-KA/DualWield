@@ -50,7 +50,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1697747997436904575}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -178,7 +178,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7269447938927789378}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -238,7 +238,6 @@ GameObject:
   - component: {fileID: 7269447939106450804}
   - component: {fileID: 3515881512901175134}
   - component: {fileID: 2965627672885505358}
-  - component: {fileID: -2102120428620293017}
   m_Layer: 3
   m_Name: MeleeFlyingEnemy
   m_TagString: Enemy
@@ -263,7 +262,7 @@ Transform:
   - {fileID: 7016169176799961037}
   - {fileID: 2727554336084689744}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7269447939106450805
 MeshFilter:
@@ -281,7 +280,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7269447939106450806}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -340,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0b1464467520b142964ee656adda144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 9
+  baseMovementSpeed: 3
   health: 100
   statusEffect: 0
   FreezePercent: 0
@@ -352,40 +351,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   viewDistance: 100
-  attackDamage: 30
+  attackDamage: 25
   attackRange: 10
   attackWaitTime: 5
   squashDamage: 10
   squashThreshHold: 2
-  isAlwaysHuntingTarget: 0
   maxFlyingHeight: 5
   diveSpeed: 55
   returnSpeed: 5
   velocity: {x: 0, y: 0, z: 0}
   attackHitRange: 1
-  isDiving: 0
---- !u!195 &-2102120428620293017
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7269447939106450806}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 5
-  m_BaseOffset: 5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!1 &8165821071403694071
 GameObject:
   m_ObjectHideFlags: 0

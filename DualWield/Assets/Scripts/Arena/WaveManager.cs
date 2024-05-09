@@ -6,8 +6,6 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> doorList = new();
     [SerializeField] private List<GameObject> waveList = new();
-    [SerializeField] private CameraManager cameraManager;
-    [SerializeField] private GameObject arenaExitCam;
     private bool isArenaStarted = false;
     private int currentWaveCount = 0;
     private int maxWave = 0;
@@ -59,10 +57,9 @@ public class WaveManager : MonoBehaviour
 
     private void EndArena()
     {
-        cameraManager.TriggerDoorCam(arenaExitCam);
-        ToggleDoor(true);
         isArenaStarted = false;
         DisableAllWaves();
+        FinishArena();
     }
 
     private void EnableCurrentWave()
@@ -80,7 +77,6 @@ public class WaveManager : MonoBehaviour
     
     private void ToggleDoor(bool isOpen)
     {
-        Debug.Log("Toggling Door");
         if (doorList.Count == 0) Debug.Log($"Door Missing in Arena Script: {gameObject.name}");
 
         foreach(GameObject door in doorList)
@@ -95,6 +91,14 @@ public class WaveManager : MonoBehaviour
                 Debug.LogError($"{door.name} animator function cannot be found || has an error with trigger name");
             }
         }
+    }
+    
+    private void FinishArena()
+    {
+        foreach (GameObject Door in doorList)
+        {
+            Destroy(Door);
+        }   
     }
 
     private bool IsWaveFinished()

@@ -55,20 +55,6 @@ public class WindGun : ParticleWeapon
             
     }
 
-    public override void SetOtherWeaponType(WeaponType otherWeaponType)
-    {
-        base.SetOtherWeaponType(otherWeaponType);
-        //Sets Wind gun to blue wind if other gun is freeze
-        if (otherWeaponType == WeaponType.FreezeGun)
-        {
-            base.SetParticleRangeExtended();
-        }
-        else
-        {
-            base.SetParticleRangeNormal();
-        }
-    }
-
     private void WindAndFreeze()
     {
         foreach (BaseEnemy Enemy in ListofEnemies)
