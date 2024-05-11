@@ -40,6 +40,7 @@ public class WaveManager : MonoBehaviour
     {
         isArenaStarted = true;
         EnableCurrentWave();
+        ToggleDoor(false);
     }
 
     private void NextWave()
@@ -59,7 +60,7 @@ public class WaveManager : MonoBehaviour
     {
         isArenaStarted = false;
         DisableAllWaves();
-        FinishArena();
+        ToggleDoor(true);
     }
 
     private void EnableCurrentWave()
@@ -91,14 +92,6 @@ public class WaveManager : MonoBehaviour
                 Debug.LogError($"{door.name} animator function cannot be found || has an error with trigger name");
             }
         }
-    }
-    
-    private void FinishArena()
-    {
-        foreach (GameObject Door in doorList)
-        {
-            Destroy(Door);
-        }   
     }
 
     private bool IsWaveFinished()
