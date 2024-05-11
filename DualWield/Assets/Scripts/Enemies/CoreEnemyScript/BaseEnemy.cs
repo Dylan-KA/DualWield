@@ -13,12 +13,11 @@ public class BaseEnemy : BaseCharacter
     private bool isPlayerSeen = false;
     private float dmgFlickerRate = 0.15f;
 
+    protected float currentMovementSpeed;
     protected GameObject enemyModel;
-    protected NavMeshAgent navAgent;
     protected Transform playerTransform;
     protected EnemyTypes enemyType;
     protected bool isAttacking = false;
-    protected float currentMovementSpeed;
     protected float currentAttackTimer = 0f;
     protected float fieldOfView = 350;
 
@@ -49,7 +48,6 @@ public class BaseEnemy : BaseCharacter
 
     private void OnEnable()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         SetEnemyVision();
     }
 
@@ -64,9 +62,8 @@ public class BaseEnemy : BaseCharacter
         base.Start();
         try
         {
-            navAgent = GetComponent<NavMeshAgent>();
-            SetEnemyVision();
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            SetEnemyVision();
         }
         catch
         {
@@ -89,14 +86,8 @@ public class BaseEnemy : BaseCharacter
         base.OnCollisionEnter(collision);
     }
 
-    public override void Freeze()
-    {
-        base.Freeze();
-        StopEnemyMovement();
-
-    }
-
-    // Implemented in ground/flying enemy script
+    // Implemented in enemies ground/flying
+    protected virtual void EnemyAttackAtCertainRange() { }
     protected virtual void MoveTowardsTarget() { }
     // Implemented in the individual enemy script
     protected virtual void Attack() { }
@@ -150,90 +141,9 @@ public class BaseEnemy : BaseCharacter
         }   
     }
 
-    protected virtual void EnemyAttackAtCertainRange()
-    {
-        if (statusEffect != StatusEffect.Freeze)
-        {
-            if (isAlwaysHuntingTarget)
-            {
-                ArenaBehaviour();
-            }
-            else
-            {
-                NormalBehaviour();
-            }
-        }
-    }
-
-    protected void NormalBehaviour()
-    {
-        if (GetIsPlayerSeen())
-        {
-            if (IsPlayerInAttackingRange())
-            {
-                LookAtPlayer();
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                    if (currentAttackTimer <= 0)
-                    {
-                        Attack();
-                    }
-                }
-                else if (isAttacking && currentAttackTimer <= 0)
-                {
-                    Attack();
-                }
-            }
-            else
-            {
-                LookAtPlayer();
-                ResetAttack();
-                MoveTowardsTarget();
-            }
-        }
-    }
-
-    protected void ArenaBehaviour()
-    {
-        if (GetIsPlayerSeen() && IsPlayerInAttackingRange())
-        {
-            LookAtPlayer();
-            if (!isAttacking)
-            {
-                isAttacking = true;
-                if (currentAttackTimer <= 0)
-                {
-                    Attack();
-                }
-            }
-            else if (isAttacking && currentAttackTimer >= attackWaitTime)
-            {
-                Attack();
-            }
-        }
-        else
-        {
-            LookAtPlayer();
-            ResetAttack();
-            MoveTowardsTarget();
-        }
-    }
-
-    private bool IsPlayerInAttackingRange()
-    {
-        return Vector3.Distance(transform.position, playerTransform.position) <= attackRange;
-    }
-
     protected virtual void LookAtPlayer()
     {
         transform.LookAt(playerTransform);
-    }
-
-    // Sets the movement speed based on how frzozen the enemy is
-    protected virtual void SetMovementSpeed()
-    {
-        navAgent.speed = baseMovementSpeed * (1 - (FreezePercent / 100));
     }
 
     public override void TakeDamage(float damageAmount)
@@ -267,11 +177,6 @@ public class BaseEnemy : BaseCharacter
     private void ReadyForNextFlicker()
     {
         isFlickering = false;
-    }
-    protected void StopEnemyMovement()
-    {
-        navAgent.enabled = false;
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     public void SetSquashDamage(float newDamge)
