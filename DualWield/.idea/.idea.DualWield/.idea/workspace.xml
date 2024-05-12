@@ -6,9 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="7c55d3eb-df09-46bf-860d-cbbc0a400599" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DualWield/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Material/Testing/Emission.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Material/Testing/Emission.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Level2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Arena/WaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Arena/WaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena1Pipes.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena1Pipes.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door-Shrinking.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door-Shrinking.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door2.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door2.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door2.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door2.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door2Shrinking.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Arena2Door2Shrinking.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Closed.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Closed.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Opening.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Opening.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Openned.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Openned.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Scale0.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Scale0.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Scale02.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/Door/Scale02.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/NavMesh-Bridge 2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/NavMesh-Bridge 2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/NavMesh-NewArena1.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Level2/NavMesh-NewArena1.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +152,7 @@
       <workItem from="1714114385326" duration="4090000" />
       <workItem from="1714350523593" duration="1395000" />
       <workItem from="1714822730573" duration="3531000" />
-      <workItem from="1715329174918" duration="4959000" />
+      <workItem from="1715329174918" duration="7499000" />
     </task>
     <servers />
   </component>
