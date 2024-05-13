@@ -21,7 +21,7 @@ public class GroundEnemy : BaseEnemy
     {
         base.OnCollisionEnter(collision);
 
-        if (collision.relativeVelocity.magnitude > squashThreshHold && collision.gameObject.CompareTag("Untagged") && isPushed)
+        if (collision.relativeVelocity.magnitude > squashThreshHold && collision.gameObject.layer == 7 && isPushed)
         {
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             TakeDamage(squashDamage);
