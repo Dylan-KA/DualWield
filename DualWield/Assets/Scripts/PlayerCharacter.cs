@@ -140,7 +140,8 @@ public class PlayerCharacter : BaseCharacter
         // movement and camera
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        moveDirection = (forward * (baseMovementSpeed * Input.GetAxis("Vertical"))) + (right * (baseMovementSpeed * Input.GetAxis("Horizontal")));
+        moveDirection = (forward *  Input.GetAxis("Vertical")) + (right * Input.GetAxis("Horizontal"));
+        moveDirection = moveDirection.normalized * baseMovementSpeed;
         IsGrounded();
         if (!isFlying)
         {
