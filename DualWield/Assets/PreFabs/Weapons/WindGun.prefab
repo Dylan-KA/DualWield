@@ -492,7 +492,7 @@ MonoBehaviour:
   weaponFireSound: {fileID: 9114793080312682140}
   weaponFiringSound: {fileID: 7351466167822645370}
   ListofEnemies: []
-  ammoPerSecond: 15
+  ammoPerSecond: 5
   NormalRangeParticles: {fileID: 3024551849334972390}
   ExtendedRangeParticles: {fileID: 2535031388525247755}
   WeaponParticles: {fileID: 3024551849334972390}
