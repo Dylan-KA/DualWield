@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
 
+    [SerializeField] GameObject eventSystem;
+
     void Start()
     {
         document = GetComponent<UIDocument>();
@@ -54,12 +56,14 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (document.rootVisualElement.visible)
             {
+                eventSystem.SetActive(true);
                 player.SetMouseLocked(true);
                 document.rootVisualElement.visible = false;
                 Time.timeScale = 1f;
             }
             else
             {
+                eventSystem.SetActive(false);
                 player.SetMouseLocked(false);
                 document.rootVisualElement.visible = true;
                 Time.timeScale = 0f;

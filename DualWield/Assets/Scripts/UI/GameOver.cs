@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] GameObject gameOverMenu;
-    private PlayerCharacter playerCharacter;
+    [SerializeField] private PlayerCharacter playerCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
         gameOverMenu.SetActive(false);
-        playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
+        //playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
     }
 
     private void Update()
