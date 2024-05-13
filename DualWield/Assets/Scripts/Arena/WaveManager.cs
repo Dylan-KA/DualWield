@@ -60,11 +60,17 @@ public class WaveManager : MonoBehaviour
 
     private void EndArena()
     {
-        cameraManager.TriggerDoorCam(arenaExitCam);
-        ToggleDoor(true);
         isArenaStarted = false;
-        DisableAllWaves();
+        try
+        {
+            cameraManager.TriggerDoorCam(arenaExitCam);
+        }
+        catch
+        {
+            Debug.LogError("Arena does not have camera for door");
+        }
         ToggleDoor(true);
+        DisableAllWaves();
     }
 
     private void EnableCurrentWave()
@@ -94,7 +100,7 @@ public class WaveManager : MonoBehaviour
             }
             catch
             {
-                Debug.LogError($"{door.name} animator function cannot be found || has an error with trigger name");
+                Debug.LogError($"{door.name} animator function cannot be found || has an error with trigger name/type");
             }
         }
     }
