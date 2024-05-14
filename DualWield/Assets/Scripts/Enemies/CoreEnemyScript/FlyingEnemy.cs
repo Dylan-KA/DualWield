@@ -22,7 +22,7 @@ public class FlyingEnemy : BaseEnemy
     {
         base.OnCollisionEnter(collision);
 
-        if (collision.gameObject.CompareTag("Floor") && statusEffect == StatusEffect.Freeze)
+        if (collision.gameObject.layer == 7 && statusEffect == StatusEffect.Freeze)
         {
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             TakeDamage(squashDamage);
@@ -69,8 +69,8 @@ public class FlyingEnemy : BaseEnemy
 
     public override void Freeze()
     {
-        base.Freeze();
         gameObject.AddComponent<Rigidbody>();
+        base.Freeze();
         gameObject.GetComponent<Collider>().isTrigger = false;
     }
 }

@@ -92,8 +92,10 @@ public class BaseEnemy : BaseCharacter
     public override void Freeze()
     {
         base.Freeze();
-        StopEnemyMovement();
-
+        if (navAgent)
+        {
+            StopEnemyMovement();
+        }
     }
 
     // Implemented in ground/flying enemy script

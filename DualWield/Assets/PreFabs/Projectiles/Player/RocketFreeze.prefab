@@ -132,5 +132,5 @@ MonoBehaviour:
   baseDamage: 40
   isFiredByEnemy: 0
   explosiveRange: 6
-  explosionPrefab: {fileID: 198357973136645638, guid: 75a392c0908c45643a18825a3df3af49, type: 3}
+  explosionPrefab: {fileID: 198357973136645638, guid: 204b5811217b8da4f867ca58fba7c054, type: 3}
   molotovPrefab: {fileID: 0}
