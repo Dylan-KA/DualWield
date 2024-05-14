@@ -55848,7 +55848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionText: {fileID: 243014131}
   missionString: 'Mission Objective: Break into the facility'
-  textDuration: 8
+  textDuration: 5
 --- !u!1 &667042802
 GameObject:
   m_ObjectHideFlags: 0
@@ -76731,7 +76731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionText: {fileID: 243014131}
   missionString: 'Mission Objective: Go fight the aliens'
-  textDuration: 7
+  textDuration: 5
 --- !u!65 &1264599513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -105155,7 +105155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionText: {fileID: 243014131}
   missionString: 'Mission Objective: Steal the weapons'
-  textDuration: 7
+  textDuration: 5
 --- !u!65 &2061323818
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -10484,7 +10484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionText: {fileID: 262883035}
   missionString: 'Mission Objective: Fight ''em on their  turf'
-  textDuration: 7
+  textDuration: 5
 --- !u!65 &821165703
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12179,7 +12179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   missionText: {fileID: 262883035}
   missionString: 'Mission Objective: Blow up the ship'
-  textDuration: 7
+  textDuration: 5
 --- !u!65 &990770180
 BoxCollider:
   m_ObjectHideFlags: 0
