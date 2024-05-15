@@ -16,7 +16,7 @@ public class OpenDoorOnPickup : MonoBehaviour
             foreach (Light var_light in lights)
             {
                 var_light.color = Color.red;
-                var_light.intensity = 2.5f;
+                var_light.intensity = 8.0f;
             }
 
             foreach (TextMeshPro connection in lineConnections)
