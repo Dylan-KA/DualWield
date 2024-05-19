@@ -47,13 +47,13 @@ public class BaseEnemy : BaseCharacter
         return playerTransform;
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         SetEnemyVision();
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         StopAllCoroutines();
     }
