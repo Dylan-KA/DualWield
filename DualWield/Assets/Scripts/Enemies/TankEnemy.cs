@@ -27,10 +27,8 @@ public class TankEnemy : GroundEnemy
     private void ThrowProjectile()
     {
         GameObject bullet = Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
-        // Debug.Log(playerTransform.gameObject.name);
         bullet.GetComponent<Rigidbody>().velocity = 
             GetPredictedPosition(playerTransform.position + playerTransform.gameObject.GetComponent<CharacterController>().center, bullet.GetComponent<Transform>().position);
-        // Debug.Log(bullet.GetComponent<Rigidbody>().velocity);
     }
 
     private ThrowData CalculateInitalVelocity(Vector3 targetPosition, Vector3 startPosition)
