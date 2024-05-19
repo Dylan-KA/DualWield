@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 548359951065864236}
   - component: {fileID: 5289630811277942560}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EmptyAmmoSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 854430132224508197}
   - component: {fileID: 1645242702964836130}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeaponFireSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2174709033735691842}
   - component: {fileID: 6018129538999456172}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WeaponFiringSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 9019822857827249864}
   - component: {fileID: 9019822857827249870}
   - component: {fileID: 2619971020580556631}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flamethrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ MonoBehaviour:
   weaponFireSound: {fileID: 1645242702964836130}
   weaponFiringSound: {fileID: 6018129538999456172}
   ListofEnemies: []
-  ammoPerSecond: 10
+  ammoPerSecond: 15
   NormalRangeParticles: {fileID: 6896752204022441817}
   ExtendedRangeParticles: {fileID: 6359849559566482721}
   WeaponParticles: {fileID: 0}
@@ -527,9 +527,29 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 8528919871481209165}
     m_Modifications:
+    - target: {fileID: 1001005852633408, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230862096963796, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393688157360954, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497415103117672, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_Name
       value: Extended Range Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_RootOrder
@@ -1004,9 +1024,29 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 8528919871481209165}
     m_Modifications:
+    - target: {fileID: 1001005852633408, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230862096963796, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1393688157360954, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497415103117672, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_Name
       value: Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 1725317912486240, guid: e55149ba6f4d00741984987e258c3378, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4274653050354540, guid: e55149ba6f4d00741984987e258c3378, type: 3}
       propertyPath: m_RootOrder
@@ -1140,6 +1180,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d671c6f2915254246939c9d45076d6f4, type: 3}
       propertyPath: m_Name
       value: FlameModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d671c6f2915254246939c9d45076d6f4, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:

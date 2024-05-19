@@ -5,8 +5,17 @@ using UnityEngine.AI;
 
 public class GroundEnemy : BaseEnemy
 {
+    private ParticleSystem slimeEffect;
     private bool isPushed = false;
-
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        slimeEffect = gameObject.GetComponentInChildren<ParticleSystem>();
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+    }
     protected override void Start()
     {
         base.Start();
@@ -55,6 +64,12 @@ public class GroundEnemy : BaseEnemy
         {
             StartCoroutine(ResetNavMesh());
         }
+    }
+
+    public override void Freeze()
+    {
+        base.Freeze();
+        slimeEffect.Stop();
     }
 
     private IEnumerator ResetNavMesh()

@@ -489,7 +489,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIPopup: {fileID: 3883481942469354641}
   pickup: {fileID: 8134860648132901150}
-  GameManager: {fileID: 0}
   weaponType: 1
 --- !u!1 &8865362835978561637
 GameObject:
@@ -645,6 +644,10 @@ PrefabInstance:
     - target: {fileID: 9019822857827249868, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
       propertyPath: m_Name
       value: WindGunPickup
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019822857827249868, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9019822857827249871, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
       propertyPath: m_RootOrder

@@ -681,6 +681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketLauncherPickup
       objectReference: {fileID: 0}
+    - target: {fileID: 7707916321804409933, guid: 58accf7880b7fd04a9e2e03f7f88ddf5, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 844610252149487880, guid: 58accf7880b7fd04a9e2e03f7f88ddf5, type: 3}
     m_AddedGameObjects:
