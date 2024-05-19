@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using TMPro;
 using UnityEngine;
 
 public class OpenDoorOnArea : MonoBehaviour
@@ -10,6 +11,7 @@ public class OpenDoorOnArea : MonoBehaviour
     [SerializeField] private OnArea whichEntity;
 
     [SerializeField] private GameObject door;
+    [SerializeField] private TextMeshPro[] lineConnections;
 
     private void Start()
     {
@@ -24,6 +26,10 @@ public class OpenDoorOnArea : MonoBehaviour
         if (other.CompareTag("Enemy") && whichEntity == OnArea.Enemy)
         {
             door.SetActive(false);
+            foreach (TextMeshPro connection in lineConnections)
+            {
+                connection.color = Color.green;
+            }
         }
         else if (other.CompareTag("Player") && whichEntity == OnArea.Player)
         {
