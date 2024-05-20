@@ -69,7 +69,10 @@ public class FlyingEnemy : BaseEnemy
 
     public override void Freeze()
     {
-        gameObject.AddComponent<Rigidbody>();
+        if (!gameObject.GetComponent<Rigidbody>())
+        {
+            gameObject.AddComponent<Rigidbody>();
+        }
         base.Freeze();
         gameObject.GetComponent<Collider>().isTrigger = false;
     }
