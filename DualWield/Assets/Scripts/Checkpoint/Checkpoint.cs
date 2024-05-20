@@ -9,7 +9,7 @@ public class Checkpoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        checkPointData = GameObject.FindGameObjectWithTag("Player Data").GetComponent<CheckpointData>();
+        checkPointData = GameObject.FindGameObjectWithTag("Checkpoint Data").GetComponent<CheckpointData>();
     }
 
     private void OnTriggerEnter(Collider other)
