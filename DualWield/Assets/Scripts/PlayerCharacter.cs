@@ -140,8 +140,17 @@ public class PlayerCharacter : BaseCharacter
         // movement and camera
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
-        moveDirection = (forward *  Input.GetAxis("Vertical")) + (right * Input.GetAxis("Horizontal"));
-        moveDirection = moveDirection.normalized * baseMovementSpeed;
+
+        moveDirection = (forward * Input.GetAxis("Vertical") + right * Input.GetAxis("Horizontal"));
+
+        if (moveDirection.magnitude < 1)
+        {
+            moveDirection *=  baseMovementSpeed;
+        }
+        else
+        {
+            moveDirection = moveDirection.normalized * baseMovementSpeed;
+        }
         IsGrounded();
         if (!isFlying)
         {
@@ -159,11 +168,10 @@ public class PlayerCharacter : BaseCharacter
             {
                 velocity.y = 0;
             }
-
         }
-
         characterController.Move(velocity * Time.deltaTime);
         characterController.Move(moveDirection * Time.deltaTime);
+        
         if (canMove && Cursor.visible == false)
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookspeed;
