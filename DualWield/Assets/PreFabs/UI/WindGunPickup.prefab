@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4267884696194278149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8788209048893453858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd58ee8c313f749e8955c02cde7760d0, type: 3}
   m_Name: 
@@ -713,3 +713,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9019822857827249868, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
   m_PrefabInstance: {fileID: 993058772181981138}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6141817928528699346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134860648132901150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2e3ffd788902046a7d554c7a24cc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestWeapon: 1
+  ParentWeapon: {fileID: 0}
