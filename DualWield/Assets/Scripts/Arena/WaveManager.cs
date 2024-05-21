@@ -88,7 +88,6 @@ public class WaveManager : MonoBehaviour
     
     private void ToggleDoor(bool isOpen)
     {
-        Debug.Log("Toggling Door");
         if (doorList.Count == 0) Debug.Log($"Door Missing in Arena Script: {gameObject.name}");
 
         foreach(GameObject door in doorList)
