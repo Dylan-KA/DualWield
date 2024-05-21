@@ -1219,7 +1219,7 @@ Transform:
   - {fileID: 580390277}
   - {fileID: 279677643}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &65247954 stripped
 Transform:
@@ -1304,10 +1304,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -2577,7 +2577,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1306530129737148570, guid: 1e573dbf53bdf884db8a8bf595a0874d, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1306530129737148570, guid: 1e573dbf53bdf884db8a8bf595a0874d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3456,6 +3456,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 806660302, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1407577518, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -4456,7 +4460,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -7724,7 +7728,7 @@ Transform:
   - {fileID: 1224620854}
   - {fileID: 683466645}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580390276
 GameObject:
@@ -7807,7 +7811,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -8586,7 +8590,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -8923,7 +8927,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: bfdc9f914d9e9674f84bd18d3cbe35fe, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: bfdc9f914d9e9674f84bd18d3cbe35fe, type: 3}
       propertyPath: m_LocalScale.x
@@ -9257,7 +9261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676391185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.775627, y: -63.04935, z: -1137.9087}
+  m_LocalPosition: {x: -103.72437, y: -48.93, z: -690.9562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9306,8 +9310,8 @@ Transform:
   - {fileID: 2132405731}
   - {fileID: 1713915498}
   - {fileID: 571681662}
-  m_Father: {fileID: 1964415705}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &680760008
 PrefabInstance:
@@ -10511,7 +10515,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &839315743
 PrefabInstance:
@@ -11347,7 +11351,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -11705,7 +11709,7 @@ Transform:
   - {fileID: 711607783}
   - {fileID: 87329933}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &970635826 stripped
 MonoBehaviour:
@@ -12206,7 +12210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1001364342
 PrefabInstance:
@@ -12282,7 +12286,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21996
+  m_Name: pb_Mesh559634
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -13020,7 +13024,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -13417,7 +13421,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21498
+  m_Name: pb_Mesh559136
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -16657,7 +16661,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20954
+  m_Name: pb_Mesh558576
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -17030,10 +17034,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -17392,7 +17396,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -24541,7 +24545,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -26119,7 +26123,7 @@ Transform:
   - {fileID: 1095359224}
   - {fileID: 1261399141}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1579039976
 PrefabInstance:
@@ -27486,7 +27490,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1
@@ -27711,7 +27715,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 1
@@ -31116,6 +31120,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 362003377366404853, guid: 2b47881952ff9fc4fb4c064c0cfeee4e, type: 3}
   m_PrefabInstance: {fileID: 1726590426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1728688004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_RootOrder
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 41.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 41.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 41.016
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -151.55133
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 60.88716
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 64.05995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279536677923969317, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6130450288634243257, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: m_Name
+      value: LevelFinishCollider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6351529315989577874, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
+      propertyPath: nextScene
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8dea5e22c2383d4f9b9707242419af2, type: 3}
 --- !u!1001 &1733407243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31214,7 +31293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh22028
+  m_Name: pb_Mesh559666
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -32590,7 +32669,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -36657,7 +36736,7 @@ Light:
   m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147483647
+    m_Bits: 2047
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -37005,9 +37084,8 @@ Transform:
   - {fileID: 862456874}
   - {fileID: 721286029}
   - {fileID: 1922855704}
-  - {fileID: 676391186}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1964415706
 Animator:
@@ -37427,7 +37505,7 @@ Transform:
   - {fileID: 1853456443}
   - {fileID: 1521159615}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2016669010
 PrefabInstance:
@@ -37644,7 +37722,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21920
+  m_Name: pb_Mesh559556
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -37961,7 +38039,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh21616
+  m_Name: pb_Mesh559252
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -38610,7 +38688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7479695423132059846, guid: cd5abb3b821a3e64a968ea372ae59c37, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7479695423132059846, guid: cd5abb3b821a3e64a968ea372ae59c37, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39300,7 +39378,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 128

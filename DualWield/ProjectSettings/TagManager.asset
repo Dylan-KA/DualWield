@@ -19,6 +19,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Hologram
+  - ExcludeLight
   - NotInteractable
   - 
   - 

@@ -6,14 +6,27 @@ using UnityEngine;
 public class PickUpResource : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
-
     [SerializeField] private ResourceType resourceType;
-
     [SerializeField] float resource;
+    // Adjustable parameters for the bounce and rotation
+    float bounceAmplitude = 0.25f; // Height of the bounce
+    float bounceFrequency = 3.0f;   // Speed of the bounce
+    float rotationSpeed = 50.0f;    // Rotation speed in degrees per second
+    // Initial position to calculate bounce
+    private Vector3 initialPosition;
 
     private void Start()
     {
         gameManager = GameManager.Instance;
+        initialPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        // Bounce and rotate Ammo
+        float newY = initialPosition.y + Mathf.Sin(Time.time * bounceFrequency) * bounceAmplitude;
+        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
