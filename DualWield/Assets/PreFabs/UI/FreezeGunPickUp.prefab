@@ -507,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &769845877187835973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -602,6 +602,7 @@ GameObject:
   - component: {fileID: 1767020458077752356}
   - component: {fileID: 455779295540812605}
   - component: {fileID: 809930029239643645}
+  - component: {fileID: 4371425056171055635}
   m_Layer: 0
   m_Name: PickupManager
   m_TagString: Untagged
@@ -644,15 +645,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6865863726983968957}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd58ee8c313f749e8955c02cde7760d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UIPopup: {fileID: 2742178428945073469}
   pickup: {fileID: 4311510165982021645}
-  GameManager: {fileID: 0}
   weaponType: 2
+--- !u!114 &4371425056171055635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865863726983968957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2e3ffd788902046a7d554c7a24cc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestWeapon: 2
+  ParentWeapon: {fileID: 4311510165982021645}
 --- !u!1 &9201248944916532841
 GameObject:
   m_ObjectHideFlags: 0

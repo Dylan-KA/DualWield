@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 1097243605}
   - component: {fileID: 1097243607}
   - component: {fileID: 1097243606}
+  - component: {fileID: 1318400713161701155}
   m_Layer: 0
   m_Name: PickupManager
   m_TagString: Untagged
@@ -304,7 +305,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097243604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd58ee8c313f749e8955c02cde7760d0, type: 3}
   m_Name: 
@@ -312,6 +313,20 @@ MonoBehaviour:
   UIPopup: {fileID: 949706356}
   pickup: {fileID: 2612021681115916257}
   weaponType: 3
+--- !u!114 &1318400713161701155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097243604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2e3ffd788902046a7d554c7a24cc7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TestWeapon: 3
+  ParentWeapon: {fileID: 2612021681115916257}
 --- !u!1 &1134895045
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2118052103
 RectTransform:
   m_ObjectHideFlags: 0
