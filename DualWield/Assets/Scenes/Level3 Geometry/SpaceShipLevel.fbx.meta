@@ -23,12 +23,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Ceiling 2
-    second: {fileID: 2100000, guid: bfa9de39496728d47a4497f6c06f818c, type: 2}
+    second: {fileID: 2100000, guid: 4d367b9d0e9a2b340b30fac5d6fa8e62, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Floor
-    second: {fileID: 2100000, guid: 562709ba593bc0847820f0e8e7eb10cd, type: 2}
+    second: {fileID: 2100000, guid: 11d9a7fe2456beb4885f67e845a09478, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -53,12 +53,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Wall 1
-    second: {fileID: 2100000, guid: b52b3073816e23d4aa5a5a4eb57f0464, type: 2}
+    second: {fileID: 2100000, guid: 36f18229547b5634ea62ad47c1086929, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Wall 2
-    second: {fileID: 2100000, guid: fcd55bfe9b5310d4d8c5ed825745d315, type: 2}
+    second: {fileID: 2100000, guid: 39cce777018c3924fa2f756d3616ade8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallBlank
+    second: {fileID: 2100000, guid: 562709ba593bc0847820f0e8e7eb10cd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
