@@ -24,6 +24,7 @@ public class PlayerCharacter : BaseCharacter
     public bool isFlying { private get; set; }
     public CharacterController characterController;
     public Camera playerCamera;
+    public GameObject weaponHolder;
     public bool canMove = true;
     public float gravity = 10f;
     public float lookspeed = 2f;
@@ -98,17 +99,17 @@ public class PlayerCharacter : BaseCharacter
         switch (weaponType)
         {
             case WeaponType.Flamethrower:
-                weapon = Instantiate(flamethrowerPrefab, playerCamera.transform);
+                weapon = Instantiate(flamethrowerPrefab, weaponHolder.transform);
 
                 break;
             case WeaponType.WindGun:
-                weapon = Instantiate(windGunPrefab, playerCamera.transform);
+                weapon = Instantiate(windGunPrefab, weaponHolder.transform);
                 break;
             case WeaponType.FreezeGun:
-                weapon = Instantiate(FreezeGunPrefab, playerCamera.transform);
+                weapon = Instantiate(FreezeGunPrefab, weaponHolder.transform);
                 break;
             case WeaponType.RocketLauncher:
-                weapon = Instantiate(RocketGunPrefab, playerCamera.transform);
+                weapon = Instantiate(RocketGunPrefab, weaponHolder.transform);
                 break;
             default:
                 Debug.LogError("Unknown weapon type! Add it to this switch statement or something");
