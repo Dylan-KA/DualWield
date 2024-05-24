@@ -24,6 +24,7 @@ public class PlayerCharacter : BaseCharacter
     public BaseWeapon rightWeapon { get; private set; }
     public bool isFlying { private get; set; }
     public CharacterController characterController;
+    private HealthBar healthBar;
     public Camera playerCamera;
     public GameObject weaponHolder;
     public bool canMove = true;
@@ -45,6 +46,7 @@ public class PlayerCharacter : BaseCharacter
     protected override void Start()
     {
         characterController = GetComponent<CharacterController>();
+        healthBar = FindObjectOfType<HealthBar>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -70,6 +72,7 @@ public class PlayerCharacter : BaseCharacter
     {
         base.TakeDamage(damageAmount);
         UpdatePlayerRedScreen();
+
         TriggerHealthRegen();
     }
 
@@ -83,6 +86,8 @@ public class PlayerCharacter : BaseCharacter
         newTransparency
         );
         UIPlayerHealth.color = newColor;
+
+        healthBar.UpdateHealth(health);
     }
 
     /// <summary>
