@@ -18,6 +18,7 @@ public class WeaponHotbar : MonoBehaviour
     [SerializeField] private GameObject[] leftGunSprites;
     [SerializeField] private GameObject[] rightGunSprites;
     private bool[] gunsUnlocked = { true, false, false, false };
+    public bool[] GunsUnlocked { get => gunsUnlocked; }
 
     /// <summary>
     /// Checkpoint system should call this when the player spawns, so that they got the proper weapons

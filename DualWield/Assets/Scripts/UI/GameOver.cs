@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         gameOverMenu.SetActive(false);
-        //playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
+        playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
     }
 
     private void Update()
