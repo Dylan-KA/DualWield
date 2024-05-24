@@ -48,9 +48,9 @@ public class GroundEnemy : BaseEnemy
 
     public void PushEnemy()
     {
-        navAgent.enabled = false;
+        //navAgent.enabled = false;
         isPushed = true;
-        StopCoroutine(ResetNavMesh());
+        //StopCoroutine(ResetNavMesh());
     }
 
     protected override void MoveTowardsTarget()
@@ -62,7 +62,7 @@ public class GroundEnemy : BaseEnemy
         }
         else
         {
-            StartCoroutine(ResetNavMesh());
+            //StartCoroutine(ResetNavMesh());
         }
     }
 
