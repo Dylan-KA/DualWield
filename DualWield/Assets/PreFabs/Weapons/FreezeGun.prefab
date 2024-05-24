@@ -304,11 +304,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handOffset: {x: 0.5, y: -0.35, z: 0.8}
   weaponType: 2
-  roundsPerMinute: 900
+  roundsPerMinute: 1200
   weaponEmptySound: {fileID: 2010603728431467183}
   weaponFireSound: {fileID: 4788318397373144328}
   weaponFiringSound: {fileID: 4788318397373144328}
-  ammoPerSecond: 15
+  ammoPerSecond: 8
   lineRend: {fileID: 3241542965103208407}
 --- !u!120 &3241542965103208407
 LineRenderer:
