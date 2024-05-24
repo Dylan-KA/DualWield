@@ -59,6 +59,7 @@ MonoBehaviour:
   groundlayer:
     serializedVersion: 2
     m_Bits: 128
+  groundBoxSize: {x: 0.4, y: 0.1, z: 0.4}
   flamethrowerPrefab: {fileID: 9019822857827249870, guid: 85176bdd04b5c6a4e87b719e798b3eed, type: 3}
   windGunPrefab: {fileID: 2777539602328322250, guid: f57a95b1b052d494cae98aa9b5448a7b, type: 3}
   FreezeGunPrefab: {fileID: -1529562647357173759, guid: 4d4f672b0de8d4d49b8ae04f7b0204e6, type: 3}
@@ -72,6 +73,7 @@ MonoBehaviour:
   gravity: 50
   lookspeed: 2
   lookXLimit: 90
+  groundColliderOffSetDistance: 1
 --- !u!143 &833108082530496967
 CharacterController:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class PlayerCharacter : BaseCharacter
     [SerializeField] private WeaponType startingWeaponRight;
     [SerializeField] private WeaponType startingWeaponLeft;
     [SerializeField] private LayerMask groundlayer;
+    [SerializeField] private Vector3 groundBoxSize;
     [SerializeField] private BaseWeapon flamethrowerPrefab;
     [SerializeField] private BaseWeapon windGunPrefab;
     [SerializeField] private BaseWeapon FreezeGunPrefab;
@@ -33,13 +34,13 @@ public class PlayerCharacter : BaseCharacter
     private Coroutine healthRegenCoroutine;
     private Vector3 velocity;
     private Vector3 moveDirection = Vector3.zero;
-    private bool isGrounded;
     private float maxFallingSpeed = -50.0f;
     private float rotationX = 0;
     private float cooldownTime = 2f;
     private float lastUsedTime;
     private float healthRegenDelay = 5f;
     private float healthRegenRate = 10f;
+    private float groundColliderOffSet = 1f;
 
     protected override void Start()
     {
@@ -152,10 +153,10 @@ public class PlayerCharacter : BaseCharacter
         {
             moveDirection = moveDirection.normalized * baseMovementSpeed;
         }
-        IsGrounded();
+
         if (!isFlying)
         {
-            if (!isGrounded)
+            if (!IsGrounded())
             {
                 velocity.y -= gravity * Time.deltaTime;
 
@@ -237,9 +238,16 @@ public class PlayerCharacter : BaseCharacter
         velocity.y = force;
     }
 
-    public void IsGrounded()
+    private void OnDrawGizmos()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, groundlayer);
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position-transform.up * groundColliderOffSet, groundBoxSize);
+    }
+
+    public bool IsGrounded()
+    {
+        //return Physics.Raycast(transform.position, Vector3.down, 1f, groundlayer);
+        return Physics.BoxCast(transform.position, groundBoxSize, -transform.up, transform.rotation, groundColliderOffSet, groundlayer);
     }
 
     private void TriggerHealthRegen()
