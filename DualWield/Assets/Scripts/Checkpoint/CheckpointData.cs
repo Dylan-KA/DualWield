@@ -42,11 +42,8 @@ public class CheckpointData : MonoBehaviour
     {
         scene = 0;
         lastCheckpoint = Vector3.zero;
-
-        unlockedWeapons[0] = false; // no flame
-        unlockedWeapons[1] = true; // wind!
-        unlockedWeapons[2] = false; // no rocket
-        unlockedWeapons[3] = false; // no freeze
+        // no flame, wind, no rocket, no freeze
+        unlockedWeapons = new bool[] { false, true, false, false };
     }
 
     public Vector3 GetPosition()
@@ -59,9 +56,10 @@ public class CheckpointData : MonoBehaviour
         return unlockedWeapons;
     }
 
-    public void UpdateCheckpoint(Vector3 position)
+    public void UpdateCheckpoint(Vector3 position, bool[] unlockedWeapons)
     {
         lastCheckpoint = position;
+        this.unlockedWeapons = unlockedWeapons;
         scene = SceneManager.GetActiveScene().buildIndex;
     }
 

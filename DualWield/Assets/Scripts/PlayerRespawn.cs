@@ -13,23 +13,25 @@ public class PlayerRespawn : MonoBehaviour
     void Start()
     {
         checkpointData = GameObject.FindGameObjectWithTag("Checkpoint Data").GetComponent<CheckpointData>();
-        
+        weaponHotbar = FindObjectOfType<WeaponHotbar>();
         if (checkpointData.IsPlayerRespawnAtCheckpoint())
         {
             transform.position = checkpointData.GetPosition();
+            weaponHotbar.SetUnlockedWeapons(checkpointData.GetUnlockedWeapons());
         }
-
-        weaponHotbar = FindObjectOfType<WeaponHotbar>();
-        bool[] unlockedWeapons = checkpointData.GetUnlockedWeapons();
-        if (SceneManager.GetActiveScene().buildIndex >= 2)
+        else
         {
-            unlockedWeapons[0] = true;
-            unlockedWeapons[3] = true;
-        }
-        if (SceneManager.GetActiveScene().buildIndex == 3)
-        {
-            unlockedWeapons[2] = true;
-        }
-        weaponHotbar.SetUnlockedWeapons(unlockedWeapons);
+            bool[] unlockedWeapons = checkpointData.GetUnlockedWeapons();
+            if (SceneManager.GetActiveScene().buildIndex >= 2)
+            {
+                unlockedWeapons[0] = true;
+                unlockedWeapons[3] = true;
+            }
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                unlockedWeapons[2] = true;
+            }
+            weaponHotbar.SetUnlockedWeapons(unlockedWeapons);
+        }        
     }
 }
