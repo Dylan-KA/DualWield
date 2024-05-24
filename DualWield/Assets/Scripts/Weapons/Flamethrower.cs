@@ -67,7 +67,7 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(baseDamage * Time.deltaTime);
+                Enemy.TakeDamage(baseDamage / (roundsPerMinute / 60f));
             }
         }
     }
@@ -81,7 +81,7 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(baseDamage * damageMultiplier * Time.deltaTime);
+                Enemy.TakeDamage(baseDamage * damageMultiplier / (roundsPerMinute / 60f));
             }
         }
         IncreaseMultiplier();
@@ -92,7 +92,7 @@ public class Flamethrower : ParticleWeapon
         if(ListofEnemies.Length != 0){
             foreach (BaseEnemy Enemy in ListofEnemies)
             {
-                Enemy.TakeDamage(baseDamage * Time.deltaTime);
+                Enemy.TakeDamage(baseDamage / (roundsPerMinute/60f));
             }
         }
     }

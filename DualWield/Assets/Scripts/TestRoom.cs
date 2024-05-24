@@ -16,6 +16,8 @@ public class TestRoom : MonoBehaviour
          PC.EquipWeapon(TestWeapon, Hand.Right);
          PC.EquipWeapon(TestWeapon, Hand.Left);
          FindObjectOfType<WeaponHotbar>().UnlockWeapon(TestWeapon);
+         FindObjectOfType<GameManager>().RefillAmmo();
+         FindObjectOfType<CheckpointData>().UnlockWeapon(TestWeapon);
          Destroy(ParentWeapon);
       }
    }

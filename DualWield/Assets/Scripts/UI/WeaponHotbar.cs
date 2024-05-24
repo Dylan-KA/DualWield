@@ -26,12 +26,13 @@ public class WeaponHotbar : MonoBehaviour
     /// <param name="hasFlame"></param>
     /// <param name="hasRocket"></param>
     /// <param name="hasFreeze"></param>
-    public void SetUnlockedWeapons(bool hasWind = true, bool hasFlame = false, bool hasRocket = false, bool hasFreeze = false)
+    public void SetUnlockedWeapons(bool[] newGunsUnlocked)
     {
-        gunsUnlocked[0] = hasFlame;
-        gunsUnlocked[1] = hasWind;
-        gunsUnlocked[2] = hasFreeze;
-        gunsUnlocked[3] = hasRocket;
+        gunsUnlocked[0] = newGunsUnlocked[0];
+        gunsUnlocked[1] = newGunsUnlocked[1];
+        gunsUnlocked[2] = newGunsUnlocked[2];
+        gunsUnlocked[3] = newGunsUnlocked[3];
+
         for (int i = 0; i < gunsUnlocked.Length; i++)
         {
             circleBackgroundSprites[i].SetActive(gunsUnlocked[i]);
