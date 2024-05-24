@@ -148,7 +148,7 @@ public class WeaponHotbar : MonoBehaviour
     {
         player = FindObjectOfType<PlayerCharacter>();
         blur = player.GetComponentInChildren<PostProcessVolume>();
-        SetUnlockedWeapons(true, true, false, false);
+        //SetUnlockedWeapons(true, true, false, false); for testing
     }
 
     // Update is called once per frame
