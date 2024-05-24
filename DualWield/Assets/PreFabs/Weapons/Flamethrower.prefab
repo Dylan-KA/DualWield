@@ -496,7 +496,7 @@ MonoBehaviour:
   NormalRangeParticles: {fileID: 6896752204022441817}
   ExtendedRangeParticles: {fileID: 6359849559566482721}
   WeaponParticles: {fileID: 0}
-  baseDamage: 1000
+  baseDamage: 80
   damageMultiplier: 1
   defaultParticleColors: []
   BlueFlameColors:
