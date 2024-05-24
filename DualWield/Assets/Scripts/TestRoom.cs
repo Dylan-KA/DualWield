@@ -15,6 +15,7 @@ public class TestRoom : MonoBehaviour
          PlayerCharacter PC = other.gameObject.GetComponent<PlayerCharacter>();
          PC.EquipWeapon(TestWeapon, Hand.Right);
          PC.EquipWeapon(TestWeapon, Hand.Left);
+         FindObjectOfType<WeaponHotbar>().UnlockWeapon(TestWeapon);
          Destroy(ParentWeapon);
       }
    }

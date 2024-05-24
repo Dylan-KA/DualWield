@@ -12,6 +12,7 @@ public class PlayerCharacter : BaseCharacter
     [SerializeField] private WeaponType startingWeaponRight;
     [SerializeField] private WeaponType startingWeaponLeft;
     [SerializeField] private LayerMask groundlayer;
+    [SerializeField] private Vector3 groundBoxSize;
     [SerializeField] private BaseWeapon flamethrowerPrefab;
     [SerializeField] private BaseWeapon windGunPrefab;
     [SerializeField] private BaseWeapon FreezeGunPrefab;
@@ -23,7 +24,9 @@ public class PlayerCharacter : BaseCharacter
     public BaseWeapon rightWeapon { get; private set; }
     public bool isFlying { private get; set; }
     public CharacterController characterController;
+    private HealthBar healthBar;
     public Camera playerCamera;
+    public GameObject weaponHolder;
     public bool canMove = true;
     public float gravity = 10f;
     public float lookspeed = 2f;
@@ -32,17 +35,18 @@ public class PlayerCharacter : BaseCharacter
     private Coroutine healthRegenCoroutine;
     private Vector3 velocity;
     private Vector3 moveDirection = Vector3.zero;
-    private bool isGrounded;
     private float maxFallingSpeed = -50.0f;
     private float rotationX = 0;
     private float cooldownTime = 2f;
     private float lastUsedTime;
     private float healthRegenDelay = 5f;
     private float healthRegenRate = 10f;
+    private float groundColliderOffSet = 1f;
 
     protected override void Start()
     {
         characterController = GetComponent<CharacterController>();
+        healthBar = FindObjectOfType<HealthBar>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -68,6 +72,7 @@ public class PlayerCharacter : BaseCharacter
     {
         base.TakeDamage(damageAmount);
         UpdatePlayerRedScreen();
+
         TriggerHealthRegen();
     }
 
@@ -81,6 +86,8 @@ public class PlayerCharacter : BaseCharacter
         newTransparency
         );
         UIPlayerHealth.color = newColor;
+
+        healthBar.UpdateHealth(health);
     }
 
     /// <summary>
@@ -98,17 +105,17 @@ public class PlayerCharacter : BaseCharacter
         switch (weaponType)
         {
             case WeaponType.Flamethrower:
-                weapon = Instantiate(flamethrowerPrefab, playerCamera.transform);
+                weapon = Instantiate(flamethrowerPrefab, weaponHolder.transform);
 
                 break;
             case WeaponType.WindGun:
-                weapon = Instantiate(windGunPrefab, playerCamera.transform);
+                weapon = Instantiate(windGunPrefab, weaponHolder.transform);
                 break;
             case WeaponType.FreezeGun:
-                weapon = Instantiate(FreezeGunPrefab, playerCamera.transform);
+                weapon = Instantiate(FreezeGunPrefab, weaponHolder.transform);
                 break;
             case WeaponType.RocketLauncher:
-                weapon = Instantiate(RocketGunPrefab, playerCamera.transform);
+                weapon = Instantiate(RocketGunPrefab, weaponHolder.transform);
                 break;
             default:
                 Debug.LogError("Unknown weapon type! Add it to this switch statement or something");
@@ -151,10 +158,10 @@ public class PlayerCharacter : BaseCharacter
         {
             moveDirection = moveDirection.normalized * baseMovementSpeed;
         }
-        IsGrounded();
+
         if (!isFlying)
         {
-            if (!isGrounded)
+            if (!IsGrounded())
             {
                 velocity.y -= gravity * Time.deltaTime;
 
@@ -236,9 +243,16 @@ public class PlayerCharacter : BaseCharacter
         velocity.y = force;
     }
 
-    public void IsGrounded()
+    private void OnDrawGizmos()
     {
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, 1f, groundlayer);
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(transform.position-transform.up * groundColliderOffSet, groundBoxSize);
+    }
+
+    public bool IsGrounded()
+    {
+        //return Physics.Raycast(transform.position, Vector3.down, 1f, groundlayer);
+        return Physics.BoxCast(transform.position, groundBoxSize, -transform.up, transform.rotation, groundColliderOffSet, groundlayer);
     }
 
     private void TriggerHealthRegen()

@@ -12,10 +12,44 @@ public class WeaponHotbar : MonoBehaviour
     [SerializeField] private GameObject leftGun;
     [SerializeField] private GameObject rightGun;
     [SerializeField] private GameObject[] circleBackgroundSprites;
+    [SerializeField] private GameObject[] circleBackgroundGreySprites;
     [SerializeField] private GameObject[] circleGunSprites;
     [SerializeField] private GameObject[] circleGlowSprites;
     [SerializeField] private GameObject[] leftGunSprites;
     [SerializeField] private GameObject[] rightGunSprites;
+    private bool[] gunsUnlocked = { true, false, false, false };
+
+    /// <summary>
+    /// Checkpoint system should call this when the player spawns, so that they got the proper weapons
+    /// </summary>
+    /// <param name="hasWind"></param>
+    /// <param name="hasFlame"></param>
+    /// <param name="hasRocket"></param>
+    /// <param name="hasFreeze"></param>
+    public void SetUnlockedWeapons(bool hasWind = true, bool hasFlame = false, bool hasRocket = false, bool hasFreeze = false)
+    {
+        gunsUnlocked[0] = hasFlame;
+        gunsUnlocked[1] = hasWind;
+        gunsUnlocked[2] = hasFreeze;
+        gunsUnlocked[3] = hasRocket;
+        for (int i = 0; i < gunsUnlocked.Length; i++)
+        {
+            circleBackgroundSprites[i].SetActive(gunsUnlocked[i]);
+            circleGlowSprites[i].SetActive(gunsUnlocked[i]);
+            circleGunSprites[i].SetActive(gunsUnlocked[i]);
+            circleBackgroundGreySprites[i].SetActive(!gunsUnlocked[i]);
+        }
+    }
+
+    public void UnlockWeapon(WeaponType weaponType)
+    {
+        int gunIndex = (int)weaponType;
+        circleBackgroundSprites[gunIndex].SetActive(true);
+        circleGlowSprites[gunIndex].SetActive(true);
+        circleGunSprites[gunIndex].SetActive(true);
+        circleBackgroundGreySprites[gunIndex].SetActive(false);
+        gunsUnlocked[gunIndex] = true;
+    }
 
     void SetLeftWeaponUI()
     {
@@ -91,14 +125,15 @@ public class WeaponHotbar : MonoBehaviour
         Vector3 offsetFromCenter = Input.mousePosition - new Vector3(Screen.width / 2, Screen.height / 2, 0);
         if (offsetFromCenter.magnitude < 35f) return WeaponType.None;
 
-        if (offsetFromCenter.x > 0 && offsetFromCenter.y > 0)
+        if (offsetFromCenter.x > 0 && offsetFromCenter.y > 0 && gunsUnlocked[3])
             return WeaponType.RocketLauncher;
-        else if (offsetFromCenter.x < 0 && offsetFromCenter.y > 0)
+        else if (offsetFromCenter.x < 0 && offsetFromCenter.y > 0 && gunsUnlocked[0])
             return WeaponType.Flamethrower;
-        else if (offsetFromCenter.x > 0 && offsetFromCenter.y < 0)
+        else if (offsetFromCenter.x > 0 && offsetFromCenter.y < 0 && gunsUnlocked[2])
             return WeaponType.FreezeGun;
-        else
+        else if (offsetFromCenter.x < 0 && offsetFromCenter.y < 0 && gunsUnlocked[1])
             return WeaponType.WindGun;
+        return WeaponType.None;
     }
 
     void SetWeapon(Hand hand)
@@ -113,6 +148,7 @@ public class WeaponHotbar : MonoBehaviour
     {
         player = FindObjectOfType<PlayerCharacter>();
         blur = player.GetComponentInChildren<PostProcessVolume>();
+        //SetUnlockedWeapons(true, true, false, false); for testing
     }
 
     // Update is called once per frame

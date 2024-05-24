@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4536706849049509449, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
+      propertyPath: health
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: -4536706849049509449, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
       propertyPath: isAlwaysHuntingTarget
       value: 1
       objectReference: {fileID: 0}
@@ -58,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8766485580880972853, guid: a5ca41a64e35c8f449c5300e1c737217, type: 3}
       propertyPath: m_Name
-      value: TankEnemy
+      value: TankEnemy Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
