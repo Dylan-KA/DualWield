@@ -5,19 +5,20 @@ using UnityEngine;
 
 public class RollingExplosive : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
-    [SerializeField] private ParticleSystem explosionParticles;
+    [SerializeField] private MeshRenderer[] meshRenderers;
+    [SerializeField] private GameObject explosionParticles;
     [SerializeField] private float baseDamage;
     [SerializeField] private float explosionTimer = 2.0f;
     [SerializeField] private float explosiveRange;
     private bool isExploded = false;
     private bool isFuseActive = false;
+    private GameObject explosion;
 
 
     // Start is called before the first frame update
     private void Start()
     {
-        meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        
     }
 
     // Update is called once per frame
@@ -69,14 +70,24 @@ public class RollingExplosive : MonoBehaviour
                 damagePercent = ((explosiveRange - distance) / 2f) / (explosiveRange / 2f);
             player.TakeDamage(baseDamage * damagePercent);
         }
-        DestroySelf();
 
-        //explosionParticles.Play();
-        //Invoke(nameof(DestroySelf), 0.5f);
+        EnableParticle();
+    }
+
+    private void EnableParticle()
+    {
+        foreach (MeshRenderer meshRenderer in meshRenderers)
+        {
+            meshRenderer.enabled = false;
+        }
+        gameObject.GetComponent<SphereCollider>().enabled = false;
+        explosion = Instantiate(explosionParticles, gameObject.transform.position, Quaternion.identity);
+        Invoke(nameof(DestroySelf), 0.5f);
     }
 
     private void DestroySelf()
     {
+        Destroy(explosion);
         Destroy(gameObject);
     }
 }

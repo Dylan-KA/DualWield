@@ -7,6 +7,7 @@ public class TankEnemy : GroundEnemy
     [SerializeField] private Transform projectileSpawnTransform;
     [SerializeField] private GameObject projectile;
     [SerializeField] private float maxThrowForce = 50f;
+    private float freezeReduction = 0.1f;
 
     protected override void Start()
     {
@@ -17,18 +18,22 @@ public class TankEnemy : GroundEnemy
     {
         base.Update();
     }
+    public override void AddFreezePercent(float freezeChange)
+    {
+        base.AddFreezePercent(freezeChange * freezeReduction);
+    }
     protected override void Attack()
     {
         transform.LookAt(playerTransform);
-        StopEnemyMovement();
+        // StopEnemyMovement();
         ThrowProjectile();
         ResetAttackWaitTime();
     }
     private void ThrowProjectile()
     {
         GameObject bullet = Instantiate(projectile, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
-        bullet.GetComponent<Rigidbody>().velocity = 
-            GetPredictedPosition(playerTransform.position + playerTransform.gameObject.GetComponent<CharacterController>().center, bullet.GetComponent<Transform>().position);
+        bullet.GetComponent<Rigidbody>().velocity =
+            CalculateInitalVelocity(playerTransform.position + playerTransform.gameObject.GetComponent<CharacterController>().center, bullet.GetComponent<Transform>().position).InitalVelocity;
     }
 
     private ThrowData CalculateInitalVelocity(Vector3 targetPosition, Vector3 startPosition)
@@ -50,6 +55,7 @@ public class TankEnemy : GroundEnemy
         };
     }
 
+    // Not good at predicting
     private Vector3 GetPredictedPosition(Vector3 targetPosition, Vector3 startPosition)
     {
         ThrowData throwData = CalculateInitalVelocity(targetPosition, startPosition);
