@@ -225,8 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a65b1d186d609941838b274ba05aa03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshRenderer: {fileID: 0}
-  explosionParticles: {fileID: 198357973136645638, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
-  baseDamage: 20
-  explosionTimer: 2
+  meshRenderers:
+  - {fileID: 7263172056655484052}
+  - {fileID: 1508024516627231602}
+  explosionParticles: {fileID: 1845955007268882, guid: 67a684e320da6e7439421a07e3fa265c, type: 3}
+  baseDamage: 50
+  explosionTimer: 1
   explosiveRange: 5
