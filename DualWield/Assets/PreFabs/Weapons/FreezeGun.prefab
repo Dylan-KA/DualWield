@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handOffset: {x: 0.5, y: -0.35, z: 0.8}
   weaponType: 2
-  roundsPerMinute: 1200
+  roundsPerMinute: 900
   weaponEmptySound: {fileID: 2010603728431467183}
   weaponFireSound: {fileID: 4788318397373144328}
   weaponFiringSound: {fileID: 4788318397373144328}

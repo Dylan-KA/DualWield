@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseSpeed: 20
   speedMult: 0.6
-  baseDamage: 100
+  baseDamage: 70
   isFiredByEnemy: 0
   explosiveRange: 9
   explosionPrefab: {fileID: 198357973136645638, guid: 75a392c0908c45643a18825a3df3af49, type: 3}
