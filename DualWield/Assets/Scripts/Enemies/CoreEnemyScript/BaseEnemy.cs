@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 public class BaseEnemy : BaseCharacter
 {
@@ -244,6 +245,7 @@ public class BaseEnemy : BaseCharacter
 
         base.TakeDamage(damageAmount);
         if (health <= 0)
+            PlayAudio();
             Destroy(gameObject);
 
         if (!isFlickering && statusEffect != StatusEffect.Freeze)
@@ -300,4 +302,18 @@ public class BaseEnemy : BaseCharacter
     {
         currentAttackTimer = attackWaitTime;
     }
+    
+    // Audio Management //
+    
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] creature;
+
+    void PlayAudio()
+    {
+        var i = Random.Range(0, creature.Length);
+        audioSource.PlayOneShot(creature[i]);
+    }
+    
+    //                  //
 }
