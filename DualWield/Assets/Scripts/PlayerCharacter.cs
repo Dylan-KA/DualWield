@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerCharacter : BaseCharacter
@@ -72,6 +73,8 @@ public class PlayerCharacter : BaseCharacter
     {
         base.TakeDamage(damageAmount);
         UpdatePlayerRedScreen();
+        
+        PlayAudio("hurt");
 
         TriggerHealthRegen();
     }
@@ -133,6 +136,8 @@ public class PlayerCharacter : BaseCharacter
         {
             leftWeapon.SetOtherWeaponType(rightWeapon.GetWeaponType());
             rightWeapon.SetOtherWeaponType(leftWeapon.GetWeaponType());
+
+            PlayAudio("pickup");
         }
 
     }
@@ -263,6 +268,31 @@ public class PlayerCharacter : BaseCharacter
         }
         healthRegenCoroutine = StartCoroutine(RegenerateHealth());
     }
+    
+    // Audio Management //
+    
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] hurt;
+    public AudioClip[] pickup;
+
+    void PlayAudio(String audioType)
+    {
+        int i;
+        switch (audioType)
+        {
+            case "hurt":
+                i = Random.Range(0, hurt.Length);
+                audioSource.PlayOneShot(hurt[i]); return;
+            case "pickup":
+                i = Random.Range(0, pickup.Length);
+                audioSource.PlayOneShot(pickup[i]); return;
+            default:
+                return;
+        }
+    }
+    
+    //                  //
 
     IEnumerator RegenerateHealth()
     {
