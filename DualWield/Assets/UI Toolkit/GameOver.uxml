@@ -1,10 +1,16 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/StyleSheet.uss?fileID=7433441132597879392&amp;guid=7bcd82daf3be9d64da2c5ebf656a39a9&amp;type=3#StyleSheet" />
     <ui:GroupBox style="width: 100%; height: 100%; align-items: center; justify-content: space-between; background-color: rgba(0, 0, 0, 0.49); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;">
-        <ui:GroupBox name="Quit" class="button flame" style="bottom: auto; left: auto; top: 510px;">
+        <ui:GroupBox name="Quit" class="button flame" style="bottom: 0; left: auto; top: 52%;">
             <ui:VisualElement style="height: 60px; width: 154px; left: -154px; background-image: url(&apos;project://database/Assets/Sprites/WeaponSwap/Flame.png?fileID=2800000&amp;guid=25c8165ab2c43bb429bcbc714da440d8&amp;type=3#Flame&apos;); scale: -1 1;" />
             <ui:VisualElement style="width: 154px; height: 60px; right: auto; left: 100%; background-image: url(&apos;project://database/Assets/Sprites/WeaponSwap/Flame.png?fileID=2800000&amp;guid=25c8165ab2c43bb429bcbc714da440d8&amp;type=3#Flame&apos;);" />
             <ui:Button text="QUIT" name="QuitButton" style="-unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/zekton/zekton%20rg.otf?fileID=12800000&amp;guid=a67b52cf268f44d4f9738a412de1b6d3&amp;type=3#zekton rg&apos;); -unity-font-style: bold; font-size: 30px; background-color: rgb(139, 42, 42); border-left-color: rgb(255, 35, 35); border-right-color: rgb(255, 35, 35); border-top-color: rgb(255, 35, 35); border-bottom-color: rgb(255, 35, 35);" />
         </ui:GroupBox>
+        <ui:GroupBox name="Respawn" class="button rocket" style="bottom: 52%; left: auto;">
+            <ui:VisualElement style="height: 60px; width: 180px; left: -180px; background-image: url(&apos;project://database/Assets/Sprites/WeaponSwap/Rocket.png?fileID=2800000&amp;guid=e89aedcf333b4d74d85e7a9e647423a9&amp;type=3#Rocket&apos;); scale: -1 1;" />
+            <ui:VisualElement style="width: 180px; height: 60px; right: auto; left: 100%; background-image: url(&apos;project://database/Assets/Sprites/WeaponSwap/Rocket.png?fileID=2800000&amp;guid=e89aedcf333b4d74d85e7a9e647423a9&amp;type=3#Rocket&apos;);" />
+            <ui:Button text="RESPAWN" name="RespawnButton" style="-unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/zekton/zekton%20rg.otf?fileID=12800000&amp;guid=a67b52cf268f44d4f9738a412de1b6d3&amp;type=3#zekton rg&apos;); -unity-font-style: bold; font-size: 30px; background-color: rgb(150, 175, 50); border-left-color: rgb(255, 200, 75); border-right-color: rgb(255, 200, 75); border-top-color: rgb(255, 200, 75); border-bottom-color: rgb(255, 200, 75); transition-property: all; transition-duration: 0s; transition-timing-function: ease; transition-delay: 0s;" />
+        </ui:GroupBox>
+        <ui:Label tabindex="999" text="GAME OVER!" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/TextMesh%20Pro/Fonts/zekton/zekton%20rg.otf?fileID=12800000&amp;guid=a67b52cf268f44d4f9738a412de1b6d3&amp;type=3#zekton rg&apos;); font-size: 80px; -unity-font-style: bold; top: 20%;" />
     </ui:GroupBox>
 </ui:UXML>
