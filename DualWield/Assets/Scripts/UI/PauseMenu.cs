@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     private UIDocument document;
 
     private PlayerCharacter player;
-    private Button settingsButton;
+    //private Button settingsButton;
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
 
@@ -20,8 +20,8 @@ public class PauseMenu : MonoBehaviour
         document = GetComponent<UIDocument>();
         document.rootVisualElement.visible = false;
 
-        settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
-        settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
+        //settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
+        //settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
         quitButton = document.rootVisualElement.Q("QuitButton") as Button;
         quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
         Time.timeScale = 1f;
@@ -53,7 +53,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.IsPlayerDead()) {
             if (document.rootVisualElement.visible)
             {
                 eventSystem.SetActive(true);
