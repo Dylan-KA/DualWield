@@ -438,9 +438,12 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isPlayerSeen: 0
+  isAttacking: 0
+  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 20
-  attackRange: 15
+  attackRange: 30
   attackWaitTime: 3
   squashDamage: 10
   squashThreshHold: 2

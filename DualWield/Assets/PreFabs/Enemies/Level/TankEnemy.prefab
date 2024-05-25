@@ -5271,7 +5271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a9c3784282313c4680721f3be5bdb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMovementSpeed: 6
+  baseMovementSpeed: 7
   health: 250
   statusEffect: 0
   FreezePercent: 0
@@ -5282,10 +5282,13 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
+  isPlayerSeen: 0
+  isAttacking: 0
+  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 0
-  attackRange: 20
-  attackWaitTime: 1
+  attackRange: 50
+  attackWaitTime: 1.5
   squashDamage: 30
   squashThreshHold: 2000
   isAlwaysHuntingTarget: 0

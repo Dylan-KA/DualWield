@@ -95,7 +95,7 @@ public class BaseEnemy : BaseCharacter
         base.Freeze();
         if (navAgent)
         {
-            StopEnemyMovement();
+            CompletelyStopEnemyMovement();
         }
     }
 
@@ -272,7 +272,7 @@ public class BaseEnemy : BaseCharacter
     {
         isFlickering = false;
     }
-    protected void StopEnemyMovement()
+    protected void CompletelyStopEnemyMovement()
     {
         navAgent.enabled = false;
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
