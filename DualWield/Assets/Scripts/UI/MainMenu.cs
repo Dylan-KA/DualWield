@@ -40,6 +40,8 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         levelSelect = FindObjectOfType<LevelSelect>().GetComponent<UIDocument>();
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
     }
 
     private void OnPlayClicked(ClickEvent evt)
