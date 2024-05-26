@@ -22,7 +22,6 @@ public class TestRoom : MonoBehaviour
     // Audio Management //
     [Header("Audio")]
     public AudioSource audioSource;
-    public AudioClip[] hurt;
     public AudioClip[] pickup;
 
     private void OnTriggerEnter(Collider other)
@@ -62,9 +61,6 @@ public class TestRoom : MonoBehaviour
         int i;
         switch (audioType)
         {
-            case "hurt":
-                i = Random.Range(0, hurt.Length);
-                audioSource.PlayOneShot(hurt[i]); return;
             case "pickup":
                 i = Random.Range(0, pickup.Length);
                 audioSource.PlayOneShot(pickup[i]); return;
