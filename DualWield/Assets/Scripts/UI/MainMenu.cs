@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     private UIDocument levelSelect;
 
     private Button playButton;
-    private Button settingsButton;
+    //private Button settingsButton;
     private Button creditsButton;
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
@@ -23,8 +23,8 @@ public class MainMenu : MonoBehaviour
 
         playButton = document.rootVisualElement.Q("PlayButton") as Button;
         playButton.RegisterCallback<ClickEvent>(OnPlayClicked);
-        settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
-        settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
+        //settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
+        //settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
         creditsButton = document.rootVisualElement.Q("CreditsButton") as Button;
         creditsButton.RegisterCallback<ClickEvent>(OnCreditsClicked);
         quitButton = document.rootVisualElement.Q("QuitButton") as Button;
@@ -48,10 +48,10 @@ public class MainMenu : MonoBehaviour
         document.rootVisualElement.visible = false;
     }
 
-    private void OnSettingsClicked(ClickEvent evt)
+    /*private void OnSettingsClicked(ClickEvent evt)
     {
         
-    }
+    }*/
 
     private void OnCreditsClicked(ClickEvent evt)
     {
