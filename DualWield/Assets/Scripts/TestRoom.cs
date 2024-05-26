@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TestRoom : MonoBehaviour
 {
@@ -13,6 +14,12 @@ public class TestRoom : MonoBehaviour
    [SerializeField] private GameObject door;
    [SerializeField] private Light[] lights;
    [SerializeField] private TextMeshPro[] lineConnections;
+
+    // Audio Management //
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] hurt;
+    public AudioClip[] pickup;
 
     private void OnTriggerEnter(Collider other)
    {
@@ -41,6 +48,25 @@ public class TestRoom : MonoBehaviour
                 connection.color = Color.green;
             }
          }
+         PlayAudio("pickup");
+
       }
    }
+
+    void PlayAudio(String audioType)
+    {
+        int i;
+        switch (audioType)
+        {
+            case "hurt":
+                i = Random.Range(0, hurt.Length);
+                audioSource.PlayOneShot(hurt[i]); return;
+            case "pickup":
+                i = Random.Range(0, pickup.Length);
+                audioSource.PlayOneShot(pickup[i]); return;
+            default:
+                return;
+        }
+    }
+
 }
