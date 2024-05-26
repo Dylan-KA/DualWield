@@ -26,7 +26,7 @@ public class GameOver : MonoBehaviour
         quitButton.RegisterCallback<ClickEvent>(ReturnToMainMenu);
         Time.timeScale = 1f;
 
-        playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
+        //playerCharacter = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>();
     }
 
     private void Update()
