@@ -20,6 +20,7 @@ public class RangeEnemy : GroundEnemy
     {
         AimAtPlayer();
         Instantiate(projectilePrefab, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        PlayAudioFiring();
         ResetAttackWaitTime();
     }
     private void AimAtPlayer()
