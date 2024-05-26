@@ -316,6 +316,7 @@ public class BaseEnemy : BaseCharacter
     
     private void PlayAudio()
     {
+        if (creature.Length == 0) return;
         var i = Random.Range(0, creature.Length);
         audioSource.PlayOneShot(creature[i]);
     }
