@@ -7,6 +7,7 @@ public class PickUpResource : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
     [SerializeField] private ResourceType resourceType;
+    [SerializeField] private AudioClip ammoPickupSFX;
     [SerializeField] float resource;
     // Adjustable parameters for the bounce and rotation
     float bounceAmplitude = 0.25f; // Height of the bounce
@@ -46,6 +47,7 @@ public class PickUpResource : MonoBehaviour
             
             if (success) {
                 gameObject.SetActive(false);
+                AudioSource.PlayClipAtPoint(ammoPickupSFX, transform.position);
                 Invoke("Respawn", 30f);
             }
         }

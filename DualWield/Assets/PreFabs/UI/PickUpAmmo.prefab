@@ -112,4 +112,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   resourceType: 1
+  ammoPickupSFX: {fileID: 8300000, guid: 8602334adcf501a41918ce39406f2fc7, type: 3}
   resource: 100
