@@ -81,7 +81,7 @@ public class TestRoom : MonoBehaviour
     private void Update()
     {
         float newY = initialPosition.y + Mathf.Sin(Time.time * bounceFrequency) * bounceAmplitude;
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        ParentWeapon.transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
 }
