@@ -71,6 +71,7 @@ public class WaveManager : MonoBehaviour
         }
         ToggleDoor(true);
         DisableAllWaves();
+        PlayAudio();
     }
 
     private void EnableCurrentWave()
@@ -113,4 +114,17 @@ public class WaveManager : MonoBehaviour
     {
         return currentWaveCount == maxWave;
     }
+    
+    // Audio Management //
+    
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip[] doorOpen;
+    private void PlayAudio()
+    {
+        var i = Random.Range(0, doorOpen.Length);
+        audioSource.PlayOneShot(doorOpen[i]);
+    }
+
+    //                  //
 }
