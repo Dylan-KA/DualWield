@@ -68,6 +68,7 @@ public class BaseEnemy : BaseCharacter
             navAgent = GetComponent<NavMeshAgent>();
             SetEnemyVision();
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            audioSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         }
         catch
         {
@@ -245,8 +246,11 @@ public class BaseEnemy : BaseCharacter
 
         base.TakeDamage(damageAmount);
         if (health <= 0)
+        {
             PlayAudio();
             Destroy(gameObject);
+        }
+            
 
         if (!isFlickering && statusEffect != StatusEffect.Freeze)
         {
