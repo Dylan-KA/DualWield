@@ -11,6 +11,7 @@ public class FlyingRangeEnemy : FlyingEnemy
     {
         base.Attack();
         Instantiate(projectilePrefab, projectileSpawnTransform.position, projectileSpawnTransform.rotation);
+        PlayAudioFiring();
         ResetAttackWaitTime();
     }
 }
