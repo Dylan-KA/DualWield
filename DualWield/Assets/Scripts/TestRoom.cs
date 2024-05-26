@@ -15,6 +15,10 @@ public class TestRoom : MonoBehaviour
    [SerializeField] private Light[] lights;
    [SerializeField] private TextMeshPro[] lineConnections;
 
+    float bounceAmplitude = 0.18f; // Height of the bounce
+    float bounceFrequency = 3.0f;   // Speed of the bounce
+    private Vector3 initialPosition;
+
     // Audio Management //
     [Header("Audio")]
     public AudioSource audioSource;
@@ -67,6 +71,17 @@ public class TestRoom : MonoBehaviour
             default:
                 return;
         }
+    }
+
+    private void Start()
+    {
+        initialPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        float newY = initialPosition.y + Mathf.Sin(Time.time * bounceFrequency) * bounceAmplitude;
+        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
 }
