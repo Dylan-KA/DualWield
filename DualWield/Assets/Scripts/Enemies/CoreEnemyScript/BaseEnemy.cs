@@ -317,12 +317,14 @@ public class BaseEnemy : BaseCharacter
     {
         if (creature.Length == 0) return;
         var i = Random.Range(0, creature.Length);
-        audioSource.PlayOneShot(creature[i]);
+        //audioSource.PlayOneShot(creature[i]);
+        AudioSource.PlayClipAtPoint(creature[i], transform.position);
     }
     public void PlayAudioFiring()
     {
         var i = Random.Range(0, laser.Length);
-        audioSource.PlayOneShot(laser[i]);
+        //audioSource.PlayOneShot(laser[i]);
+        AudioSource.PlayClipAtPoint(laser[i], transform.position);
     }
     
     //                  //
