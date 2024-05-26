@@ -68,7 +68,6 @@ public class BaseEnemy : BaseCharacter
             navAgent = GetComponent<NavMeshAgent>();
             SetEnemyVision();
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            audioSource = GameObject.FindGameObjectWithTag("Player").GetComponent<AudioSource>();
         }
         catch
         {

@@ -157,6 +157,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 37aa7fefc9c3441faac66163de8217ce, type: 3}
   - {fileID: 8300000, guid: e532b1c2a996c402aa78aceee8719960, type: 3}
   - {fileID: 8300000, guid: ca226caafe5a4415286a4b8b73ce00c4, type: 3}
+  laser:
+  - {fileID: 8300000, guid: 88408ebfe926e4d61b2856558d40d4da, type: 3}
+  - {fileID: 8300000, guid: 8a9147a0efab2472389fb55fa5615aff, type: 3}
+  - {fileID: 8300000, guid: e9b40bfb2fe59496d800be78759c4703, type: 3}
+  - {fileID: 8300000, guid: 9e67e6b8fc8d14ae8bd38e54d2de07e6, type: 3}
+  - {fileID: 8300000, guid: 7ed1a68860e564777aa4891f86ff4007, type: 3}
 --- !u!195 &-1050066774347056340
 NavMeshAgent:
   m_ObjectHideFlags: 0
