@@ -129,9 +129,6 @@ MonoBehaviour:
   obstructionMask:
     serializedVersion: 2
     m_Bits: 128
-  isPlayerSeen: 0
-  isAttacking: 0
-  currentAttackTimer: 0
   viewDistance: 100
   attackDamage: 20
   attackRange: 30
@@ -146,6 +143,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 87565caf36e6041da99f33cd574408a8, type: 3}
   - {fileID: 8300000, guid: 574359564aeb0496791450914168d5d2, type: 3}
   - {fileID: 8300000, guid: 37aa7fefc9c3441faac66163de8217ce, type: 3}
+  laser:
+  - {fileID: 8300000, guid: 88408ebfe926e4d61b2856558d40d4da, type: 3}
+  - {fileID: 8300000, guid: 8a9147a0efab2472389fb55fa5615aff, type: 3}
+  - {fileID: 8300000, guid: e9b40bfb2fe59496d800be78759c4703, type: 3}
+  - {fileID: 8300000, guid: 9e67e6b8fc8d14ae8bd38e54d2de07e6, type: 3}
+  - {fileID: 8300000, guid: 7ed1a68860e564777aa4891f86ff4007, type: 3}
   maxFlyingHeight: 5
   projectileSpawnTransform: {fileID: 589142606214024216}
   projectilePrefab: {fileID: 7263172056655484054, guid: ee3af580214e9724c8d0a50a7adafa4f, type: 3}

@@ -312,11 +312,17 @@ public class BaseEnemy : BaseCharacter
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip[] creature;
-
-    void PlayAudio()
+    public AudioClip[] laser;
+    
+    private void PlayAudio()
     {
         var i = Random.Range(0, creature.Length);
         audioSource.PlayOneShot(creature[i]);
+    }
+    public void PlayAudioFiring()
+    {
+        var i = Random.Range(0, laser.Length);
+        audioSource.PlayOneShot(laser[i]);
     }
     
     //                  //
