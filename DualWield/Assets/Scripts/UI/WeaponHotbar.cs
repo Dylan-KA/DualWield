@@ -156,6 +156,8 @@ public class WeaponHotbar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale == 0f) return;
+
         if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E))
         {
             SetUIEnabled(true);

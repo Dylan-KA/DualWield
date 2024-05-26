@@ -6,8 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; } // its PascalCase on purpose!
 
-    [CanBeNull]
-    [SerializeField] private TextMeshProUGUI ammoDisplay;
+    /*[CanBeNull]
+    [SerializeField] private TextMeshProUGUI ammoDisplay;*/
+    private AmmoUI ammoUI;
     private float currentAmmoAmount;
     
     [Header("Settings")] [Tooltip("When ammo goes below this number, text goes red. Default: 20")]
@@ -28,18 +29,21 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (!ammoDisplay) { Debug.LogError("Error: Assign the ammo display to the GameManager.", ammoDisplay); }
+        //if (!ammoDisplay) { Debug.LogError("Error: Assign the ammo display to the GameManager.", ammoDisplay); }
+        ammoUI = FindObjectOfType<AmmoUI>();
         RefillAmmo(); // Starting with two weapons. Remove if we don't start with two weapons.
     }
     
     private void SetAmmoDisplay(float amount)
     {
+        /*int amountInt = (int)amount;
         if (!ammoDisplay) { return; }
-        int amountInt = (int)amount;
         ammoDisplay.text = amountInt + "%";
-        ammoDisplay.color = GetAmmo() <= LowAmmoMax ? Color.red : Color.white; // When ammo gets low
+        ammoDisplay.color = GetAmmo() <= LowAmmoMax ? Color.red : Color.white;*/ // When ammo gets low
+
+        ammoUI.SetBarProgress(amount);
     }
-    
+
     /// <summary>
     /// Drains ammo. Saves amount in memory (currentAmmoAmount).
     /// </summary>

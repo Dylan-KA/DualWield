@@ -25,6 +25,17 @@ public abstract class BaseWeapon : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (Time.timeScale <= 0f)
+        {
+            weaponFireSound.mute = true;
+            weaponFiringSound.mute = true;
+            return;
+        }
+        else
+        {
+            weaponFireSound.mute = false;
+            weaponFiringSound.mute = false;
+        }
         //PositionGun(); // uncomment this temporarily if u want to find a good handOffset
         if (isFiring)
         {
