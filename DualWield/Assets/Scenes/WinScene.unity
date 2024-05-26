@@ -385,7 +385,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-203274
+  m_Name: pb_Mesh-869812
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -1190,7 +1190,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-203288
+  m_Name: pb_Mesh-869826
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2365,7 +2365,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-203302
+  m_Name: pb_Mesh-869840
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -2594,8 +2594,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 16777215
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 1
   m_colorMode: 2
   m_fontColorGradient:
