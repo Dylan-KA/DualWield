@@ -137,7 +137,7 @@ public class PlayerCharacter : BaseCharacter
             leftWeapon.SetOtherWeaponType(rightWeapon.GetWeaponType());
             rightWeapon.SetOtherWeaponType(leftWeapon.GetWeaponType());
 
-            PlayAudio("pickup");
+            //PlayAudio("pickup");
         }
 
     }
