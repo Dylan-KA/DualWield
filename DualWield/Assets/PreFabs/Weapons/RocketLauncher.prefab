@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1653570320174985619}
   - component: {fileID: 1764909315771187418}
   - component: {fileID: 5902844966649548838}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8378529641771610108}
   - component: {fileID: 5045373985556383770}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: EmptyAmmoSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8085594665690500742}
   - component: {fileID: 1421068829247303149}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: WeaponFireSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173678698144972684}
   - component: {fileID: 844610252149487880}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: RocketLauncher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 6626697363519821535}
   - component: {fileID: 390658775997152261}
   - component: {fileID: 21223900321317159}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6496395669778013917}
   - component: {fileID: 4057917665161291875}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: WeaponFiringSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

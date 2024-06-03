@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6259666894588071499}
   - component: {fileID: 2010603728431467183}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: EmptyAmmoSFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1773085937944981470}
   - component: {fileID: 4788318397373144328}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 4265684341758219900}
   - component: {fileID: -1529562647357173759}
   - component: {fileID: 3241542965103208407}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: FreezeGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -479,7 +479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f58351a08dac3e346ba61dc6e8a11b65, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects:
