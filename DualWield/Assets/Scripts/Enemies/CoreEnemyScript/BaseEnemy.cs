@@ -174,25 +174,11 @@ public class BaseEnemy : BaseCharacter
         {
             if (IsPlayerInAttackingRange())
             {
-                LookAtPlayer();
-                if (!isAttacking)
-                {
-                    isAttacking = true;
-                    if (currentAttackTimer <= 0)
-                    {
-                        Attack();
-                    }
-                }
-                else if (isAttacking && currentAttackTimer <= 0)
-                {
-                    Attack();
-                }
+                AttackBehaviour();
             }
             else
             {
-                LookAtPlayer();
-                ResetAttack();
-                MoveTowardsTarget();
+                MoveBehaviour();
             }
         }
     }
@@ -201,26 +187,36 @@ public class BaseEnemy : BaseCharacter
     {
         if (GetIsPlayerSeen() && IsPlayerInAttackingRange())
         {
-            LookAtPlayer();
-            if (!isAttacking)
-            {
-                isAttacking = true;
-                if (currentAttackTimer <= 0)
-                {
-                    Attack();
-                }
-            }
-            else if (isAttacking && currentAttackTimer <= 0)
+            AttackBehaviour();
+        }
+        else
+        {
+            MoveBehaviour();
+        }
+    }
+
+    private void AttackBehaviour()
+    {
+        LookAtPlayer();
+        if (!isAttacking)
+        {
+            isAttacking = true;
+            if (currentAttackTimer <= 0)
             {
                 Attack();
             }
         }
-        else
+        else if (isAttacking && currentAttackTimer <= 0)
         {
-            LookAtPlayer();
-            ResetAttack();
-            MoveTowardsTarget();
+            Attack();
         }
+    }
+
+    private void MoveBehaviour()
+    {
+        LookAtPlayer();
+        ResetAttack();
+        MoveTowardsTarget();
     }
 
     private bool IsPlayerInAttackingRange()
