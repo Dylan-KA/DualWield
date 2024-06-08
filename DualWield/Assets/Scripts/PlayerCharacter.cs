@@ -192,25 +192,6 @@ public class PlayerCharacter : BaseCharacter
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookspeed, 0);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //May need to implement a cooldown for this.
-            if (Time.time - lastUsedTime >= cooldownTime)
-            {
-                Collider[] colliders = Physics.OverlapSphere(transform.position, 3, LayerMask.GetMask("Enemy"));
-                foreach (Collider EnemyCollider in colliders)
-                {
-                    Vector3 directionFromPlayer = EnemyCollider.transform.position - transform.position;
-                    directionFromPlayer.Normalize();
-                    EnemyCollider.GetComponent<Rigidbody>().AddForce(50f * directionFromPlayer, ForceMode.Impulse);
-                    GameManager.Instance.RefillAmmoCustom(5);
-
-                }
-
-                lastUsedTime = Time.time;
-            }
-        }
-
         // firing
         if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q)) // stop firing when swapping weapons
         {

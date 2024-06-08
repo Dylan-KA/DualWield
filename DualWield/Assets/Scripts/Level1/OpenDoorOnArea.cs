@@ -9,7 +9,7 @@ public class OpenDoorOnArea : MonoBehaviour
 {
     [Description("Option: Which entity will be detected by this area trigger.")]
     [SerializeField] private OnArea whichEntity;
-
+    [SerializeField] private AudioClip clip;
     [SerializeField] private GameObject door;
     [SerializeField] private TextMeshPro[] lineConnections;
 
@@ -25,6 +25,7 @@ public class OpenDoorOnArea : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && whichEntity == OnArea.Enemy)
         {
+            AudioSource.PlayClipAtPoint(clip, door.transform.position);
             door.SetActive(false);
             foreach (TextMeshPro connection in lineConnections)
             {
