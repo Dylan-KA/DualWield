@@ -210,7 +210,7 @@ public class BaseEnemy : BaseCharacter
                     Attack();
                 }
             }
-            else if (isAttacking && currentAttackTimer >= attackWaitTime)
+            else if (isAttacking && currentAttackTimer <= 0)
             {
                 Attack();
             }
