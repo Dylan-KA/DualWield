@@ -3918,6 +3918,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &262883036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6262573941491883653, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+  m_PrefabInstance: {fileID: 262883034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &262883037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 509380725118621597, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+  m_PrefabInstance: {fileID: 262883034}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &262883038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1376375799698539199, guid: f2b5fc628d97b4e5eb037459ae5baaa9, type: 3}
+  m_PrefabInstance: {fileID: 262883034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &267343831
 GameObject:
   m_ObjectHideFlags: 0
@@ -9642,6 +9657,11 @@ PrefabInstance:
 --- !u!20 &649014365 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 833108083828602931, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
+  m_PrefabInstance: {fileID: 649014364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &649014366 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2732617494867552312, guid: e323a88e4fcec3b45b46ae18e6a03a69, type: 3}
   m_PrefabInstance: {fileID: 649014364}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &657279686
@@ -41133,9 +41153,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2183711618128402133, guid: 53582f1ede5877d4ebaea23b0ffb66a3, type: 3}
+      propertyPath: AmmoBar
+      value: 
+      objectReference: {fileID: 262883036}
+    - target: {fileID: 2183711618128402133, guid: 53582f1ede5877d4ebaea23b0ffb66a3, type: 3}
+      propertyPath: CrossHair
+      value: 
+      objectReference: {fileID: 262883038}
+    - target: {fileID: 2183711618128402133, guid: 53582f1ede5877d4ebaea23b0ffb66a3, type: 3}
+      propertyPath: HealthBar
+      value: 
+      objectReference: {fileID: 262883037}
+    - target: {fileID: 2183711618128402133, guid: 53582f1ede5877d4ebaea23b0ffb66a3, type: 3}
       propertyPath: PlayerCamera
       value: 
       objectReference: {fileID: 649014365}
+    - target: {fileID: 2183711618128402133, guid: 53582f1ede5877d4ebaea23b0ffb66a3, type: 3}
+      propertyPath: WeaponCamera
+      value: 
+      objectReference: {fileID: 649014366}
     - target: {fileID: 2183711618128402134, guid: 53582f1ede5877d4ebaea23b0ffb66a3, type: 3}
       propertyPath: m_Name
       value: CameraManager
