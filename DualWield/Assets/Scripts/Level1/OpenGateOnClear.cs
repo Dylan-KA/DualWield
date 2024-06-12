@@ -6,6 +6,10 @@ public class OpenGateOnClear : MonoBehaviour
 {
     [SerializeField] private Transform enemies;
     [SerializeField] private GameObject door;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private GameObject doorCam;
+    [SerializeField] private CameraManager cameraManager;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +21,8 @@ public class OpenGateOnClear : MonoBehaviour
     {
         if (enemies.childCount == 0)
         {
+            audioSource.PlayOneShot(audioClip, 2.0f);
+            cameraManager.TriggerDoorCam(doorCam);
             door.SetActive(false);
         }
     }
