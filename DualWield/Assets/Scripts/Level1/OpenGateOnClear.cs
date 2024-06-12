@@ -10,20 +10,25 @@ public class OpenGateOnClear : MonoBehaviour
     [SerializeField] private AudioClip audioClip;
     [SerializeField] private GameObject doorCam;
     [SerializeField] private CameraManager cameraManager;
+    private bool IsOpen = false;
 
     // Update is called once per frame
     void Update()
     {
-        EnemyCheck();
+        if (!IsOpen)
+        {
+            EnemyCheck();
+        }
     }
 
     void EnemyCheck()
     {
         if (enemies.childCount == 0)
         {
+            IsOpen = true;
             audioSource.PlayOneShot(audioClip, 2.0f);
             cameraManager.TriggerDoorCam(doorCam);
-            door.SetActive(false);
+            door.GetComponent<Animator>().SetBool("isOpen", true);
         }
     }
 }
