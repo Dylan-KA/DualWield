@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 833108082530496965}
   - component: {fileID: 833108082530496967}
   - component: {fileID: 3116888686022336899}
+  - component: {fileID: 263418645292685868}
   - component: {fileID: 7208512683897465925}
   m_Layer: 6
   m_Name: Player
@@ -122,6 +123,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 579caf9be8c71e345b0d4f2d5a42df71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &263418645292685868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833108082530496963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef68385528ba44d31a07e7e689ec68f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepSounds:
+  - {fileID: 8300000, guid: 5d4edf4c37fac47e49b5ac06531bd944, type: 3}
+  - {fileID: 8300000, guid: da0fbfb9686c94c08a3f78b4558bfe21, type: 3}
+  minTimeBetweenFootsteps: 0.3
+  maxTimeBetweenFootsteps: 0.6
 --- !u!82 &7208512683897465925
 AudioSource:
   m_ObjectHideFlags: 0
