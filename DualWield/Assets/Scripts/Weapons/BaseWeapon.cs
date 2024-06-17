@@ -164,7 +164,6 @@ public abstract class BaseWeapon : MonoBehaviour
 
     public void PlayWeaponFasterFireSFX()
     {
-        Debug.Log("Playing FASTER Func()");
         if (weaponType == WeaponType.RocketLauncher && otherWeaponType == WeaponType.WindGun)
         {
             fasterWeaponFiringSound.Play();
