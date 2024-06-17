@@ -11,6 +11,8 @@ public abstract class ParticleWeapon : BaseWeapon
 
     [SerializeField] private ParticleSystem NormalRangeParticles;
     [SerializeField] private ParticleSystem ExtendedRangeParticles;
+    [SerializeField] private ParticleSystem FireWindParticles;
+    [SerializeField] private ParticleSystem RocketWindParticles;
     [SerializeField] protected ParticleSystem WeaponParticles; // The value is swapped between the 2 ranges above
     private bool particlesPlaying = false;
 
@@ -90,5 +92,16 @@ public abstract class ParticleWeapon : BaseWeapon
     {
         if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
         WeaponParticles = ExtendedRangeParticles;
+    }
+    public void SetParticleRed()
+    {
+        if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
+        WeaponParticles = FireWindParticles;
+    }
+
+    public void SetParticleGreen()
+    {
+        if (WeaponParticles) { WeaponParticles.Stop(); } // Clear particles before changing range
+        WeaponParticles = RocketWindParticles;
     }
 }

@@ -10,6 +10,7 @@ public abstract class BaseWeapon : MonoBehaviour
     [SerializeField] AudioSource weaponEmptySound;
     [SerializeField] AudioSource weaponFireSound; 
     [SerializeField] AudioSource weaponFiringSound;
+    [SerializeField] AudioSource fasterWeaponFiringSound;
     protected WeaponType otherWeaponType;
     protected Hand hand;
     
@@ -55,7 +56,13 @@ public abstract class BaseWeapon : MonoBehaviour
                             }
                         } else
                         {
-                            PlayWeaponFireSFX();
+                            if (otherWeaponType != WeaponType.WindGun)
+                            {
+                                PlayWeaponFireSFX();
+                            } else
+                            {
+                                PlayWeaponFasterFireSFX();
+                            }
                         }
                     }
                 }
@@ -84,8 +91,17 @@ public abstract class BaseWeapon : MonoBehaviour
         {
             if (GameManager.Instance.GetAmmo() > 0)
             {
+                // Plays a higher pitched sound if combined with windgun
                 if (weaponType == WeaponType.RocketLauncher) { return; }
-                PlayWeaponFireSFX();
+                if (weaponType == WeaponType.WindGun && otherWeaponType == WeaponType.Flamethrower) { return; }
+                if (otherWeaponType == WeaponType.WindGun && weaponType == WeaponType.Flamethrower)
+                {
+                    PlayWeaponFasterFireSFX();
+                } else
+                {
+                    // Else plays normally
+                    PlayWeaponFireSFX();
+                }
             } else
             {
                 PlayWeaponEmptySFX();
@@ -146,9 +162,33 @@ public abstract class BaseWeapon : MonoBehaviour
         weaponFiringSound.Play();
     }
 
+    public void PlayWeaponFasterFireSFX()
+    {
+        Debug.Log("Playing FASTER Func()");
+        if (weaponType == WeaponType.RocketLauncher && otherWeaponType == WeaponType.WindGun)
+        {
+            fasterWeaponFiringSound.Play();
+        }
+        else
+        {
+            weaponFireSound.Play();
+        }
+        if (weaponFiringSound != null)
+        {
+            PlayWeaponFasterFiringSFX();
+        }
+    }
+
+    // Higher pitch / speed audio
+    public void PlayWeaponFasterFiringSFX()
+    {
+        fasterWeaponFiringSound.Play();
+    }
+
     public void ClearWeaponSFX()
     {
         weaponFireSound.Stop();
         weaponFiringSound.Stop();
+        if (fasterWeaponFiringSound != null) { fasterWeaponFiringSound.Stop();}
     }
 }

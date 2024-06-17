@@ -62,6 +62,13 @@ public class WindGun : ParticleWeapon
         if (otherWeaponType == WeaponType.FreezeGun)
         {
             base.SetParticleRangeExtended();
+        } else if (otherWeaponType == WeaponType.Flamethrower)
+        {
+            base.SetParticleRed();
+        }
+        else if (otherWeaponType == WeaponType.RocketLauncher)
+        {
+            base.SetParticleGreen();
         }
         else
         {
