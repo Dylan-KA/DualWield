@@ -13,12 +13,11 @@ public class PlayerFootstep : MonoBehaviour
     private AudioSource audioSource; // Reference to the Audio Source component
     private bool isWalking = false; // Flag to track if the player is walking
     private float timeSinceLastFootstep; // Time since the last footstep sound
-    private CharacterController characterController;
+    [SerializeField] CharacterController characterController;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>(); // Get the Audio Source component
-        characterController = GetComponent<CharacterController>();
     }
 
     private void Update()
