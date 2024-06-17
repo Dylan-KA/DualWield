@@ -14,20 +14,27 @@ public class PlayerFootstep : MonoBehaviour
     private bool isWalking = false; // Flag to track if the player is walking
     private float timeSinceLastFootstep; // Time since the last footstep sound
     [SerializeField] CharacterController characterController;
+    private PlayerCharacter playerCharacter;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>(); // Get the Audio Source component
+        playerCharacter = characterController.gameObject.GetComponent<PlayerCharacter>();
     }
 
     private void Update()
     {
         CheckWalk();
         // Check if the player is walking
-        if (isWalking)
+        if (isWalking && IsGrounded())
         {
             PlayFootstep();
         }
+    }
+
+    private bool IsGrounded()
+    {
+        return playerCharacter.IsGrounded();
     }
 
     void CheckWalk()
