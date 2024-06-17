@@ -30,7 +30,7 @@ public class FreezeTest : MonoBehaviour
 
     private void OpenDoor()
     {
-        TestDoor.SetActive(false);
+        TestDoor.GetComponent<Animator>().SetBool("isOpen", true);
         this.gameObject.GetComponent<MeshRenderer>().material = CompleteTest;
     }
 }
