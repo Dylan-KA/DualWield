@@ -17,6 +17,11 @@ public class MainMenu : MonoBehaviour
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
 
+    [SerializeField] GameObject mainMenuCamTransform;
+    [SerializeField] GameObject creditsCamTransform;
+    float cameraLerp = 0f;
+    int lerpDirection = -1;
+
     void Awake()
     {
         document = GetComponent<UIDocument>();
@@ -57,7 +62,10 @@ public class MainMenu : MonoBehaviour
 
     private void OnCreditsClicked(ClickEvent evt)
     {
-        Application.OpenURL("https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran");
+        // no more rick roll ;(
+        //Application.OpenURL("https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran");
+
+        lerpDirection = 1;
     }
 
     private void OnQuitClicked(ClickEvent evt)
@@ -68,5 +76,15 @@ public class MainMenu : MonoBehaviour
     private void OnAnyButtonClicked(ClickEvent evt)
     {
 
+    }
+
+    private void Update()
+    {
+        cameraLerp += lerpDirection * Time.deltaTime;
+        cameraLerp = Mathf.Clamp(cameraLerp, 0, 1);
+        Vector3 newPosition = Vector3.Lerp(mainMenuCamTransform.transform.position, creditsCamTransform.transform.position, cameraLerp);
+        Quaternion newQuaternion = Quaternion.Lerp(mainMenuCamTransform.transform.rotation, creditsCamTransform.transform.rotation, cameraLerp);
+        Camera.main.transform.position = newPosition;
+        Camera.main.transform.rotation = newQuaternion;
     }
 }
