@@ -40,7 +40,6 @@ public class ExplosiveProjectile : Projectile
             {
                 if (Physics.Raycast(transform.position, Vector3.down, out var hitInfo, 4f, LayerMask.GetMask("Environment")))
                 {
-                    Debug.Log("did u work");
                     Instantiate<GameObject>(molotovPrefab, hitInfo.point + Vector3.up * 0.1f, Quaternion.identity);
                 }
 
