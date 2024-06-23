@@ -9,10 +9,10 @@ public class Checkpoint : MonoBehaviour
     public GameObject player;
 
     [SerializeField] private bool isOverride = false;
-    [SerializeField] private bool hasWind;
     [SerializeField] private bool hasFlame;
-    [SerializeField] private bool hasRocket;
+    [SerializeField] private bool hasWind;
     [SerializeField] private bool hasFreeze;
+    [SerializeField] private bool hasRocket;
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +29,12 @@ public class Checkpoint : MonoBehaviour
         {
             if (isOverride)
             {
-                checkPointData.UpdateCheckpoint(transform.position, unlockedWeaponsList.GunsUnlocked);
+                bool[] gunUnlocked = { hasFlame, hasWind, hasFreeze, hasRocket };
+                checkPointData.UpdateCheckpoint(transform.position, gunUnlocked);
             }
             else
             {
-                bool[] gunUnlocked = { hasWind, hasFlame, hasRocket, hasFreeze };
-                checkPointData.UpdateCheckpoint(transform.position, gunUnlocked);
+                checkPointData.UpdateCheckpoint(transform.position, unlockedWeaponsList.GunsUnlocked);
             }
         }
     }
@@ -43,7 +43,7 @@ public class Checkpoint : MonoBehaviour
     {
         float wait = 0.01f;
         yield return new WaitForSeconds(wait);
-
+    
         float distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
         if (distance <= 5f)
         {
