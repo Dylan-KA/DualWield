@@ -526,8 +526,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e0782585abab4425088dca66fa349401, type: 3}
   - {fileID: 8300000, guid: 338638fde7957497f80273910489dd1c, type: 3}
   - {fileID: 8300000, guid: 0110ca170a32c49d59b12a059bc0eb18, type: 3}
-  minTimeBetweenFootsteps: 0.3
-  maxTimeBetweenFootsteps: 0.6
+  minTimeBetweenFootsteps: 0.8
+  maxTimeBetweenFootsteps: 1.6
   rigidbody: {fileID: 996841942765347333}
 --- !u!82 &1722033432633137803
 AudioSource:
@@ -540,7 +540,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
