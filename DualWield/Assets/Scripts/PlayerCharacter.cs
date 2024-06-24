@@ -48,8 +48,7 @@ public class PlayerCharacter : BaseCharacter
     {
         characterController = GetComponent<CharacterController>();
         healthBar = FindObjectOfType<HealthBar>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        SetMouseLocked(true);
 
         EquipWeapon(startingWeaponRight, Hand.Right);
         EquipWeapon(startingWeaponLeft, Hand.Left);
@@ -57,6 +56,9 @@ public class PlayerCharacter : BaseCharacter
 
     public void SetMouseLocked(bool locked)
     {
+        lookspeed = PlayerPrefs.GetFloat("MouseSensitivity", 2f);
+        Camera.main.fieldOfView = PlayerPrefs.GetInt("FieldOfView", 60);
+
         if (locked)
         {
             Cursor.lockState = CursorLockMode.Locked;

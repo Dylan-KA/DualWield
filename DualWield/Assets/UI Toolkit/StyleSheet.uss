@@ -23,7 +23,7 @@
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .button VisualElement {
@@ -60,4 +60,19 @@
 }
 
 .wind {
+}
+
+Slider TextField {
+    height: 60px;
+    width: 100px;
+}
+
+#unity-drag-container {
+    height: 20px;
+    top: 20px;
+}
+
+SliderInt TextField {
+    height: 60px;
+    width: 100px;
 }

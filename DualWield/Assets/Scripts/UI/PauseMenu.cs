@@ -7,9 +7,10 @@ using UnityEngine.UIElements;
 public class PauseMenu : MonoBehaviour
 {
     private UIDocument document;
+    private UIDocument settingsMenu;
 
     private PlayerCharacter player;
-    //private Button settingsButton;
+    private Button settingsButton;
     private Button quitButton;
     private List<Button> allButtons = new List<Button>();
 
@@ -17,11 +18,12 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
+        settingsMenu = FindObjectOfType<SettingsMenu>().GetComponent<UIDocument>();
         document = GetComponent<UIDocument>();
         document.rootVisualElement.visible = false;
 
-        //settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
-        //settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
+        settingsButton = document.rootVisualElement.Q("SettingsButton") as Button;
+        settingsButton.RegisterCallback<ClickEvent>(OnSettingsClicked);
         quitButton = document.rootVisualElement.Q("QuitButton") as Button;
         quitButton.RegisterCallback<ClickEvent>(OnQuitClicked);
         Time.timeScale = 1f;
@@ -37,7 +39,8 @@ public class PauseMenu : MonoBehaviour
 
     private void OnSettingsClicked(ClickEvent evt)
     {
-        
+        document.rootVisualElement.visible = false;
+        settingsMenu.rootVisualElement.visible = true;
     }
 
     private void OnQuitClicked(ClickEvent evt)
