@@ -111,7 +111,7 @@ public class BaseEnemy : BaseCharacter
 
     private IEnumerator FOVRoutine()
     {
-        float delay = 2f;
+        float delay = .1f;
         WaitForSeconds wait = new(delay);
 
         while (true)
