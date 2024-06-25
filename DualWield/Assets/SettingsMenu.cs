@@ -40,7 +40,7 @@ public class SettingsMenu : MonoBehaviour
         document.rootVisualElement.visible = false;
 
         mouseSensitivitySlider.value = PlayerPrefs.GetFloat("MouseSensitivity", 2f);
-        fieldOfViewSlider.value = PlayerPrefs.GetInt("FieldOfView", 60);
+        fieldOfViewSlider.value = PlayerPrefs.GetInt("FieldOfView", 70);
         qualityDropDown.value = PlayerPrefs.GetString("Quality", "High");
 
         if (qualityDropDown.value == "Very Low")
