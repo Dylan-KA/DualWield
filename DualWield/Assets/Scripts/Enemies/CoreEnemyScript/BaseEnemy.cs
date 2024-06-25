@@ -50,7 +50,7 @@ public class BaseEnemy : BaseCharacter
 
     protected virtual void OnEnable()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         SetEnemyVision();
     }
 
@@ -67,7 +67,7 @@ public class BaseEnemy : BaseCharacter
         {
             navAgent = GetComponent<NavMeshAgent>();
             SetEnemyVision();
-            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         }
         catch
         {
