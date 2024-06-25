@@ -7,11 +7,13 @@ public class ExplosiveProjectile : Projectile
     [SerializeField] private float explosiveRange;
     [SerializeField] private ParticleSystem explosionPrefab;
     [SerializeField] private GameObject molotovPrefab;
+    [SerializeField] private AudioClip explodeSFX;
 
     protected override void OnImpact(Collider _)
     {
         if (!isFiredByEnemy)
         {
+            AudioSource.PlayClipAtPoint(explodeSFX, transform.position);
             int layerMask = 0;
             layerMask |= 1 << 3; // only gets enemies
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, explosiveRange, layerMask);

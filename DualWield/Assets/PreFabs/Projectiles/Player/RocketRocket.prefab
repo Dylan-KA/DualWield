@@ -134,3 +134,4 @@ MonoBehaviour:
   explosiveRange: 9
   explosionPrefab: {fileID: 198357973136645638, guid: 75a392c0908c45643a18825a3df3af49, type: 3}
   molotovPrefab: {fileID: 0}
+  explodeSFX: {fileID: 8300000, guid: 80e0970dc8a48b14a968c3d14cf26a68, type: 3}
